@@ -1,0 +1,327 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Global options &mdash; xpdAcq 0.5 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="xpdAcq 0.5 documentation" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> xpdAcq
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick Start</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="xpdusers.html">For XPD Users</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="beamlinestaff.html">For Beamline Staff</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="release_note.html">Release Notes</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">xpdAcq</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Global options</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/hold.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="global-options">
+<h1>Global options<a class="headerlink" href="#global-options" title="Permalink to this headline">¶</a></h1>
+<p><code class="docutils literal"><span class="pre">glbl</span></code> class has several attributes that control the overall behavior of <code class="docutils literal"><span class="pre">xpdacq</span></code> software.</p>
+<p>Automated dark related:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="78%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">attributes</th>
+<th class="head">&#160;</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">dk_window</span></code></td>
+<td>means desired dark window in minutes, default is 3000</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">auto_dark</span></code></td>
+<td>corresponds to logic of automated dark collection, default is <code class="docutils literal"><span class="pre">True</span></code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Automated calibration parameter injection:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="79%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">attributes</th>
+<th class="head">&#160;</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">auto_load_calib</span></code></td>
+<td>logic of automated loading calibration prameters, default is <code class="docutils literal"><span class="pre">True</span></code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Configuration on experimental instruments:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="23%" />
+<col width="77%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">attributes</th>
+<th class="head">&#160;</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">shutter_control</span></code></td>
+<td>control fast shutter or not, default is True</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">frame_acq_time</span></code></td>
+<td>exposure per frame in seconds, default is 0.1s</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">temp_controller</span></code></td>
+<td>object name of desired temperature controller, default is <code class="docutils literal"><span class="pre">cs700</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">shutter</span></code></td>
+<td>object name of desired shutter, default is <code class="docutils literal"><span class="pre">shctl1</span></code></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="possible-scenarios">
+<h2>Possible scenarios:<a class="headerlink" href="#possible-scenarios" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><strong>No automated dark collection logic at all:</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">glbl</span><span class="o">.</span><span class="n">auto_dark</span> <span class="o">=</span> <span class="bp">False</span>
+<span class="n">glbl</span><span class="o">.</span><span class="n">shutter_control</span> <span class="o">=</span> <span class="bp">False</span>
+</pre></div>
+</div>
+<p><strong>Want a fresh dark frame every time ``prun`` is triggered:</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">glbl</span><span class="o">.</span><span class="n">dk_window</span> <span class="o">=</span> <span class="mf">0.001</span> <span class="c1"># dark window is 0.001 min = 0.06 secs</span>
+</pre></div>
+</div>
+<p><strong>Want a 0.2 exposure time per frame instead of 0.1s:</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">glbl</span><span class="o">.</span><span class="n">frame_acq_time</span> <span class="o">=</span> <span class="mf">0.2</span>
+</pre></div>
+</div>
+<p><strong>Want to run temperature ramp with different device and use alternative shutter:</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">glbl</span><span class="o">.</span><span class="n">temp_controller</span> <span class="o">=</span> <span class="n">eurotherm</span>
+<span class="n">glbl</span><span class="o">.</span><span class="n">shutter</span> <span class="o">=</span> <span class="n">shctl2</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">desired objects should be properly <em>configured</em>. For more details, please contact beamline staff.</p>
+</div>
+</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright (c) 2016 trustees of Columbia University in the City of New York.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,617 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Cheat Sheet &mdash; xpdAcq 0.5 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="xpdAcq 0.5 documentation" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> xpdAcq
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick Start</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="xpdusers.html">For XPD Users</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="beamlinestaff.html">For Beamline Staff</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="release_note.html">Release Notes</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">xpdAcq</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Cheat Sheet</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/babble.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="cheat-sheet">
+<span id="id1"></span><h1>Cheat Sheet<a class="headerlink" href="#cheat-sheet" title="Permalink to this headline">¶</a></h1>
+<p>Please use this page as a reminder and copy&amp;paste code snippets into your <code class="docutils literal"><span class="pre">collection-dev</span></code>
+and <code class="docutils literal"><span class="pre">analysis</span></code> <code class="docutils literal"><span class="pre">ipython</span></code> terminals.</p>
+<p>To understand what the code does, please go <a class="reference internal" href="quickstart_old.html#qs"><span class="std std-ref">Quick start</span></a> or <a class="reference internal" href="xpdusers.html#xpdu"><span class="std std-ref">For XPD Users</span></a></p>
+<div class="section" id="start-a-beamtime">
+<h2>Start a beamtime<a class="headerlink" href="#start-a-beamtime" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">bt</span> <span class="o">=</span> <span class="n">_start_beamtime</span><span class="p">(</span><span class="n">PI_last</span><span class="o">=</span><span class="s1">&#39;Billinge&#39;</span><span class="p">,</span> <span class="n">saf_num</span><span class="o">=</span><span class="mi">300012</span><span class="p">,</span>
+                     <span class="n">experimenters</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Emma&#39;</span><span class="p">,</span> <span class="s1">&#39;Watson&#39;</span><span class="p">,</span> <span class="s1">&#39;Tim&#39;</span><span class="p">,</span> <span class="s1">&#39;Liu&#39;</span><span class="p">,</span> <span class="s1">&#39;Max&#39;</span><span class="p">,</span> <span class="s1">&#39;Terban&#39;</span><span class="p">],</span>
+                     <span class="n">wavelength</span><span class="o">=</span><span class="mf">0.184649</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="last simple">
+<li><code class="docutils literal"><span class="pre">saf_num</span></code> is the Safety Approval Form number to this beamtime</li>
+<li><code class="docutils literal"><span class="pre">experimenters</span></code> field is expected to be [‘first_name’, ‘last_name’, ‘fist_name’, ‘last_name’, ….]</li>
+</ul>
+</div>
+<div class="section" id="link-bt-to-xrun">
+<h3>link bt to xrun<a class="headerlink" href="#link-bt-to-xrun" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">xrun</span><span class="o">.</span><span class="n">beamtime</span> <span class="o">=</span> <span class="n">bt</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">this is to notice <code class="docutils literal"><span class="pre">xrun</span></code> for current beamtime. concept of <code class="docutils literal"><span class="pre">xrun</span></code> will be introduced later</p>
+</div>
+</div>
+<div class="section" id="open-a-collection">
+<h3>open a collection<a class="headerlink" href="#open-a-collection" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">open_collection</span><span class="p">(</span><span class="s1">&#39;first_collection&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="last simple">
+<li><code class="docutils literal"><span class="pre">collection_name</span></code> (“first_collection” here) can be any name you want, as long as it is a string (in quotes)</li>
+<li>Also you need to open a collection if you exit out and come back to <code class="docutils literal"><span class="pre">ipython</span></code> session</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="running-experiment">
+<h2>Running experiment<a class="headerlink" href="#running-experiment" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="calibration">
+<h3>calibration<a class="headerlink" href="#calibration" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">run_calibration</span><span class="p">(</span><span class="n">exposure</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="last simple">
+<li>this function will run a calibration shot, for a short tutorial about calibration here <a class="reference internal" href="usb_Running.html#calib-manual"><span class="std std-ref">Quick guide of calibration steps with pyFAI</span></a></li>
+<li>default behavior assume <strong>Ni</strong> as the calibrant and default <code class="docutils literal"><span class="pre">exposure</span></code> time is 60 seconds.</li>
+<li>use <code class="docutils literal"><span class="pre">run_calibration?</span></code> to find out more information</li>
+</ul>
+</div>
+</div>
+<div class="section" id="set-up-sample-objects">
+<h3>set up <code class="docutils literal"><span class="pre">Sample</span></code> objects<a class="headerlink" href="#set-up-sample-objects" title="Permalink to this headline">¶</a></h3>
+<p>Example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">Sample</span><span class="p">(</span><span class="n">bt</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;sample_name&#39;</span><span class="p">:</span><span class="s1">&#39;Ni&#39;</span><span class="p">,</span> <span class="s1">&#39;sample_composition&#39;</span><span class="p">:{</span><span class="s1">&#39;Ni&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">}}</span> <span class="p">)</span>
+<span class="n">Sample</span><span class="p">(</span><span class="n">bt</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;sample_name&#39;</span><span class="p">:</span><span class="s1">&#39;TiO2&#39;</span><span class="p">,</span> <span class="s1">&#39;sample_composition&#39;</span><span class="p">:{</span><span class="s1">&#39;Ti&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;O&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">}})</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="last simple">
+<li><code class="docutils literal"><span class="pre">sample_name</span></code> and <code class="docutils literal"><span class="pre">sample_composition</span></code> are both required.</li>
+<li><code class="docutils literal"><span class="pre">sample_name</span></code> needs to be a string and <code class="docutils literal"><span class="pre">sample_composition</span></code> needs to be a dictionary, namely in a {<cite>key</cite>: <cite>value</cite>} form.</li>
+<li>for the richness of your metadata, we encourage you to use spreadsheet to enter your metadata.
+Please see instruction <a class="reference internal" href="usb_Running.html#import-sample"><span class="std std-ref">here</span></a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="set-up-scanplan-objects">
+<h3>set up <code class="docutils literal"><span class="pre">ScanPlan</span></code> objects<a class="headerlink" href="#set-up-scanplan-objects" title="Permalink to this headline">¶</a></h3>
+<p>Example:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="32%" />
+<col width="68%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">command</th>
+<th class="head">&#160;</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">ScanPlan(bt,</span> <span class="pre">ct,</span> <span class="pre">5)</span></code></td>
+<td>a count scan for 5s</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">ScanPlan(bt,</span> <span class="pre">tseries,</span> <span class="pre">5,</span> <span class="pre">50,</span> <span class="pre">15)</span></code></td>
+<td>time series with 5s count time, 50s delay and 15 repeats</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">ScanPlan(bt,</span> <span class="pre">Tramp,</span> <span class="pre">5,</span> <span class="pre">300,</span> <span class="pre">200,</span> <span class="pre">5)</span></code></td>
+<td>temperature series with 5s count time, starting from 300k to 200k with 5k per step</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="list-objects-by-categories">
+<h3>list objects by categories<a class="headerlink" href="#list-objects-by-categories" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="ow">in</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="n">bt</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+
+<span class="n">ScanPlans</span><span class="p">:</span>
+<span class="mi">0</span><span class="p">:</span> <span class="s1">&#39;ct_5&#39;</span>
+<span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;Tramp_5_300_200_5&#39;</span>
+<span class="mi">2</span><span class="p">:</span> <span class="s1">&#39;tseries_5_50_15&#39;</span>
+
+<span class="n">Samples</span><span class="p">:</span>
+<span class="mi">0</span><span class="p">:</span> <span class="n">Ni</span>
+<span class="mi">1</span><span class="p">:</span> <span class="n">TiO2</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="interrogating-metadata-in-objects">
+<h3>interrogating metadata in objects<a class="headerlink" href="#interrogating-metadata-in-objects" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">bt</span><span class="o">.</span><span class="n">samples</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">md</span>
+<span class="n">bt</span><span class="o">.</span><span class="n">scanplans</span> <span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">.</span><span class="n">md</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="running-scan-with-acquire-objects">
+<h3>running scan with acquire objects<a class="headerlink" href="#running-scan-with-acquire-objects" title="Permalink to this headline">¶</a></h3>
+<p><em>on this sample, run this scan plan</em></p>
+<p><strong>production run engine</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">xrun</span><span class="p">(</span><span class="n">bt</span><span class="o">.</span><span class="n">samples</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>  <span class="n">bt</span><span class="o">.</span><span class="n">scanplan</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span> <span class="c1"># indexing object explicitly</span>
+
+<span class="n">xrun</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># inexplicit give ``Sample`` and ``ScanPlan`` index</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">remember to change the index according to your bt.list() result!</p>
+</div>
+</div>
+<div class="section" id="interrupt">
+<h3>interrupt<a class="headerlink" href="#interrupt" title="Permalink to this headline">¶</a></h3>
+<p>we are not living in a ideal world, so things can go wrong. The most common one
+is you want to abort your current scan. Here is a useful table from
+<a class="reference external" href="http://nsls-ii.github.io/bluesky/state-machine.html#interactive-pause-summary">original package</a></p>
+<div class="section" id="interactively-interrupt-execution">
+<h4>Interactively Interrupt Execution<a class="headerlink" href="#interactively-interrupt-execution" title="Permalink to this headline">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="43%" />
+<col width="57%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Command</th>
+<th class="head">Outcome</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Ctrl+C</td>
+<td>Pause soon.</td>
+</tr>
+<tr class="row-odd"><td>Ctrl+C twice</td>
+<td>Pause now.</td>
+</tr>
+<tr class="row-even"><td>Ctrl+C three times fast</td>
+<td>(Shortcut) Pause now and abort.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="from-a-paused-state">
+<h4>From a paused state<a class="headerlink" href="#from-a-paused-state" title="Permalink to this headline">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="74%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Command</th>
+<th class="head">Outcome</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>xrun.resume()</td>
+<td>Safely resume plan.</td>
+</tr>
+<tr class="row-odd"><td>xrun.abort()</td>
+<td>Perform cleanup. Mark as aborted.</td>
+</tr>
+<tr class="row-even"><td>xrun.stop()</td>
+<td>Perform cleanup. Mark as success.</td>
+</tr>
+<tr class="row-odd"><td>xrun.halt()</td>
+<td>Do not perform cleanup — just stop.</td>
+</tr>
+<tr class="row-even"><td>xrun.state</td>
+<td>Check if ‘paused’ or ‘idle’.</td>
+</tr>
+</tbody>
+</table>
+<p>For more complicated situations, please go to <a class="reference internal" href="troubleshooting.html#troubleshooting"><span class="std std-ref">Troubleshooting</span></a></p>
+</div>
+</div>
+<div class="section" id="saving-images-from-your-scans">
+<h3>Saving images from your scans<a class="headerlink" href="#saving-images-from-your-scans" title="Permalink to this headline">¶</a></h3>
+<p>most of analysis functionalities operate on <code class="docutils literal"><span class="pre">header</span></code> level, for the concept of it,
+please refer to <a class="reference external" href="http://nsls-ii.github.io/databroker/headers.html">here</a></p>
+<p><strong>save images from last scan:</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">save_last_tiff</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="last simple">
+<li>dark subtracted images from last <code class="docutils literal"><span class="pre">header</span></code> will be saved under directory with <code class="docutils literal"><span class="pre">sample_name</span></code>
+defined in <code class="docutils literal"><span class="pre">Sample</span></code> object you feed to <code class="docutils literal"><span class="pre">xrun</span></code>.</li>
+</ul>
+</div>
+<p>You can also issue a commend to save all images from desired <code class="docutils literal"><span class="pre">header</span></code> or a bunch of <code class="docutils literal"><span class="pre">headers</span></code></p>
+<p><strong>save images from last 5 scans till now:</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">h</span> <span class="o">=</span> <span class="n">db</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">:]</span>
+<span class="n">save_tiff</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><code class="docutils literal"><span class="pre">-5:</span></code> is Python syntax, which means <em>the last 5 till now</em>.
+It gives you <strong>multiple</strong> objects. You can always do <code class="docutils literal"><span class="pre">-7:</span></code>, <code class="docutils literal"><span class="pre">-10:</span></code>….e.t.c.</p>
+</div>
+<p><strong>save 5 headers away from now:</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">h</span> <span class="o">=</span> <span class="n">db</span><span class="p">[</span><span class="o">-</span><span class="n">P</span><span class="p">]</span>
+<span class="n">save_tiff</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><code class="docutils literal"><span class="pre">-5</span></code> is Python syntax, which means <em>the last 5 from now</em>.
+It gives you <strong>single</strong> object. You can always do <code class="docutils literal"><span class="pre">-2</span></code>, <code class="docutils literal"><span class="pre">-23</span></code>….e.t.c.</p>
+</div>
+</div>
+<div class="section" id="end-a-beamtime">
+<h3>End a beamtime<a class="headerlink" href="#end-a-beamtime" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">_end_beamtime</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="last simple">
+<li>After running this command, directories under <code class="docutils literal"><span class="pre">xpdUser</span></code> will be archived and backed up remotely.</li>
+<li>Only run this when you are done with your beamtime.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="global-options">
+<h2>Global options<a class="headerlink" href="#global-options" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal"><span class="pre">glbl</span></code> class has several attributes that control the overall behavior of <code class="docutils literal"><span class="pre">xpdacq</span></code> software.</p>
+<p>Automated dark related:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="78%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">attributes</th>
+<th class="head">&#160;</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">dk_window</span></code></td>
+<td>means desired dark window in minutes, default is 3000</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">auto_dark</span></code></td>
+<td>corresponds to logic of automated dark collection, default is <code class="docutils literal"><span class="pre">True</span></code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Automated calibration parameter injection:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="79%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">attributes</th>
+<th class="head">&#160;</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">auto_load_calib</span></code></td>
+<td>logic of automated loading calibration prameters, default is <code class="docutils literal"><span class="pre">True</span></code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Configuration on experimental instruments:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="23%" />
+<col width="77%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">attributes</th>
+<th class="head">&#160;</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">shutter_control</span></code></td>
+<td>control fast shutter or not, default is True</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">frame_acq_time</span></code></td>
+<td>exposure per frame in seconds, default is 0.1s</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">temp_controller</span></code></td>
+<td>object name of desired temperature controller, default is <code class="docutils literal"><span class="pre">cs700</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">shutter</span></code></td>
+<td>object name of desired shutter, default is <code class="docutils literal"><span class="pre">shctl1</span></code></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="possible-scenarios">
+<h3>Possible scenarios:<a class="headerlink" href="#possible-scenarios" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><strong>No automated dark collection logic at all:</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">glbl</span><span class="o">.</span><span class="n">auto_dark</span> <span class="o">=</span> <span class="bp">False</span>
+<span class="n">glbl</span><span class="o">.</span><span class="n">shutter_control</span> <span class="o">=</span> <span class="bp">False</span>
+</pre></div>
+</div>
+<p><strong>Want a fresh dark frame every time ``xrun`` is triggered:</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">glbl</span><span class="o">.</span><span class="n">dk_window</span> <span class="o">=</span> <span class="mf">0.001</span> <span class="c1"># dark window is 0.001 min = 0.06 secs</span>
+</pre></div>
+</div>
+<p><strong>Want a 0.2 exposure time per frame instead of 0.1s:</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">glbl</span><span class="o">.</span><span class="n">frame_acq_time</span> <span class="o">=</span> <span class="mf">0.2</span>
+</pre></div>
+</div>
+<p><strong>Want to run temperature ramp with different device and use alternative shutter:</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">glbl</span><span class="o">.</span><span class="n">temp_controller</span> <span class="o">=</span> <span class="n">eurotherm</span>
+<span class="n">glbl</span><span class="o">.</span><span class="n">shutter</span> <span class="o">=</span> <span class="n">shctl2</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">desired objects should be properly <em>configured</em>. For more details, please contact beamline staff.</p>
+</div>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="checklist">
+<h2>Checklist<a class="headerlink" href="#checklist" title="Permalink to this headline">¶</a></h2>
+<p>The instrument scientist (IS) should have set up your beamtime hardware and software
+for you.  Let’s check if it is the case.</p>
+<ol class="arabic simple">
+<li>Activate the XPD data acquisition environment:</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li>In a terminal look to see if it is already activated.  If it is, you should see <code class="docutils literal"><span class="pre">(collection-dev)</span></code> at the beginning of the line.</li>
+</ul>
+<div class="highlight-none"><div class="highlight"><pre><span></span>(collection-dev)xf28id1@xf28id1-ws2:~$
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li>Check that the Perkin Elmer detector is correctly set up.</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li>Look at the Perkin Elmer screen on the CSS and make sure that <code class="docutils literal"><span class="pre">Acquire</span></code> mode has been enabled. If Acquire mode is enabled, it should show system information <code class="docutils literal"><span class="pre">Collecting</span></code> in yellow color. If it hasn’t been activated, please click <code class="docutils literal"><span class="pre">start</span></code> button.</li>
+</ul>
+<a class="reference internal image-reference" href="_images/cropped_pe1c_ioc.png"><img alt="_images/cropped_pe1c_ioc.png" class="align-center" src="_images/cropped_pe1c_ioc.png" style="width: 300px; height: 200px;" /></a>
+<ul class="simple">
+<li>Type <code class="docutils literal"><span class="pre">glbl.area_det</span></code> and return.  It should return:</li>
+</ul>
+<blockquote>
+<div><div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="n">glbl</span><span class="o">.</span><span class="n">area_det</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="n">PerkinElmerContinuous</span><span class="p">(</span><span class="n">prefix</span><span class="o">=</span><span class="s1">&#39;XF:28IDC-ES:1{Det:PE1}&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;pe1&#39;</span><span class="p">,</span> <span class="n">read_attrs</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;tiff&#39;</span><span class="p">,</span> <span class="s1">&#39;stats1&#39;</span><span class="p">],</span>
+                              <span class="n">configuration_attrs</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;images_per_set&#39;</span><span class="p">,</span> <span class="s1">&#39;number_of_sets&#39;</span><span class="p">],</span>
+                              <span class="n">monitor_attrs</span><span class="o">=</span><span class="p">[])</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright (c) 2016 trustees of Columbia University in the City of New York.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
