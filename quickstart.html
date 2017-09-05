@@ -94,7 +94,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Quick Start</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#xpd-data-collection-workflow-summary">XPD Data Collection Workflow Summary</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#check-your-data-collection-environment-is-correctly-set-up">Check your data collection environment is correctly set up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#check-your-data-collection-terminal-is-correctly-set-up">Check your data collection terminal is correctly set up</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#check-that-your-analysis-environment-is-correctly-set-up">Check that your analysis environment is correctly set up</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#set-up-your-experiment">Set up your experiment</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#general">0. general</a></li>
@@ -200,7 +200,7 @@
 <p>This quick-start contains an overview of how the <code class="docutils literal"><span class="pre">xpdAcq</span></code> software works.
 To understand more details about it, please refer to the detailed documentation in <a class="reference internal" href="xpdusers.html#xpdu"><span class="std std-ref">For XPD Users</span></a></p>
 <p>Please use this page as a reminder of the workflow and to copy &amp; paste code snippets into the
-ipython environments that are controlling your experiment and analysis.  After
+ipython terminals that are controlling your experiment and analysis.  After
 pasting, hit enter.</p>
 <p>Remember, to post questions about anything XPD, including software, and to see archived answers, at the <a class="reference external" href="https://groups.google.com/forum/#!forum/xpd-users;context-place=overview">XPD-Users Google group</a> . If you are not already a member please request to join
 the community</p>
@@ -216,7 +216,7 @@ Carry out the steps in this order to ensure a successful experiment.</p>
 <li>Run <code class="docutils literal"><span class="pre">bt.list()</span></code> to see what <code class="docutils literal"><span class="pre">ScanPlans</span></code> and <code class="docutils literal"><span class="pre">Samples</span></code> you have pre-defined. Define new <code class="docutils literal"><span class="pre">ScanPlans</span></code> as needed.  To add additional samples add them to the sample excel spreadsheet and run <code class="docutils literal"><span class="pre">import_sample_info()</span></code></li>
 <li>Run setup scans on your sample to assess data quality and required exposure time by running <code class="docutils literal"><span class="pre">xrun(0,</span> <span class="pre">&lt;a_count_ScanPlan&gt;)</span></code> followed by <code class="docutils literal"><span class="pre">integrate_and_save_last()</span></code>. Navigate to <code class="docutils literal"><span class="pre">.../xpdUser/tiff_base/Setup</span></code> directory to preview the data using plotting tools such as <code class="docutils literal"><span class="pre">SrXgui</span></code>, <code class="docutils literal"><span class="pre">XPDSuite</span></code>, <code class="docutils literal"><span class="pre">Fit2D</span></code> etc.</li>
 <li>Run your experiment by running <code class="docutils literal"><span class="pre">xrun(&lt;sample&gt;,</span> <span class="pre">&lt;scanplan&gt;)</span></code></li>
-<li>Save your data using <code class="docutils literal"><span class="pre">integrate_and_save_last()</span></code>. Navigate to <code class="docutils literal"><span class="pre">.../xpdUser/tiff_base/&lt;Sample_name_from_spreadsheet&gt;</span></code> directory to preview the data using plotting tools such as <code class="docutils literal"><span class="pre">SrXgui</span></code>, <code class="docutils literal"><span class="pre">XPDSuite</span></code>, <code class="docutils literal"><span class="pre">Fit2D</span></code> etc.</li>
+<li>Your data will be automatically saved and visualized via the analysis pipleine. The data will be saved in <code class="docutils literal"><span class="pre">.../xpdUser/tiff_base/&lt;Sample_name_from_spreadsheet&gt;</span></code>.</li>
 </ol>
 </div></blockquote>
 <p>These and many more things are explained below and elsewhere in the documentation.</p>
@@ -250,20 +250,20 @@ you follow through the following guide step-by-step, typing the commands and see
 more importantly, to do things in the right order set up your experiment for success.</p>
 <p>OK, let’s get started.</p>
 </div>
-<div class="section" id="check-your-data-collection-environment-is-correctly-set-up">
-<h2>Check your data collection environment is correctly set up<a class="headerlink" href="#check-your-data-collection-environment-is-correctly-set-up" title="Permalink to this headline">¶</a></h2>
-<p>1. You will do all your work in special IPython working environments. These should already be open, you just need
-to find them.  IPython environments start the line with something like <code class="docutils literal"><span class="pre">In[49]:</span></code> and <code class="docutils literal"><span class="pre">Out[50]</span></code>, so you should
+<div class="section" id="check-your-data-collection-terminal-is-correctly-set-up">
+<h2>Check your data collection terminal is correctly set up<a class="headerlink" href="#check-your-data-collection-terminal-is-correctly-set-up" title="Permalink to this headline">¶</a></h2>
+<p>1. You will do all your work in special IPython terminals. These should already be open, you just need
+to find them.  IPython terminals start the line with something like <code class="docutils literal"><span class="pre">In[49]:</span></code> and <code class="docutils literal"><span class="pre">Out[50]</span></code>, so you should
 see that in a terminal.  Try typing <code class="docutils literal"><span class="pre">show_env()</span></code>.  If you see something like <code class="docutils literal"><span class="pre">collection-17Q1.0</span></code> or <code class="docutils literal"><span class="pre">analysis-17Q1.1</span></code>
-(the numbers will change with time) then you are good, you will use these environments to run your
+(the numbers will change with time) then you are good, you will use these terminals to run your
 experiment and to visualize and analyze your data, respectively.  We recommend that you run <code class="docutils literal"><span class="pre">collection</span></code> on
 work-station 2 (the central computer, look for <code class="docutils literal"><span class="pre">ws2</span></code> in the title at the top of the terminal windows) and
 <code class="docutils literal"><span class="pre">analysis</span></code> on the <code class="docutils literal"><span class="pre">ws3</span></code> computer on the right.</p>
-<p>If you can’t find the right environments, please ask the instrument scientist.  This is important to make sure
+<p>If you can’t find the right terminal, please ask the instrument scientist.  This is important to make sure
 that there is a clean start for your experiment.  However, if later in your experiment you ever have to restart
-your environments, then you type at the command line <code class="docutils literal"><span class="pre">bsui</span></code> for the collection and <code class="docutils literal"><span class="pre">ianalysis</span></code> for the analysis environments, respectively.</p>
+your terminals, then you type at the command line <code class="docutils literal"><span class="pre">bsui</span></code> for both the collection and analysis terminals.</p>
 <p>2. Make sure that the software has been properly configured for your beamtime. In
-your <code class="docutils literal"><span class="pre">collection-yyQn.x</span></code> environment, type:</p>
+your <code class="docutils literal"><span class="pre">collection-yyQn.x</span></code> terminal, type:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">bt</span><span class="o">.</span><span class="n">md</span>
 </pre></div>
 </div>
@@ -282,25 +282,15 @@ or if you forgot something have the IS fetch it for you from the archive later.<
 <div class="section" id="check-that-your-analysis-environment-is-correctly-set-up">
 <h2>Check that your analysis environment is correctly set up<a class="headerlink" href="#check-that-your-analysis-environment-is-correctly-set-up" title="Permalink to this headline">¶</a></h2>
 <p>1. Analysis is done in a separate (but very similar) environment to acquisition.
-This will be in a separate terminal window.  You can run an analysis
-environment on <code class="docutils literal"><span class="pre">ws2</span></code> and on work-station 3 (it is the computer on the right-hand side.
-Look for <code class="docutils literal"><span class="pre">ws3</span></code> in the terminal title field)
-so make sure that you also look there for the analysis environment.
+This will be in a separate terminal window.
 Use the instructions given above for <code class="docutils literal"><span class="pre">collection</span></code> to check you have found the right terminal window.
-For data analysis <code class="docutils literal"><span class="pre">show_env()</span></code> should return something like <code class="docutils literal"><span class="pre">analysis-17Q1.0</span></code>.</p>
-<p>If you need to restart the analysis environment later you can do it by typing</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">ianalysis</span>
-</pre></div>
-</div>
-<p>2. Make sure that the software has been properly configured for your beamtime. In
-your <code class="docutils literal"><span class="pre">analysis-yyQn.x</span></code> environment, type:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">an</span><span class="o">.</span><span class="n">md</span>
-</pre></div>
-</div>
-<p>This will return the same list of metadata about your experiment as bt.md does.  It means
-that your analysis environment is linked to the right experiment.  If not
-please get your analysis environment set up by the instrument scientist before proceeding.</p>
-<p>3. Make sure the visualization software is running. We will use <code class="docutils literal"><span class="pre">SrXgui</span></code> to visualize 2D plots
+For data analysis <code class="docutils literal"><span class="pre">show_env()</span></code> should return something like <code class="docutils literal"><span class="pre">analysis-17Q3.0</span></code>.</p>
+<ol class="arabic simple" start="2">
+<li>The analysis pipeline will start up automatically.</li>
+</ol>
+<p>3. Once the analysis pipeline starts up a few blank visualization windows will pop up, these
+will be filled with data once acquisition begins.</p>
+<p>4. Make sure the visualization software is running. We will use <code class="docutils literal"><span class="pre">SrXgui</span></code> to visualize 2D plots
 and <code class="docutils literal"><span class="pre">XPDsuite</span></code> for visualizing 1D plots and getting PDFs.
 Check that they are running by finding windows that look like:</p>
 <p><strong>SrXgui</strong></p>
