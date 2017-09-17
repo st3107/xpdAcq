@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Running scans &mdash; xpdAcq 0.5 documentation</title>
+  <title>Running scans &mdash; xpdAcq 0.6.0 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="xpdAcq 0.5 documentation" href="index.html"/>
+    <link rel="top" title="xpdAcq 0.6.0 documentation" href="index.html"/>
         <link rel="up" title="For XPD Users" href="xpdusers.html"/>
         <link rel="next" title="Initial assessment of your data" href="usb_QuickAssess.html"/>
         <link rel="prev" title="Where did all my Sample and Scan objects go?????" href="usb_Where.html"/> 
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                0.5
+                0.6
               </div>
             
           
@@ -126,6 +126,12 @@
 <li class="toctree-l4"><a class="reference internal" href="#using-the-auto-masker">Using the auto-masker</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#client-server-metadata-schema">client/server metadata schema</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#overview-with-an-example">Overview with an example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#when-and-how-to-change-exp-hash-uid">when and how to change <code class="docutils literal"><span class="pre">exp_hash_uid</span></code>?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#user-defined-folder-tag">User defined folder tag</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="usb_QuickAssess.html">Initial assessment of your data</a></li>
@@ -220,6 +226,11 @@ a predefined ScanPlan object, then hit return and sit back, your scan will be ca
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">xrun</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">scanplan</span><span class="p">)</span>
 </pre></div>
 </div>
+<dl class="class">
+<dt id="xpdacq.xpdacq.CustomizedRunEngine">
+<em class="property">class </em><code class="descclassname">xpdacq.xpdacq.</code><code class="descname">CustomizedRunEngine</code><span class="sig-paren">(</span><em>beamtime</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#xpdacq.xpdacq.CustomizedRunEngine" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <p><code class="docutils literal"><span class="pre">xrun</span></code> stands for “XPD run” which is a our main run engine.</p>
 <p>Here are some examples of a workflow.  Assume a Ni_calibrant sample is loaded on the diffractometer
 and the <code class="docutils literal"><span class="pre">Ni</span></code> Sample object is created as well as all the <code class="docutils literal"><span class="pre">ScanPlan</span></code> we need.
@@ -393,13 +404,16 @@ ring you have selected.  Then repeat this for the other four rings you will sele
 <li><p class="first">If you don’t like what you have selected, you can exit out using <code class="docutils literal"><span class="pre">CTL-C</span></code> and start again
 by running <cite>run_calibration()</cite>.  However, if you are happy with your selections accept them by first
 making the collection terminal window active by clicking on it, then hitting <code class="docutils literal"><span class="pre">&lt;enter&gt;</span></code>.</p>
-<p>You will now follow the instructions coming from PyFai.  It asks you to supply the
-indices of the rings you have selected.  Because PyFai was written by a computer
+<p>You will now follow the instructions coming from PyFAI.  It asks you to supply the
+indices of the rings you have selected.  Because PyFAI was written by a computer
 scientist and not a scientist, <strong>the first ring has number 0</strong>, the second has
 number 1, the third has number 2 and the 6th has number 5.</p>
-<p>If everything has gone well, after supplying all the indices, PyFai will pop
+<p>If everything has gone well, after supplying all the indices, PyFAI will pop
 up a number of plots that can give an expert eye some indication of the quality
-of the calibration.  If the dashed lines look as if they are lining up well with
+of the calibration.  We recommend that you type <code class="docutils literal"><span class="pre">recalib</span></code> and
+then <code class="docutils literal"><span class="pre">&lt;enter&gt;</span></code> when prompted to
+“modify parameters”. This will cause pyFAI to refine the ring selection.
+If the dashed lines look as if they are lining up well with
 the peaks you have a good calibration.  If not, <cite>CTL-C</cite> and start again.  If yes,
 activate the terminal window by clicking on it, hit <code class="docutils literal"><span class="pre">&lt;enter&gt;</span></code> at the command prompt
 then type <code class="docutils literal"><span class="pre">done</span></code>.</p>
@@ -407,7 +421,7 @@ then type <code class="docutils literal"><span class="pre">done</span></code>.</
 </ol>
 <blockquote>
 <div><a class="reference internal image-reference" href="_images/calib_08.png"><img alt="_images/calib_08.png" class="align-center" src="_images/calib_08.png" style="width: 400px; height: 300px;" /></a>
-<p>PyFai can be a bit finicky.  If it hangs, type CTL-C and start over and make
+<p>PyFAI can be a bit finicky.  If it hangs, type CTL-C and start over and make
 sure you follow the instruction exactly.</p>
 <p>You may find more information about calibration process from <a class="reference external" href="http://pyfai.readthedocs.io/en/latest/calibration.html">pyFAI documentation</a></p>
 </div></blockquote>
@@ -718,8 +732,73 @@ just run the command:</p>
 <p>This will take a shot and mask it. This mask will then be saved and loaded
 into subsequent experiment <cite>run_headers</cite> allowing them to be used for the next
 images.</p>
-<p>Let’s <a class="reference internal" href="usb_QuickAssess.html#usb-quickassess"><span class="std std-ref">take a quick look at our data</span></a></p>
 </div>
+</div>
+<div class="section" id="client-server-metadata-schema">
+<span id="client-server-md"></span><h2>client/server metadata schema<a class="headerlink" href="#client-server-metadata-schema" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="overview-with-an-example">
+<h3>Overview with an example<a class="headerlink" href="#overview-with-an-example" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal"><span class="pre">client/server</span></code> schema associate different data with a centralized
+mapping, which would allow a more flexible way to link data. Let’s take
+calibration as an example. Ideally one will perform a calibration run
+before collecting any data so that subsequent runs will be referenced to
+the experimental geometry deduced from this calibration run. However,
+there might be some time calibration run is executed after data is
+collected due to practical situation. Under traditional metadata schema,
+the data collected prior to the calibration will not be able to associated
+with given geometry in a systematic way; it relies on experimenter to
+identify which data should be grouped and this add complexities of
+analyzing data after the beamtime.</p>
+<p>The <code class="docutils literal"><span class="pre">client/server</span></code> schema is designed to solve the problem described above.
+At the beginning of the beamtime, an unique <code class="docutils literal"><span class="pre">exp_hash_uid</span></code> is generated.
+Every subsequent run will inserted with the metadata <code class="docutils literal"><span class="pre">client_uid=exp_hash_uid</span></code>
+while the calibration run will have <code class="docutils literal"><span class="pre">server_uid=exp_hash_uid</span></code> in the metadata.
+Therefore, by querying scans with the matched client/server uid, production runs
+and calibration runs are linked by regardless the order in time. Furthermore,
+this <code class="docutils literal"><span class="pre">client/server</span></code> schema would allow the recalibration if any factor related
+to defining experimental geometry, such as wavelength, was known to be in accurate.</p>
+<p>The <code class="docutils literal"><span class="pre">client/server</span></code> logic can be extended to other kinds of mapping as well.
+Currently, <code class="docutils literal"><span class="pre">xpdAcq</span></code> utilizes this logic in associating calibration runs with
+production runs.</p>
+</div>
+<div class="section" id="when-and-how-to-change-exp-hash-uid">
+<h3>when and how to change <code class="docutils literal"><span class="pre">exp_hash_uid</span></code>?<a class="headerlink" href="#when-and-how-to-change-exp-hash-uid" title="Permalink to this headline">¶</a></h3>
+<p>It’s strongly suggested to update the <code class="docutils literal"><span class="pre">exp_hash_uid</span></code> whenever there is
+a sensible change to your experimental setup, for example, different detectors,
+changes in sample stages, fluctuation of ring current and so on. In this way,
+the data that is referenced to the same experiment condition will be more
+tightly associated and will make future data analysis easier as direct comparison
+is possible.</p>
+<p>To update the <code class="docutils literal"><span class="pre">exp_hash_uid</span></code>, please type following command in the <code class="docutils literal"><span class="pre">collection</span></code>
+terminal of your ipython.</p>
+<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="n">update_exp_hash_uid</span><span class="p">()</span>
+
+<span class="c1"># example output</span>
+<span class="c1">#INFO: experiment hash uid has been updated to 3020835e-9cb3-4c63-9bf4-4834bf5e865f</span>
+</pre></div>
+</div>
+<p>Once <code class="docutils literal"><span class="pre">exp_hash_uid</span></code> is updated, all subsequent runs will have the
+updated <code class="docutils literal"><span class="pre">client_uid</span></code> metadata and calibration runs will has this new uid
+as <code class="docutils literal"><span class="pre">server_uid</span></code>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The idea of <code class="docutils literal"><span class="pre">hash</span></code> is borrowed from computer science. It means we conceptually
+represent all experiment related factors, ranging from the instruments inside
+and outside the hutch, synchrotron beam current to ambient temperature, as a
+unique identifier, <code class="docutils literal"><span class="pre">uid</span></code>. Therefore, this identifier could be use for mapping
+data that shares common experiment related factors.</p>
+</div>
+</div>
+</div>
+<div class="section" id="user-defined-folder-tag">
+<span id="folder-tag"></span><h2>User defined folder tag<a class="headerlink" href="#user-defined-folder-tag" title="Permalink to this headline">¶</a></h2>
+<p>You can also add metadata to the run by adding key word arguments to the run eg
+<code class="docutils literal"><span class="pre">xrun(0,</span> <span class="pre">8,</span> <span class="pre">my_scan_tag='hello</span> <span class="pre">world')</span></code>. Some pieces of metadata are special,
+like <code class="docutils literal"><span class="pre">folder_tag</span></code>. When <code class="docutils literal"><span class="pre">folder_tag</span></code> is added
+(eg <code class="docutils literal"><span class="pre">xrun(0,</span> <span class="pre">8,</span> <span class="pre">folder_tag='after_saxs')</span></code> then the <code class="docutils literal"><span class="pre">after_saxs</span></code> will be
+added to the file path where the data is saved
+(eg <code class="docutils literal"><span class="pre">&lt;.../tiff_base/sample_name/after_saxs/mask/file_name&gt;</span></code>).</p>
+<p>Let’s <a class="reference internal" href="usb_QuickAssess.html#usb-quickassess"><span class="std std-ref">take a quick look at our data</span></a></p>
 </div>
 </div>
 
@@ -767,7 +846,7 @@ images.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.5',
+            VERSION:'0.6.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

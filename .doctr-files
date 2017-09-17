@@ -15,11 +15,9 @@
 ./_sources/beamlinestaff.rst.txt
 ./_sources/cheat_sheet.rst.txt
 ./_sources/features.rst.txt
-./_sources/hold.rst.txt
 ./_sources/index.rst.txt
 ./_sources/installation.rst.txt
 ./_sources/quickstart.rst.txt
-./_sources/quickstart_old.rst.txt
 ./_sources/release_note.rst.txt
 ./_sources/sb_cheat_sheet.rst.txt
 ./_sources/sb_endBeamtime.rst.txt
@@ -76,12 +74,10 @@
 ./cheat_sheet.html
 ./features.html
 ./genindex.html
-./hold.html
 ./index.html
 ./installation.html
 ./objects.inv
 ./quickstart.html
-./quickstart_old.html
 ./release_note.html
 ./sb_cheat_sheet.html
 ./sb_endBeamtime.html

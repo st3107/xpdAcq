@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Release Notes &mdash; xpdAcq 0.5 documentation</title>
+  <title>Release Notes &mdash; xpdAcq 0.6.0 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="xpdAcq 0.5 documentation" href="index.html"/>
+    <link rel="top" title="xpdAcq 0.6.0 documentation" href="index.html"/>
         <link rel="prev" title="Troubleshooting" href="troubleshooting.html"/> 
 
   
@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                0.5
+                0.6
               </div>
             
           
@@ -103,6 +103,7 @@
 </ul>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Release Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#v0-5-2"><code class="docutils literal"><span class="pre">v0.5.2</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#v0-5-0"><code class="docutils literal"><span class="pre">v0.5.0</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#v0-3-0"><code class="docutils literal"><span class="pre">v0.3.0</span></code></a></li>
 </ul>
@@ -172,6 +173,37 @@
             
   <div class="section" id="release-notes">
 <span id="release-note"></span><h1>Release Notes<a class="headerlink" href="#release-notes" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="v0-5-2">
+<h2><code class="docutils literal"><span class="pre">v0.5.2</span></code><a class="headerlink" href="#v0-5-2" title="Permalink to this headline">¶</a></h2>
+<p>This is a stable release of <code class="docutils literal"><span class="pre">xpdAcq</span></code> software.</p>
+<p>Addition to all the features of <code class="docutils literal"><span class="pre">v0.5.0</span></code>, new features introduced to this version are:</p>
+<blockquote>
+<div><ul class="simple">
+<li>functionality to reload beamtime configuration when reenter into <code class="docutils literal"><span class="pre">ipython</span></code> session</li>
+<li>improved logic of importing metadata from a spreadsheet, information is parsed in a
+way that facilitates data driven studies.</li>
+<li>new ScanPlan: temperature list scan <code class="docutils literal"><span class="pre">Tlist</span></code>. User can collect data at desired
+temperature points.</li>
+</ul>
+</div></blockquote>
+<p><code class="docutils literal"><span class="pre">v0.5.2</span></code> supports following built-in scans:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>single-frame (ct)
+time-series (tseries)
+temperature-series scans (Tramp)
+temperature-list scans (Tlist)
+</pre></div>
+</div>
+<p>Additional built-in scan types will be added in future releases.</p>
+<p><code class="docutils literal"><span class="pre">v0.5.2</span></code> also supports following automated logics :</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="usb_Running.html#auto-dark"><span class="std std-ref">automated dark subtraction</span></a></li>
+<li><a class="reference internal" href="usb_Running.html#auto-calib"><span class="std std-ref">automated calibration capture</span></a></li>
+<li><a class="reference internal" href="usb_Running.html#auto-mask"><span class="std std-ref">automated mask per image</span></a></li>
+</ul>
+</div></blockquote>
+<p>This version is fully documented and extensively tested.</p>
+</div>
 <div class="section" id="v0-5-0">
 <h2><code class="docutils literal"><span class="pre">v0.5.0</span></code><a class="headerlink" href="#v0-5-0" title="Permalink to this headline">¶</a></h2>
 <p>This is a stable release of <code class="docutils literal"><span class="pre">xpdAcq</span></code> software.</p>
@@ -271,7 +303,7 @@ temperature-series scans (Tramp)
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.5',
+            VERSION:'0.6.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

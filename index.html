@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>xpdAcq documentation &mdash; xpdAcq 0.5 documentation</title>
+  <title>xpdAcq documentation &mdash; xpdAcq 0.6.0 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="xpdAcq 0.5 documentation" href="#"/>
+    <link rel="top" title="xpdAcq 0.6.0 documentation" href="#"/>
         <link rel="next" title="Quick Start" href="quickstart.html"/> 
 
   
@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                0.5
+                0.6
               </div>
             
           
@@ -187,20 +187,32 @@ the software, please post it as a new thread at <a class="reference external" hr
 </div>
 <div class="section" id="what-s-new">
 <h2>What’s new?<a class="headerlink" href="#what-s-new" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="current-version-v0-5-2">
-<h3>current version : <code class="docutils literal"><span class="pre">v0.5.2</span></code><a class="headerlink" href="#current-version-v0-5-2" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="current-version-v0-6-0">
+<h3>current version : <code class="docutils literal"><span class="pre">v0.6.0</span></code><a class="headerlink" href="#current-version-v0-6-0" title="Permalink to this headline">¶</a></h3>
 <p>This is a stable release of <code class="docutils literal"><span class="pre">xpdAcq</span></code> software.</p>
-<p>Addition to all the features of <code class="docutils literal"><span class="pre">v0.5.0</span></code>, new features introduced to this version are:</p>
-<blockquote>
-<div><ul class="simple">
-<li>functionality to reload beamtime configuration when reenter into <code class="docutils literal"><span class="pre">ipython</span></code> session</li>
-<li>improved logic of importing metadata from a spreadsheet, information is parsed in a
-way that facilitates data driven studies.</li>
-<li>new ScanPlan: temperature list scan <code class="docutils literal"><span class="pre">Tlist</span></code>. User can collect data at desired
-temperature points.</li>
-</ul>
-</div></blockquote>
-<p><code class="docutils literal"><span class="pre">v0.5.2</span></code> supports following built-in scans:</p>
+<p>This version is fully documented and extensively tested.</p>
+<p>New features introduced to this version:</p>
+<ul>
+<li><p class="first">Integration with automated data reduction pipeline. Now live visualization and
+automated data-saving is supported. For the details about the pipeline, please
+refer to <a class="reference external" href="http://xpdacq.github.io/xpdAn/">xpdAn documentation</a>.</p>
+</li>
+<li><p class="first">Advanced shutter control logic for temperature-ramping scan plan,
+<code class="docutils literal"><span class="pre">Tlist</span></code> and <code class="docutils literal"><span class="pre">Tramp</span></code>. By default, shutter will remain closed in
+between exposures, which prevent detector from burning. This behavior can
+be overridden, leaving the fast shutter open for the entire scan.
+Please refer to the function docstring by typing <code class="docutils literal"><span class="pre">Tlist?</span></code> or
+<code class="docutils literal"><span class="pre">Tramp?</span></code> in the <code class="docutils literal"><span class="pre">collection</span></code> terminal for more details.</p>
+</li>
+<li><p class="first">Refined metadata logic. We implement <code class="docutils literal"><span class="pre">client-server</span></code> logic which
+would largely enhance the linking between associated scans. For
+more details, please refer to <a class="reference internal" href="usb_Running.html#client-server-md"><span class="std std-ref">client/server metadata schema</span></a>.</p>
+</li>
+<li><p class="first">Now programs takes in user defined folder tag so that it’s easier to
+separate data into subfolders with memorable names. Please refer to
+<a class="reference internal" href="usb_Running.html#folder-tag"><span class="std std-ref">User defined folder tag</span></a>.</p>
+</li>
+<li><p class="first">Current version supports following built-in scans:</p>
 <div class="highlight-none"><div class="highlight"><pre><span></span>single-frame (ct)
 time-series (tseries)
 temperature-series scans (Tramp)
@@ -208,15 +220,8 @@ temperature-list scans (Tlist)
 </pre></div>
 </div>
 <p>Additional built-in scan types will be added in future releases.</p>
-<p><code class="docutils literal"><span class="pre">v0.5.2</span></code> also supports following automated logics :</p>
-<blockquote>
-<div><ul class="simple">
-<li><a class="reference internal" href="usb_Running.html#auto-dark"><span class="std std-ref">automated dark subtraction</span></a></li>
-<li><a class="reference internal" href="usb_Running.html#auto-calib"><span class="std std-ref">automated calibration capture</span></a></li>
-<li><a class="reference internal" href="usb_Running.html#auto-mask"><span class="std std-ref">automated mask per image</span></a></li>
+</li>
 </ul>
-</div></blockquote>
-<p>This version is fully documented and extensively tested.</p>
 <div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
@@ -273,7 +278,7 @@ temperature-list scans (Tlist)
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.5',
+            VERSION:'0.6.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
