@@ -11,7 +11,7 @@
 ./_images/usb_beamtime_bt_0.png
 ./_images/xpd_control.png
 ./_sources/api.rst.txt
-./_sources/babble.rst.txt
+./_sources/api_doc.rst.txt
 ./_sources/beamlinestaff.rst.txt
 ./_sources/cheat_sheet.rst.txt
 ./_sources/features.rst.txt
@@ -69,7 +69,7 @@
 ./_static/up.png
 ./_static/websupport.js
 ./api.html
-./babble.html
+./api_doc.html
 ./beamlinestaff.html
 ./cheat_sheet.html
 ./features.html

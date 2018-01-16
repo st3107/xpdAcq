@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Quick Start &mdash; xpdAcq 0.5.2 documentation</title>
+  <title>Quick Start &mdash; xpdAcq 0.6.1 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="xpdAcq 0.5.2 documentation" href="index.html"/>
+    <link rel="top" title="xpdAcq 0.6.1 documentation" href="index.html"/>
         <link rel="next" title="For XPD Users" href="xpdusers.html"/>
         <link rel="prev" title="xpdAcq documentation" href="index.html"/> 
 
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                0.5
+                0.6
               </div>
             
           
@@ -94,7 +94,6 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Quick Start</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#xpd-data-collection-workflow-summary">XPD Data Collection Workflow Summary</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#check-your-data-collection-terminal-is-correctly-set-up">Check your data collection terminal is correctly set up</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#check-that-your-analysis-environment-is-correctly-set-up">Check that your analysis environment is correctly set up</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#set-up-your-experiment">Set up your experiment</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#general">0. general</a></li>
@@ -127,6 +126,9 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="xpdusers.html">For XPD Users</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api_doc.html">API Documentation</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="beamlinestaff.html">For Beamline Staff</a></li>
@@ -232,7 +234,7 @@ Carry out the steps in this order to ensure a successful experiment.</p>
 <li>I(Q) (as <code class="docutils literal"><span class="pre">.chi</span></code>)</li>
 <li>I(tth) (as <code class="docutils literal"><span class="pre">.chi</span></code>)</li>
 <li>G(r) (as <code class="docutils literal"><span class="pre">.gr</span></code>)</li>
-<li>calibration (as <code class="docutils literal"><span class="pre">.poni</span></code>, if applicable)</li>
+<li>Calibration parameters (as <code class="docutils literal"><span class="pre">.poni</span></code>, if applicable)</li>
 </ol>
 </div></blockquote>
 </li>
@@ -257,7 +259,8 @@ Carry out the steps in this order to ensure a successful experiment.</p>
 <li>Run your experiment by running <code class="docutils literal"><span class="pre">xrun(&lt;sample&gt;,</span> <span class="pre">&lt;scanplan&gt;)</span></code> and your data will be saved automatically.</li>
 </ol>
 </div></blockquote>
-<p>These and many more things are explained below and elsewhere in the documentation.</p>
+<p>These and many more things are explained below and elsewhere in the
+documentation. <a class="reference external" href="https://groups.google.com/forum/#!forum/xpd-users;context-place=overview">XPD-Users Google group</a> .</p>
 </div>
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
@@ -287,13 +290,7 @@ and keeping your data secure.</p>
 <p>Below we give a step-by-step guide to setting up and running a successful experiment.  We can’t cover all possibilities, and there is
 much more power within the <code class="docutils literal"><span class="pre">xpdAcq</span></code> and <code class="docutils literal"><span class="pre">Bluesky</span></code> software that you can explore as you get more advanced, but we recommend that
 you follow through the following guide step-by-step, typing the commands and seeing what happens, to get used to the software and,
-more importantly, to do things in the right order set up your experiment for success.</p>
-<p>OK, let’s get started.</p>
-</div>
-<div class="section" id="check-your-data-collection-terminal-is-correctly-set-up">
-<h2>Check your data collection terminal is correctly set up<a class="headerlink" href="#check-your-data-collection-terminal-is-correctly-set-up" title="Permalink to this headline">¶</a></h2>
-<p>1. You will do all your work in special IPython terminals. These should already be open, you just need
-to find them.  IPython terminals start the line with something like <code class="docutils literal"><span class="pre">In[49]:</span></code> and <code class="docutils literal"><span class="pre">Out[50]</span></code>, so you should
+more importantly, to do things in the right order set up your experiment for success. <a class="reference external" href="https://groups.google.com/forum/#!forum/xpd-users;context-place=overview">XPD-Users Google group</a> to find them. IPython terminals start the line with something like <code class="docutils literal"><span class="pre">In[49]:</span></code> and <code class="docutils literal"><span class="pre">Out[50]</span></code>, so you should
 see that in a terminal.  Try typing <code class="docutils literal"><span class="pre">show_env()</span></code>.  If you see something like <code class="docutils literal"><span class="pre">collection-17Q1.0</span></code> or <code class="docutils literal"><span class="pre">analysis-17Q1.1</span></code>
 (the numbers will change with time) then you are good, you will use these terminals to run your
 experiment and to visualize and analyze your data, respectively.  We recommend that you run <code class="docutils literal"><span class="pre">collection</span></code> on
@@ -357,7 +354,7 @@ This is standard Python syntax.</p>
 you can discover them by typing a few letters and then hitting the ‘Tab’ key.  All
 functions that the xpd software knows about that start with that sequence of letters
 will be revealed. Try typing <code class="docutils literal"><span class="pre">s</span></code> then Tab.  Too many in the list?  Then add another
-letter (e.g., type <code class="docutils literal"><span class="pre">h``so</span> <span class="pre">you</span> <span class="pre">have</span> <span class="pre">``sh</span></code>) then ‘Tab’.  Can you find <code class="docutils literal"><span class="pre">show_env()</span></code>?
+letter (e.g., type <code class="docutils literal"><span class="pre">h</span></code> so you have <code class="docutils literal"><span class="pre">sh</span></code>) then <code class="docutils literal"><span class="pre">Tab</span></code>.  Can you find <code class="docutils literal"><span class="pre">show_env()</span></code>?
 You can navigate to the one you want using the arrow keys and hit enter.</p>
 <p>Now, if you don’t know what that function does and what arguments it needs or has as optional (and you don’t)
 then type the name of the function but without the parentheses, add a <cite>?</cite> at the end, and hit return.
@@ -380,8 +377,7 @@ You should now see a list of (or maybe just one) tiff files.
 Double-click on the most recent one (in name order it will be the bottom one)
 to view the one you just collected. By default, <code class="docutils literal"><span class="pre">save_last_tiff()</span></code> saves a dark-subtracted
 image so you will see a dark corrected image of your sample.</p>
-<p>To zoom in to part of the image, click on the plot with the mouse to make it active,
-then type <code class="docutils literal"><span class="pre">z</span></code> on the keyboard.  The cursor should change to a ‘+’.  Move the cross
+<p>To zoom in to part of the image, click on the plot with the mouse to make it active, then type <code class="docutils literal"><span class="pre">z</span></code> on the keyboard.  The cursor should change to a  <code class="docutils literal"><span class="pre">+</span></code>.  Move the cross
 to the top left of the selection you want to make, then hold down the left mouse
 button and move the mouse to the bottom-right corner and let go the left mouse
 button.   To reset the figure type <code class="docutils literal"><span class="pre">Esc</span></code> on the keyboard.  <cite>Remember, for the
@@ -426,7 +422,14 @@ we recommend to just edit existing or add new samples to the sheet but not to de
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">run_calibration</span><span class="p">()</span> <span class="c1"># default values (calibrant_file=&#39;Ni.D&#39; and exposure=5) don&#39;t need to be typed</span>
 </pre></div>
 </div>
-<p>and follow the instructions in <a class="reference internal" href="usb_Running.html#calib-manual"><span class="std std-ref">Quick guide of calibration steps with pyFAI</span></a>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="last simple">
+<li>Instruction of the calibration steps: <a class="reference internal" href="usb_Running.html#calib-manual"><span class="std std-ref">Quick guide of calibration steps with pyFAI</span></a></li>
+<li>Full API documentation: <a class="reference internal" href="api_doc.html#calib-api"><span class="std std-ref">run_calibration API Documentation</span></a></li>
+<li>Documentation of <code class="docutils literal"><span class="pre">pyFAI</span></code> calibration gui <a class="reference external" href="http://pyfai.readthedocs.io/en/latest/usage/cookbook/calibrate.html#start-pyfai-calib">link</a></li>
+</ul>
+</div>
 <p>The resulting calibration parameters will be saved in the header of every scan you run until you
 run <code class="docutils literal"><span class="pre">run_calibration()</span></code> again.</p>
 </div>
@@ -615,11 +618,10 @@ and that they are correctly linked to the samples for which they are the backgro
 at position 3 in the list.</p>
 </div></blockquote>
 <ol class="arabic simple" start="3">
-<li>Then in the <code class="docutils literal"><span class="pre">collection-yyQn.x</span></code> terminal, you will type <code class="docutils literal"><span class="pre">xrun</span></code> giving as arguments</li>
+<li>Then in the <code class="docutils literal"><span class="pre">collection-yyQn.x</span></code> terminal, you will type <code class="docutils literal"><span class="pre">xrun</span></code> giving as arguments the background sample-object with a <code class="docutils literal"><span class="pre">ct</span></code> ScanPlan object of the desired exposure.</li>
 </ol>
 <blockquote>
-<div><p>the background sample-object with a <code class="docutils literal"><span class="pre">ct</span></code> ScanPlan object of the desired exposure:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># if you are running this as a tutorial don&#39;t type this.  It will take &gt;30 mins to complete because</span>
+<div><div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># if you are running this as a tutorial don&#39;t type this.  It will take &gt;30 mins to complete because</span>
 <span class="c1"># scanplan[3] is a 15 minute exposure and there is no stored 15 minute dark exposure for subtraction</span>
 <span class="c1"># so the code will automatically collect that too!</span>
 <span class="c1"># but to test it you could replace bt.scanplan[3] with bt.scanplan[0]....</span>
@@ -746,7 +748,7 @@ For more details about how to write a <code class="docutils literal"><span class
 please see <a class="reference external" href="http://nsls-ii.github.io/bluesky/plans.html">here</a>.</p>
 <p>We recommend that you use <code class="docutils literal"><span class="pre">xpdAcq</span></code> built-in plans wherever possible.  If there
 is a new scan plan that you think could be useful to other users, please post it to
-the <a class="reference external" href="https://groups.google.com/forum/#!forum/xpd-users;context-place=overview">XPD-Users Google group</a> ,
+the <a class="reference external" href="https://groups.google.com/forum/#!forum/xpd-users;context-place=overview">XPD-Users Google group</a>,
 and suggest that perhaps it would be great to have that
 as an <code class="docutils literal"><span class="pre">xpdAcq</span></code> built-in ScanPlan in the future!</p>
 </div>
@@ -886,7 +888,7 @@ into the <code class="docutils literal"><span class="pre">collection-yyQn.x</spa
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.5.2',
+            VERSION:'0.6.1',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
