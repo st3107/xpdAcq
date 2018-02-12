@@ -104,7 +104,7 @@
 </ul>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Troubleshooting</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#how-do-i-start-the-collection-ipython-environment-so-i-can-collect-some-data">How do I start the <code class="docutils literal"><span class="pre">collection</span></code> ipython environment so I can collect some data?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-do-i-start-the-collection-ipython-environment-so-i-can-collect-some-data">How do I start the <code class="docutils literal notranslate"><span class="pre">collection</span></code> ipython environment so I can collect some data?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#how-do-i-check-if-my-beamtime-is-properly-set-up">How do I check if my beamtime is properly set up?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#why-does-my-scan-halt-for-no-reason">Why does my scan halt for no reason?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#where-did-all-my-sample-and-scan-objects-go">Where did all my Sample and Scan objects go?????</a></li>
@@ -179,19 +179,19 @@
   <div class="section" id="troubleshooting">
 <span id="id1"></span><h1>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="how-do-i-start-the-collection-ipython-environment-so-i-can-collect-some-data">
-<h2>How do I start the <code class="docutils literal"><span class="pre">collection</span></code> ipython environment so I can collect some data?<a class="headerlink" href="#how-do-i-start-the-collection-ipython-environment-so-i-can-collect-some-data" title="Permalink to this headline">¶</a></h2>
+<h2>How do I start the <code class="docutils literal notranslate"><span class="pre">collection</span></code> ipython environment so I can collect some data?<a class="headerlink" href="#how-do-i-start-the-collection-ipython-environment-so-i-can-collect-some-data" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li>Activate the XPD data acquisition environment:</li>
 </ol>
 <blockquote>
 <div><ul class="simple">
-<li>In a terminal look to see if it is already activated.  If it is, you should see <code class="docutils literal"><span class="pre">(collection)</span></code> at the beginning of the line.</li>
+<li>In a terminal look to see if it is already activated.  If it is, you should see <code class="docutils literal notranslate"><span class="pre">(collection)</span></code> at the beginning of the line.</li>
 </ul>
-<div class="highlight-none"><div class="highlight"><pre><span></span>(collection)xf28id1@xf28id1-ws2:~$
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(collection)xf28id1@xf28id1-ws2:~$
 </pre></div>
 </div>
 <ul class="simple">
-<li>If you don’t see it, type <code class="docutils literal"><span class="pre">icollection</span></code> at the command prompt then check again.</li>
+<li>If you don’t see it, type <code class="docutils literal notranslate"><span class="pre">icollection</span></code> at the command prompt then check again.</li>
 </ul>
 </div></blockquote>
 <ol class="arabic simple" start="2">
@@ -199,29 +199,29 @@
 </ol>
 <blockquote>
 <div><ul class="simple">
-<li>In a terminal look to see if it is already activated.  If it is, you should see <code class="docutils literal"><span class="pre">(analysis-dev)</span></code> at the beginning of the line.</li>
+<li>In a terminal look to see if it is already activated.  If it is, you should see <code class="docutils literal notranslate"><span class="pre">(analysis-dev)</span></code> at the beginning of the line.</li>
 </ul>
-<div class="highlight-none"><div class="highlight"><pre><span></span>(analysis-dev)xf28id1@xf28id1-ws2:~$
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(analysis-dev)xf28id1@xf28id1-ws2:~$
 </pre></div>
 </div>
 <ul class="simple">
-<li>If you don’t see it, type <code class="docutils literal"><span class="pre">ianalysis</span></code> at the command prompt then check again.</li>
+<li>If you don’t see it, type <code class="docutils literal notranslate"><span class="pre">ianalysis</span></code> at the command prompt then check again.</li>
 </ul>
 </div></blockquote>
 <p><strong>Pro Tip</strong> to avoid overhead that slows down the data acquisition computer, it is
-a good idea to run the analysis environment on a different computer.  Normally <code class="docutils literal"><span class="pre">(analysis)</span></code>
-will be run on the central computer at XPD, and <code class="docutils literal"><span class="pre">(collection)</span></code> on the right-hand computer.</p>
+a good idea to run the analysis environment on a different computer.  Normally <code class="docutils literal notranslate"><span class="pre">(analysis)</span></code>
+will be run on the central computer at XPD, and <code class="docutils literal notranslate"><span class="pre">(collection)</span></code> on the right-hand computer.</p>
 </div>
 <div class="section" id="how-do-i-check-if-my-beamtime-is-properly-set-up">
 <h2>How do I check if my beamtime is properly set up?<a class="headerlink" href="#how-do-i-check-if-my-beamtime-is-properly-set-up" title="Permalink to this headline">¶</a></h2>
 <p>The instrument scientist (IS) should have set up your beamtime hardware and software
 for you.  Let’s check if it is the case.</p>
 <ol class="arabic simple">
-<li>Type <code class="docutils literal"><span class="pre">bt.md</span></code> and hit return, you should see similar output as following:</li>
+<li>Type <code class="docutils literal notranslate"><span class="pre">bt.md</span></code> and hit return, you should see similar output as following:</li>
 </ol>
 <blockquote>
 <div><blockquote>
-<div><div class="highlight-python:"><div class="highlight"><pre><span></span>&gt;&gt;&gt; bt.md
+<div><div class="highlight-python: notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; bt.md
 {&#39;bt_experimenters&#39;: [&#39;Tim&#39;, &#39;Liu&#39;],
 &#39;bt_piLast&#39;: &#39;Billinge&#39;,
 &#39;bt_safN&#39;: &#39;300564&#39;,
@@ -230,22 +230,22 @@ for you.  Let’s check if it is the case.</p>
 </pre></div>
 </div>
 </div></blockquote>
-<p>You should see the beamtime (<code class="docutils literal"><span class="pre">bt</span></code>) metadata (<code class="docutils literal"><span class="pre">md</span></code>) that has been pre-stored by the IS, and it should contain things like the last name of the PI on the proposal and the SAF number for the beamtime.  If not, please seek out the IS to get your session initialized.</p>
+<p>You should see the beamtime (<code class="docutils literal notranslate"><span class="pre">bt</span></code>) metadata (<code class="docutils literal notranslate"><span class="pre">md</span></code>) that has been pre-stored by the IS, and it should contain things like the last name of the PI on the proposal and the SAF number for the beamtime.  If not, please seek out the IS to get your session initialized.</p>
 </div></blockquote>
 <ol class="arabic simple" start="2">
-<li>Check that the wavelength has been set.  Does the correct x-ray wavelength appear inside <code class="docutils literal"><span class="pre">bt_wavelength</span></code> field, or does it say <code class="docutils literal"><span class="pre">None</span></code>.  If the latter, you can still collect scans but automated data reduction may not work, so best to grab the IS again.</li>
+<li>Check that the wavelength has been set.  Does the correct x-ray wavelength appear inside <code class="docutils literal notranslate"><span class="pre">bt_wavelength</span></code> field, or does it say <code class="docutils literal notranslate"><span class="pre">None</span></code>.  If the latter, you can still collect scans but automated data reduction may not work, so best to grab the IS again.</li>
 <li>Check that the Perkin Elmer detector is correctly set up.</li>
 </ol>
 <blockquote>
 <div><ul class="simple">
-<li>Look at the Perkin Elmer screen on the CSS and make sure that <code class="docutils literal"><span class="pre">Acquire</span></code> mode has been enabled. If Acquire mode is enabled, it should show system information <code class="docutils literal"><span class="pre">Collecting</span></code> in yellow color. If it hasn’t been activated, please click ‘start’ button.</li>
+<li>Look at the Perkin Elmer screen on the CSS and make sure that <code class="docutils literal notranslate"><span class="pre">Acquire</span></code> mode has been enabled. If Acquire mode is enabled, it should show system information <code class="docutils literal notranslate"><span class="pre">Collecting</span></code> in yellow color. If it hasn’t been activated, please click ‘start’ button.</li>
 </ul>
 <a class="reference internal image-reference" href="_images/cropped_pe1c_ioc.png"><img alt="_images/cropped_pe1c_ioc.png" class="align-center" src="_images/cropped_pe1c_ioc.png" style="width: 300px; height: 200px;" /></a>
 <ul class="simple">
-<li>Type <code class="docutils literal"><span class="pre">glbl.area_det</span></code> and return.  It should return:</li>
+<li>Type <code class="docutils literal notranslate"><span class="pre">glbl.area_det</span></code> and return.  It should return:</li>
 </ul>
 <blockquote>
-<div><div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="n">glbl</span><span class="o">.</span><span class="n">area_det</span>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="n">glbl</span><span class="o">.</span><span class="n">area_det</span>
 <span class="n">Out</span><span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="n">PerkinElmerContinuous</span><span class="p">(</span><span class="n">prefix</span><span class="o">=</span><span class="s1">&#39;XF:28IDC-ES:1{Det:PE1}&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;pe1&#39;</span><span class="p">,</span> <span class="n">read_attrs</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;tiff&#39;</span><span class="p">,</span> <span class="s1">&#39;stats1&#39;</span><span class="p">],</span> <span class="n">configuration_attrs</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;images_per_set&#39;</span><span class="p">,</span> <span class="s1">&#39;number_of_sets&#39;</span><span class="p">],</span> <span class="n">monitor_attrs</span><span class="o">=</span><span class="p">[])</span>
 </pre></div>
 </div>
@@ -260,7 +260,7 @@ Please follow the workflow in the <a class="reference internal" href="cheat_shee
 <p>Sometimes you might find your scans halt for no reason, not even an error message.
 That most likely come from confusion at machine level.
 Don’t worry, just make sure <strong>there is only one XPD control running on this computer.</strong>.
-<code class="docutils literal"><span class="pre">XPD</span> <span class="pre">control</span></code> can be launched by double-clicking on shortcut in desktop:</p>
+<code class="docutils literal notranslate"><span class="pre">XPD</span> <span class="pre">control</span></code> can be launched by double-clicking on shortcut in desktop:</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="_images/xpd_control.png"><img alt="_images/xpd_control.png" class="align-center" src="_images/xpd_control.png" style="width: 60px; height: 80px;" /></a>
 </div></blockquote>
@@ -268,9 +268,9 @@ Don’t worry, just make sure <strong>there is only one XPD control running on t
 <blockquote>
 <div><a class="reference internal image-reference" href="_images/pe1c_ioc.png"><img alt="_images/pe1c_ioc.png" class="align-center" src="_images/pe1c_ioc.png" style="width: 400px; height: 300px;" /></a>
 </div></blockquote>
-<p>Each <code class="docutils literal"><span class="pre">XPD</span> <span class="pre">control</span></code> means a control panel between XPD computer and experiment apparatuses, such as area detector or motor.
-Therefore we should avoid having multiple <code class="docutils literal"><span class="pre">XPD</span> <span class="pre">control</span></code> running at the same time.
-To make sure there is only one <code class="docutils literal"><span class="pre">XPD</span> <span class="pre">control</span></code> running, move to top left corner and click <code class="docutils literal"><span class="pre">Activities</span></code>.
+<p>Each <code class="docutils literal notranslate"><span class="pre">XPD</span> <span class="pre">control</span></code> means a control panel between XPD computer and experiment apparatuses, such as area detector or motor.
+Therefore we should avoid having multiple <code class="docutils literal notranslate"><span class="pre">XPD</span> <span class="pre">control</span></code> running at the same time.
+To make sure there is only one <code class="docutils literal notranslate"><span class="pre">XPD</span> <span class="pre">control</span></code> running, move to top left corner and click <code class="docutils literal notranslate"><span class="pre">Activities</span></code>.
 Then you should see all currently active windows. Close duplicated control panels (if any) then it should work.</p>
 <p>If scan still halts, please contact beamline scientist immediately for bug report.</p>
 </div>
@@ -289,7 +289,7 @@ collection ipython environment is not so stable
 restarts of it.  How bad if we had to retype our metadata every
 time?  So every time you create an xpdAcq acquisition object,
 the details are saved to a file on the local hard-drive.  When
-<code class="docutils literal"><span class="pre">icollection</span></code> is run, the main <code class="docutils literal"><span class="pre">bt</span></code> object (if it exists) is
+<code class="docutils literal notranslate"><span class="pre">icollection</span></code> is run, the main <code class="docutils literal notranslate"><span class="pre">bt</span></code> object (if it exists) is
 automatically reloaded, but not the other acquisition objects.
 But don’t worry, they are all safe and sound.</p>
 </div>

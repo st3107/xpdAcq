@@ -106,9 +106,9 @@
 </ul>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Release Notes</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#v0-5-2"><code class="docutils literal"><span class="pre">v0.5.2</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#v0-5-0"><code class="docutils literal"><span class="pre">v0.5.0</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#v0-3-0"><code class="docutils literal"><span class="pre">v0.3.0</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v0-5-2"><code class="docutils literal notranslate"><span class="pre">v0.5.2</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v0-5-0"><code class="docutils literal notranslate"><span class="pre">v0.5.0</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v0-3-0"><code class="docutils literal notranslate"><span class="pre">v0.3.0</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -177,27 +177,27 @@
   <div class="section" id="release-notes">
 <span id="release-note"></span><h1>Release Notes<a class="headerlink" href="#release-notes" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="v0-5-2">
-<h2><code class="docutils literal"><span class="pre">v0.5.2</span></code><a class="headerlink" href="#v0-5-2" title="Permalink to this headline">¶</a></h2>
-<p>This is a stable release of <code class="docutils literal"><span class="pre">xpdAcq</span></code> software.</p>
-<p>Addition to all the features of <code class="docutils literal"><span class="pre">v0.5.0</span></code>, new features introduced to this version are:</p>
+<h2><code class="docutils literal notranslate"><span class="pre">v0.5.2</span></code><a class="headerlink" href="#v0-5-2" title="Permalink to this headline">¶</a></h2>
+<p>This is a stable release of <code class="docutils literal notranslate"><span class="pre">xpdAcq</span></code> software.</p>
+<p>Addition to all the features of <code class="docutils literal notranslate"><span class="pre">v0.5.0</span></code>, new features introduced to this version are:</p>
 <blockquote>
 <div><ul class="simple">
-<li>functionality to reload beamtime configuration when reenter into <code class="docutils literal"><span class="pre">ipython</span></code> session</li>
+<li>functionality to reload beamtime configuration when reenter into <code class="docutils literal notranslate"><span class="pre">ipython</span></code> session</li>
 <li>improved logic of importing metadata from a spreadsheet, information is parsed in a
 way that facilitates data driven studies.</li>
-<li>new ScanPlan: temperature list scan <code class="docutils literal"><span class="pre">Tlist</span></code>. User can collect data at desired
+<li>new ScanPlan: temperature list scan <code class="docutils literal notranslate"><span class="pre">Tlist</span></code>. User can collect data at desired
 temperature points.</li>
 </ul>
 </div></blockquote>
-<p><code class="docutils literal"><span class="pre">v0.5.2</span></code> supports following built-in scans:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>single-frame (ct)
+<p><code class="docutils literal notranslate"><span class="pre">v0.5.2</span></code> supports following built-in scans:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>single-frame (ct)
 time-series (tseries)
 temperature-series scans (Tramp)
 temperature-list scans (Tlist)
 </pre></div>
 </div>
 <p>Additional built-in scan types will be added in future releases.</p>
-<p><code class="docutils literal"><span class="pre">v0.5.2</span></code> also supports following automated logics :</p>
+<p><code class="docutils literal notranslate"><span class="pre">v0.5.2</span></code> also supports following automated logics :</p>
 <blockquote>
 <div><ul class="simple">
 <li><a class="reference internal" href="usb_Running.html#auto-dark"><span class="std std-ref">automated dark subtraction</span></a></li>
@@ -208,28 +208,28 @@ temperature-list scans (Tlist)
 <p>This version is fully documented and extensively tested.</p>
 </div>
 <div class="section" id="v0-5-0">
-<h2><code class="docutils literal"><span class="pre">v0.5.0</span></code><a class="headerlink" href="#v0-5-0" title="Permalink to this headline">¶</a></h2>
-<p>This is a stable release of <code class="docutils literal"><span class="pre">xpdAcq</span></code> software.</p>
+<h2><code class="docutils literal notranslate"><span class="pre">v0.5.0</span></code><a class="headerlink" href="#v0-5-0" title="Permalink to this headline">¶</a></h2>
+<p>This is a stable release of <code class="docutils literal notranslate"><span class="pre">xpdAcq</span></code> software.</p>
 <p>New features introduced to this version:</p>
 <blockquote>
 <div><ul class="simple">
-<li>flexibility of running customized <code class="docutils literal"><span class="pre">bluesky</span></code> plans while keeping <code class="docutils literal"><span class="pre">xpdAcq</span></code> dark collection logic.</li>
+<li>flexibility of running customized <code class="docutils literal notranslate"><span class="pre">bluesky</span></code> plans while keeping <code class="docutils literal notranslate"><span class="pre">xpdAcq</span></code> dark collection logic.</li>
 <li>ability of importing metadata from a spreadsheet, open the door for data driven studies.</li>
 <li>data reduction tools:<ul>
-<li>azimuthal integration using <code class="docutils literal"><span class="pre">pyFAI</span></code> as the back-end</li>
+<li>azimuthal integration using <code class="docutils literal notranslate"><span class="pre">pyFAI</span></code> as the back-end</li>
 <li>auto-masking based on statistics on pixel counts</li>
 </ul>
 </li>
 </ul>
 </div></blockquote>
-<p><code class="docutils literal"><span class="pre">v0.5.0</span></code> supports three kinds of built-in scans:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>single-frame (ct)
+<p><code class="docutils literal notranslate"><span class="pre">v0.5.0</span></code> supports three kinds of built-in scans:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>single-frame (ct)
 time-series (tseries)
 temperature-series scans (Tramp)
 </pre></div>
 </div>
 <p>Additional built-in scan types will be added in future releases.</p>
-<p><code class="docutils literal"><span class="pre">v0.5.0</span></code> supports following automated logics :</p>
+<p><code class="docutils literal notranslate"><span class="pre">v0.5.0</span></code> supports following automated logics :</p>
 <blockquote>
 <div><ul class="simple">
 <li><a class="reference internal" href="usb_Running.html#auto-dark"><span class="std std-ref">automated dark subtraction</span></a></li>
@@ -240,13 +240,13 @@ temperature-series scans (Tramp)
 <p>This version is fully documented and extensively tested.</p>
 </div>
 <div class="section" id="v0-3-0">
-<h2><code class="docutils literal"><span class="pre">v0.3.0</span></code><a class="headerlink" href="#v0-3-0" title="Permalink to this headline">¶</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">v0.3.0</span></code><a class="headerlink" href="#v0-3-0" title="Permalink to this headline">¶</a></h2>
 <p>This is the first full, stable, release, of xpdAcq software.
 It offers functionality to acquire data at XPD but with very limited
 tools yet to analyze it.
 Future releases will focus more on analysis functionalities.
-<code class="docutils literal"><span class="pre">v0.3.0</span></code> is still a limited functionality release in that it only supports three kinds of scans:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>single-frame (ct)
+<code class="docutils literal notranslate"><span class="pre">v0.3.0</span></code> is still a limited functionality release in that it only supports three kinds of scans:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>single-frame (ct)
 time-series (tseries)
 temperature-series scans (Tramp)
 </pre></div>

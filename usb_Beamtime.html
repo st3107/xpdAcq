@@ -193,9 +193,9 @@ carry out the following steps:</p>
 <blockquote>
 <div><ol class="arabic simple">
 <li>Check if you are in the collection environment</li>
-<li>Type <code class="docutils literal"><span class="pre">bt</span></code>.  It should return similar output as the following:</li>
+<li>Type <code class="docutils literal notranslate"><span class="pre">bt</span></code>.  It should return similar output as the following:</li>
 </ol>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bt</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bt</span>
 <span class="go">{&#39;bt_experimenters&#39;: [&#39;Tim&#39;, &#39;Liu&#39;],</span>
 <span class="go"> &#39;bt_piLast&#39;: &#39;Billinge&#39;,</span>
 <span class="go"> &#39;bt_safN&#39;: &#39;300564&#39;,</span>
@@ -209,14 +209,14 @@ carry out the following steps:</p>
 your beamtime.  You can investigate what is inside.</p>
 <p>To see the kinds of information is contained, place a dot after bt and hit <cite>tab</cite>. The information (but not their values) will be listed.</p>
 <a class="reference internal image-reference" href="_images/usb_beamtime_bt_0.png"><img alt="_images/usb_beamtime_bt_0.png" class="align-center" src="_images/usb_beamtime_bt_0.png" style="width: 400px; height: 200px;" /></a>
-<p>To see what is contained in a specific field, type <code class="docutils literal"><span class="pre">bt.&lt;thing&gt;</span></code> and hit return. For example, in our case:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bt</span><span class="o">.</span><span class="n">wavelength</span>
+<p>To see what is contained in a specific field, type <code class="docutils literal notranslate"><span class="pre">bt.&lt;thing&gt;</span></code> and hit return. For example, in our case:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bt</span><span class="o">.</span><span class="n">wavelength</span>
 <span class="go">0.1832</span>
 </pre></div>
 </div>
 <p>this is a beamtime (<cite>‘bt’</cite>) type of object with name <cite>‘bt’</cite>.  More interesting
 is the metadata it contains:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bt</span><span class="o">.</span><span class="n">md</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bt</span><span class="o">.</span><span class="n">md</span>
 <span class="go">{&#39;bt_experimenters&#39;: [&#39;Tim&#39;, &#39;Liu&#39;],</span>
 <span class="go"> &#39;bt_piLast&#39;: &#39;Billinge&#39;,</span>
 <span class="go"> &#39;bt_safN&#39;: &#39;300564&#39;,</span>
@@ -224,26 +224,26 @@ is the metadata it contains:</p>
 <span class="go"> &#39;bt_wavelength&#39;: 0.1832}</span>
 </pre></div>
 </div>
-<p>The instrument responsible, created an initial version of <code class="docutils literal"><span class="pre">bt</span></code> with information
+<p>The instrument responsible, created an initial version of <code class="docutils literal notranslate"><span class="pre">bt</span></code> with information
 from the Safety Approval Form (SAF) form: PI’s last name, SAF number
 and the experimenters.</p>
-<p>When the beamtime object is created, it is given its own unique-ID, the <code class="docutils literal"><span class="pre">bt_uid</span></code>.
+<p>When the beamtime object is created, it is given its own unique-ID, the <code class="docutils literal notranslate"><span class="pre">bt_uid</span></code>.
 As long as you use the XPD acquisition software, every scan you make during your beamtime,
 along with the other Beamtime level metadata,
-will contain this <code class="docutils literal"><span class="pre">'bt_uid'</span></code> metadata field with the same uid value.
+will contain this <code class="docutils literal notranslate"><span class="pre">'bt_uid'</span></code> metadata field with the same uid value.
 This can be searched for later in the scan headers, and used to find all the data
 collected during your beamtime.</p>
 <p>Some of the other things in the container are not quantities, or attributes, but
 functions, or <cite>methods</cite>.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bt</span><span class="o">.</span><span class="n">list</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bt</span><span class="o">.</span><span class="n">list</span>
 <span class="go">&lt;bound method XPD.list of &lt;class &#39;xpdacq.beamtime.Beamtime&#39;&gt;&gt;</span>
 </pre></div>
 </div>
-<p>This means that <code class="docutils literal"><span class="pre">bt</span></code> not only contains beamtime information, but it can do things.  In this
-case, <code class="docutils literal"><span class="pre">bt.list</span></code> will list all the xpd-acquire-objects that have been created at
-the time.  To execute a method, add a parentheses to the end of <code class="docutils literal"><span class="pre">bt.list()</span></code>
+<p>This means that <code class="docutils literal notranslate"><span class="pre">bt</span></code> not only contains beamtime information, but it can do things.  In this
+case, <code class="docutils literal notranslate"><span class="pre">bt.list</span></code> will list all the xpd-acquire-objects that have been created at
+the time.  To execute a method, add a parentheses to the end of <code class="docutils literal notranslate"><span class="pre">bt.list()</span></code>
 and hit return.  So far, there is only 1 object, the <cite>bt</cite> object with name <cite>bt</cite>.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bt</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bt</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
 
 <span class="go"> ScanPlans:</span>
 <span class="go"> 0: &#39;ct_5&#39;</span>
@@ -265,8 +265,8 @@ and hit return.  So far, there is only 1 object, the <cite>bt</cite> object with
 <span class="go"> ...</span>
 </pre></div>
 </div>
-<p>As we mentioned before, if <code class="docutils literal"><span class="pre">bt</span></code> doesn’t exist,</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bt</span>
+<p>As we mentioned before, if <code class="docutils literal notranslate"><span class="pre">bt</span></code> doesn’t exist,</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bt</span>
 <span class="go">---------------------------------------------------------------------------</span>
 <span class="go">NameError                                 Traceback (most recent call last)</span>
 <span class="go">&lt;ipython-input-1-d0d7ab093f8d&gt; in &lt;module&gt;()</span>
@@ -277,11 +277,11 @@ and hit return.  So far, there is only 1 object, the <cite>bt</cite> object with
 </div>
 <p>speak to your beamline scientist as there may be other aspects of the
 environment setup that need to be fixed. If you ever do have to create
-(we call it <cite>instantiate</cite>) a new <code class="docutils literal"><span class="pre">bt</span></code> object, it is done like this:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bt</span> <span class="o">=</span> <span class="n">Beamtime</span><span class="p">(</span><span class="s1">&#39;Billinge&#39;</span><span class="p">,</span><span class="mi">300256</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Simon&#39;</span><span class="p">,</span><span class="s1">&#39;Billinge&#39;</span><span class="p">,</span> <span class="s1">&#39;Chia-Hao&#39;</span><span class="p">,</span><span class="s1">&#39;Liu&#39;</span><span class="p">],</span> <span class="mf">0.18326</span><span class="p">)</span>
+(we call it <cite>instantiate</cite>) a new <code class="docutils literal notranslate"><span class="pre">bt</span></code> object, it is done like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bt</span> <span class="o">=</span> <span class="n">Beamtime</span><span class="p">(</span><span class="s1">&#39;Billinge&#39;</span><span class="p">,</span><span class="mi">300256</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Simon&#39;</span><span class="p">,</span><span class="s1">&#39;Billinge&#39;</span><span class="p">,</span> <span class="s1">&#39;Chia-Hao&#39;</span><span class="p">,</span><span class="s1">&#39;Liu&#39;</span><span class="p">],</span> <span class="mf">0.18326</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>We will assume that <code class="docutils literal"><span class="pre">bt</span></code> exists.  Now, we move on to the next step, <a class="reference internal" href="usb_Experiment.html#usb-experiment"><span class="std std-ref">Setting up your XPD acuisition objects</span></a> within our beamtime.</p>
+<p>We will assume that <code class="docutils literal notranslate"><span class="pre">bt</span></code> exists.  Now, we move on to the next step, <a class="reference internal" href="usb_Experiment.html#usb-experiment"><span class="std std-ref">Setting up your XPD acuisition objects</span></a> within our beamtime.</p>
 </div>
 
 

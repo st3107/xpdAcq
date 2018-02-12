@@ -174,14 +174,14 @@
 <div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>To post questions about anything XPD, including software, and to see archived answers, please join the <a class="reference external" href="https://groups.google.com/forum/#!forum/xpd-users;context-place=overview">XPD-Users Google group</a></p>
-<p><code class="docutils literal"><span class="pre">xpdAcq</span></code> is a Python package that aids data collection at the XPD beamlime. It is built on top of and augments the NSLS-II data acquisition Python
+<p><code class="docutils literal notranslate"><span class="pre">xpdAcq</span></code> is a Python package that aids data collection at the XPD beamlime. It is built on top of and augments the NSLS-II data acquisition Python
 package <a class="reference external" href="http://nsls-ii.github.io/bluesky/">bluesky</a> .</p>
 <p>XPD may be operated directly by bluesky, or using xpdAcq.</p>
-<p>The goal of the <code class="docutils literal"><span class="pre">xpdAcq</span></code> package is to simplify your collection and analysis workflow during beamtime,
-so that you can focus more on scientific aspects of your experiment. Additionally, <code class="docutils literal"><span class="pre">xpdAcq</span></code> provides an interface
+<p>The goal of the <code class="docutils literal notranslate"><span class="pre">xpdAcq</span></code> package is to simplify your collection and analysis workflow during beamtime,
+so that you can focus more on scientific aspects of your experiment. Additionally, <code class="docutils literal notranslate"><span class="pre">xpdAcq</span></code> provides an interface
 that needs less Python experience than the current native bluesky interface.</p>
-<p>We hope that you find it intuitive, like the most important function to run a scan, <code class="docutils literal"><span class="pre">xrun</span></code>:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">xrun</span><span class="p">(</span><span class="n">sample</span><span class="o">-</span><span class="n">info</span><span class="p">,</span> <span class="n">scan</span><span class="o">-</span><span class="n">info</span><span class="p">)</span> <span class="c1">#run this Sample with this Scan-Plan</span>
+<p>We hope that you find it intuitive, like the most important function to run a scan, <code class="docutils literal notranslate"><span class="pre">xrun</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">xrun</span><span class="p">(</span><span class="n">sample</span><span class="o">-</span><span class="n">info</span><span class="p">,</span> <span class="n">scan</span><span class="o">-</span><span class="n">info</span><span class="p">)</span> <span class="c1">#run this Sample with this Scan-Plan</span>
 </pre></div>
 </div>
 <p>To get started, please go to <a class="reference internal" href="quickstart.html#quick-start"><span class="std std-ref">Quick Start</span></a></p>
@@ -191,8 +191,8 @@ the software, please post it as a new thread at <a class="reference external" hr
 <div class="section" id="what-s-new">
 <h2>What’s new?<a class="headerlink" href="#what-s-new" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="current-version-v0-6-0">
-<h3>current version : <code class="docutils literal"><span class="pre">v0.6.0</span></code><a class="headerlink" href="#current-version-v0-6-0" title="Permalink to this headline">¶</a></h3>
-<p>This is a stable release of <code class="docutils literal"><span class="pre">xpdAcq</span></code> software.</p>
+<h3>current version : <code class="docutils literal notranslate"><span class="pre">v0.6.0</span></code><a class="headerlink" href="#current-version-v0-6-0" title="Permalink to this headline">¶</a></h3>
+<p>This is a stable release of <code class="docutils literal notranslate"><span class="pre">xpdAcq</span></code> software.</p>
 <p>This version is fully documented and extensively tested.</p>
 <p>New features introduced to this version:</p>
 <ul>
@@ -201,13 +201,13 @@ automated data-saving is supported. For the details about the pipeline, please
 refer to <a class="reference external" href="http://xpdacq.github.io/xpdAn/">xpdAn documentation</a>.</p>
 </li>
 <li><p class="first">Advanced shutter control logic for temperature-ramping scan plan,
-<code class="docutils literal"><span class="pre">Tlist</span></code> and <code class="docutils literal"><span class="pre">Tramp</span></code>. By default, shutter will remain closed in
+<code class="docutils literal notranslate"><span class="pre">Tlist</span></code> and <code class="docutils literal notranslate"><span class="pre">Tramp</span></code>. By default, shutter will remain closed in
 between exposures, which prevent detector from burning. This behavior can
 be overridden, leaving the fast shutter open for the entire scan.
-Please refer to the function docstring by typing <code class="docutils literal"><span class="pre">Tlist?</span></code> or
-<code class="docutils literal"><span class="pre">Tramp?</span></code> in the <code class="docutils literal"><span class="pre">collection</span></code> terminal for more details.</p>
+Please refer to the function docstring by typing <code class="docutils literal notranslate"><span class="pre">Tlist?</span></code> or
+<code class="docutils literal notranslate"><span class="pre">Tramp?</span></code> in the <code class="docutils literal notranslate"><span class="pre">collection</span></code> terminal for more details.</p>
 </li>
-<li><p class="first">Refined metadata logic. We implement <code class="docutils literal"><span class="pre">client-server</span></code> logic which
+<li><p class="first">Refined metadata logic. We implement <code class="docutils literal notranslate"><span class="pre">client-server</span></code> logic which
 would largely enhance the linking between associated scans. For
 more details, please refer to <a class="reference internal" href="usb_Running.html#client-server-md"><span class="std std-ref">client/server metadata schema</span></a>.</p>
 </li>
@@ -216,7 +216,7 @@ separate data into subfolders with memorable names. Please refer to
 <a class="reference internal" href="usb_Running.html#folder-tag"><span class="std std-ref">User defined folder tag</span></a>.</p>
 </li>
 <li><p class="first">Current version supports following built-in scans:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>single-frame (ct)
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>single-frame (ct)
 time-series (tseries)
 temperature-series scans (Tramp)
 temperature-list scans (Tlist)

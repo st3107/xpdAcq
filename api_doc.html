@@ -213,8 +213,8 @@ reduction process. This field will be parsed with the same logic
 as the one used in parsing spreadsheet information. For detailed
 information, please visit:
 <a class="reference external" href="http://xpdacq.github.io/usb_Running.html#phase-string">http://xpdacq.github.io/usb_Running.html#phase-string</a>
-If both <code class="docutils literal"><span class="pre">calibrant</span></code> and <code class="docutils literal"><span class="pre">phase_info</span></code> arguments are not provided,
-this field will be defaulted to <code class="docutils literal"><span class="pre">Ni</span></code>.</li>
+If both <code class="docutils literal notranslate"><span class="pre">calibrant</span></code> and <code class="docutils literal notranslate"><span class="pre">phase_info</span></code> arguments are not provided,
+this field will be defaulted to <code class="docutils literal notranslate"><span class="pre">Ni</span></code>.</li>
 <li><strong>wavelength</strong> (<em>float</em><em>, </em><em>optional</em>) – x-ray wavelength in angstrom. default to value stored in
 existing Beamtime object</li>
 <li><strong>detector</strong> (<em>str</em><em> or </em><em>pyFAI.detector.Detector instance</em><em>, </em><em>optional.</em>) – detector used to collect data. default value is ‘perkin-elmer’.
@@ -223,7 +223,7 @@ other allowed values are in pyFAI documentation.</li>
 normal circumstances.</li>
 <li><strong>parallel</strong> (<em>bool</em><em>, </em><em>optional</em>) – Tag for whether run the calibration step in a separte
 process. Running in parallel in principle yields better resource
-allocation. Default is <code class="docutils literal"><span class="pre">True</span></code>, only change to <code class="docutils literal"><span class="pre">False</span></code> if
+allocation. Default is <code class="docutils literal notranslate"><span class="pre">True</span></code>, only change to <code class="docutils literal notranslate"><span class="pre">False</span></code> if
 error is raised.</li>
 <li><strong>kwargs</strong> – Additional keyword argument for calibration. please refer to
 pyFAI documentation for all options.</li>
@@ -265,20 +265,20 @@ beamtime object is linked, index-based syntax will not be allowed.</td>
 
 <p class="rubric">Examples</p>
 <p>Basic usage: run samples and plans by number</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">xrun</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">xrun</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Advanced usage: use custom plan which is compatible with bluesky</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">xrun</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">custom_plan</span><span class="p">)</span>  <span class="c1"># sample 3, an arbitrary bluesky plan</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">xrun</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">custom_plan</span><span class="p">)</span>  <span class="c1"># sample 3, an arbitrary bluesky plan</span>
 </pre></div>
 </div>
 <p>Or custom sample info. sample just has to be dict-like
 and contain the required keys.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">xrun</span><span class="p">(</span><span class="n">custom_sample_dict</span><span class="p">,</span> <span class="n">custom_plan</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">xrun</span><span class="p">(</span><span class="n">custom_sample_dict</span><span class="p">,</span> <span class="n">custom_plan</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Or use completely custom dark frame logic</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">xrun</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">custom_plan</span><span class="p">,</span> <span class="n">dark_strategy</span><span class="o">=</span><span class="n">some_custom_func</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">xrun</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">custom_plan</span><span class="p">,</span> <span class="n">dark_strategy</span><span class="o">=</span><span class="n">some_custom_func</span><span class="p">)</span>
 </pre></div>
 </div>
 <dl class="method">
@@ -294,13 +294,13 @@ be interpreted as metadata and recorded with the run.</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>sample</strong> (<em>int</em><em> or </em><em>dict-like</em>) – Sample metadata. If a beamtime object is linked,
 an integer will be interpreted as the index appears in the
-<code class="docutils literal"><span class="pre">bt.list()</span></code> method, corresponding metadata will be passed.
+<code class="docutils literal notranslate"><span class="pre">bt.list()</span></code> method, corresponding metadata will be passed.
 A customized dict can also be passed as the sample
 metadata.</li>
 <li><strong>plan</strong> (<em>int</em><em> or </em><em>generator</em>) – Scan plan. If a beamtime object is linked, an integer
 will be interpreted as the index appears in the
-<code class="docutils literal"><span class="pre">bt.list()</span></code> method, corresponding scan plan will be
-A generator or that yields <code class="docutils literal"><span class="pre">Msg</span></code> objects (or an iterable
+<code class="docutils literal notranslate"><span class="pre">bt.list()</span></code> method, corresponding scan plan will be
+A generator or that yields <code class="docutils literal notranslate"><span class="pre">Msg</span></code> objects (or an iterable
 that returns such a generator) can also be passed.</li>
 <li><strong>subs</strong> (<em>callable</em><em>, </em><em>list</em><em>, or </em><em>dict</em><em>, </em><em>optional</em>) – <p>Temporary subscriptions (a.k.a. callbacks) to be used on
 this run. Default to None. For convenience, any of the
@@ -319,10 +319,10 @@ NSLS-II. Therefore, False by default.</li>
 <li><strong>dark_strategy</strong> (<em>callable</em><em>, </em><em>optional.</em>) – Protocol of taking dark frame during experiment. Default
 to the logic of matching dark frame and light frame with
 the sample exposure time and frame rate. Details can be
-found at <code class="docutils literal"><span class="pre">http://xpdacq.github.io/xpdAcq/usb_Running.html#automated-dark-collection</span></code></li>
+found at <code class="docutils literal notranslate"><span class="pre">http://xpdacq.github.io/xpdAcq/usb_Running.html#automated-dark-collection</span></code></li>
 <li><strong>metadata_kw</strong> – Extra keyword arguments for specifying metadata in the
 run time. If the extra metdata has the same key as the
-<code class="docutils literal"><span class="pre">sample</span></code>, <code class="docutils literal"><span class="pre">ValueError</span></code> will be raised.</li>
+<code class="docutils literal notranslate"><span class="pre">sample</span></code>, <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> will be raised.</li>
 </ul>
 </td>
 </tr>

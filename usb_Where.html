@@ -196,22 +196,22 @@ is a disaster!</p>
 <cite>normal</cite> (or at least <cite>expected</cite> ) behavior in xpdAcq.  Remember that
 one of the design goals of the software project was to minimize
 users’ typing.  The design had to take into account that the
-collection <code class="docutils literal"><span class="pre">ipython</span></code> environment is not so stable
+collection <code class="docutils literal notranslate"><span class="pre">ipython</span></code> environment is not so stable
 (e.g., see <a class="reference internal" href="troubleshooting.html#troubleshooting"><span class="std std-ref">Troubleshooting</span></a> ) and we should expect periodic
 restarts of it.  How bad if we had to retype our metadata every
 time?  So every time you create an xpdAcq acquisition object,
 the details are saved to a file on the local hard-drive.  When
-<code class="docutils literal"><span class="pre">xpdui</span></code> is run, the main <code class="docutils literal"><span class="pre">bt</span></code> object (if it exists) is
+<code class="docutils literal notranslate"><span class="pre">xpdui</span></code> is run, the main <code class="docutils literal notranslate"><span class="pre">bt</span></code> object (if it exists) is
 automatically reloaded, but not the other acquisition objects.
 But don’t worry, they are all safe and sound.</p>
 </div>
 <div class="section" id="bt-list-is-your-friends">
 <span id="usb-bt-list"></span><h1>bt.list() is your friends<a class="headerlink" href="#bt-list-is-your-friends" title="Permalink to this headline">¶</a></h1>
 <p>To see what xpdAcquire acquisition objects you have available
-to you, type <code class="docutils literal"><span class="pre">bt.list()</span></code> .  This lists the name and type of all
+to you, type <code class="docutils literal notranslate"><span class="pre">bt.list()</span></code> .  This lists the name and type of all
 the acquisition objects that are on the hard-drive and available
 to you….your objects: e.g.,</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bt</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bt</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
 
 <span class="go">ScanPlans:</span>
 <span class="go">0: &#39;ct_5&#39;</span>
@@ -235,7 +235,7 @@ to you….your objects: e.g.,</p>
 assignment we used when we created them</p>
 <p>To get them, we can explicitly reload them again or just use <strong>index</strong> of this object.
 For example, consider the following sequence of code blocks:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s1</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s1</span>
 <span class="go">---------------------------------------------------------------------------</span>
 <span class="go">NameError                                 Traceback (most recent call last)</span>
 <span class="go">&lt;ipython-input-5-51081833a770&gt; in &lt;module&gt;()</span>
@@ -244,8 +244,8 @@ For example, consider the following sequence of code blocks:</p>
 <span class="go">NameError: name &#39;s1&#39; is not defined</span>
 </pre></div>
 </div>
-<p>Oh no, my <code class="docutils literal"><span class="pre">s1</span></code> sample object, which as my sample named <cite>GaAs</cite> , has disappeared!  <code class="docutils literal"><span class="pre">bt.list()</span></code> to the rescue…</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bt</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
+<p>Oh no, my <code class="docutils literal notranslate"><span class="pre">s1</span></code> sample object, which as my sample named <cite>GaAs</cite> , has disappeared!  <code class="docutils literal notranslate"><span class="pre">bt.list()</span></code> to the rescue…</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bt</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
 
 <span class="go">ScanPlans:</span>
 <span class="go">0: &#39;ct_5&#39;</span>
@@ -267,8 +267,8 @@ For example, consider the following sequence of code blocks:</p>
 </div>
 <p>That’s it with a list index of 2, inside the Samples category. type object called.
 Just to be sane, let’s reload it. We can give it any name, it doesn’t have to be
-the same name as last time, so let’s reload it as <code class="docutils literal"><span class="pre">s1_again</span></code> :</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s1_again</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">samples</span><span class="p">[</span><span class="s1">&#39;GaAs&#39;</span><span class="p">]</span> <span class="c1"># e.g., the sample name is GaAs</span>
+the same name as last time, so let’s reload it as <code class="docutils literal notranslate"><span class="pre">s1_again</span></code> :</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s1_again</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">samples</span><span class="p">[</span><span class="s1">&#39;GaAs&#39;</span><span class="p">]</span> <span class="c1"># e.g., the sample name is GaAs</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s1_again</span>
 <span class="go">{&#39;bt_experimenters&#39;: [&#39;Tim&#39;, &#39;Liu&#39;],</span>
 <span class="go"> &#39;bt_piLast&#39;: &#39;Billinge&#39;,</span>
@@ -282,14 +282,14 @@ the same name as last time, so let’s reload it as <code class="docutils litera
 </div>
 <p>As you get used to this, you will realize that you don’t actually have to reload
 it at all, and can just refer directly to it.</p>
-<p>You see that the <em>indexing method</em> acts exactly like (in fact it <cite>is</cite> ) the <code class="docutils literal"><span class="pre">#</span></code> th object
-in the list returned by <code class="docutils literal"><span class="pre">bt.list()</span></code> . And it persists for your entire beamtime,
+<p>You see that the <em>indexing method</em> acts exactly like (in fact it <cite>is</cite> ) the <code class="docutils literal notranslate"><span class="pre">#</span></code> th object
+in the list returned by <code class="docutils literal notranslate"><span class="pre">bt.list()</span></code> . And it persists for your entire beamtime,
 even if you hang up the entire software and have to have it restarted by one of the
 IT guys.</p>
-<p>Just remember.  First type <code class="docutils literal"><span class="pre">bt.list()</span></code> to locate the object you want, then use
+<p>Just remember.  First type <code class="docutils literal notranslate"><span class="pre">bt.list()</span></code> to locate the object you want, then use
 object index to reference it based on categories. For example if I want to interrogate metadata
-from <code class="docutils literal"><span class="pre">ScanPlan</span></code> object <code class="docutils literal"><span class="pre">ct_5</span></code>, you can do:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bt</span><span class="o">.</span><span class="n">scanplans</span><span class="o">.</span><span class="n">get_md</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+from <code class="docutils literal notranslate"><span class="pre">ScanPlan</span></code> object <code class="docutils literal notranslate"><span class="pre">ct_5</span></code>, you can do:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bt</span><span class="o">.</span><span class="n">scanplans</span><span class="o">.</span><span class="n">get_md</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="go">INFO: requested exposure time = 5 - &gt; computed exposure time= 5.0</span>
 <span class="go">{&#39;detectors&#39;: [&#39;pe1c&#39;],</span>
 <span class="go"> &#39;num_steps&#39;: 1,</span>
@@ -304,10 +304,10 @@ from <code class="docutils literal"><span class="pre">ScanPlan</span></code> obj
 <span class="go"> &#39;sp_uid&#39;: &#39;bc3886a2-793a-4ee2-8269-a2ccb3030342&#39;}</span>
 </pre></div>
 </div>
-<p>Don’t forget the <code class="docutils literal"><span class="pre">bt.list()</span></code> first because your object may change its position
+<p>Don’t forget the <code class="docutils literal notranslate"><span class="pre">bt.list()</span></code> first because your object may change its position
 in the list over time.</p>
-<p>As you probably noticed, we have <code class="docutils literal"><span class="pre">bt.list()</span></code> prints out two categories,
-<code class="docutils literal"><span class="pre">ScanPlans</span></code> and <code class="docutils literal"><span class="pre">Samples</span></code>. The whole purpose of this is to make it easy to reference
+<p>As you probably noticed, we have <code class="docutils literal notranslate"><span class="pre">bt.list()</span></code> prints out two categories,
+<code class="docutils literal notranslate"><span class="pre">ScanPlans</span></code> and <code class="docutils literal notranslate"><span class="pre">Samples</span></code>. The whole purpose of this is to make it easy to reference
 desired objects.</p>
 </div>
 <div class="section" id="bt-list-gotchas">
@@ -318,13 +318,13 @@ confusion until you get used to them.</p>
 <blockquote>
 <div><ol class="arabic">
 <li><p class="first">If you create a <cite>new</cite> object with the same type and name as an existing one, the existing one will be <strong>OVERWRITTEN</strong> by the new one!  You will lose the old one forever.</p>
-<p>This is actually a feature of the code (we want each object to be unique and the only thing that makes it unique from one <code class="docutils literal"><span class="pre">collection</span></code> session to the next is its name and type).
+<p>This is actually a feature of the code (we want each object to be unique and the only thing that makes it unique from one <code class="docutils literal notranslate"><span class="pre">collection</span></code> session to the next is its name and type).
 But please be careful about your naming! Why is it a feature?  You can use this to update an object by redefining it with the same name.</p>
 </li>
 <li><p class="first">At the time of writing, our xpdacq objects incorporate metadata from higher
-in the stack (e.g., <code class="docutils literal"><span class="pre">Sample</span></code> inheriting <code class="docutils literal"><span class="pre">Beamtime</span></code> metadata) dynamically.
-Any change on <code class="docutils literal"><span class="pre">Beamtime</span></code> metadata will automatically propagate down
-to all <code class="docutils literal"><span class="pre">Sample</span></code> and <code class="docutils literal"><span class="pre">ScanPlan</span></code> objects.</p>
+in the stack (e.g., <code class="docutils literal notranslate"><span class="pre">Sample</span></code> inheriting <code class="docutils literal notranslate"><span class="pre">Beamtime</span></code> metadata) dynamically.
+Any change on <code class="docutils literal notranslate"><span class="pre">Beamtime</span></code> metadata will automatically propagate down
+to all <code class="docutils literal notranslate"><span class="pre">Sample</span></code> and <code class="docutils literal notranslate"><span class="pre">ScanPlan</span></code> objects.</p>
 </li>
 </ol>
 </div></blockquote>

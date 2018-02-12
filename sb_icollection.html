@@ -194,25 +194,25 @@
 <span id="sb-icollection"></span><h1>Overview of the bsui+xpdAcq environment<a class="headerlink" href="#overview-of-the-bsui-xpdacq-environment" title="Permalink to this headline">¶</a></h1>
 <p>All data collection at NSLS-II is carried out through a powerful
 Python-software-language based interface which runs in an ipython interactive
-session. By typing <code class="docutils literal"><span class="pre">xpdui</span></code> at the unix prompt (command line) in a terminal
+session. By typing <code class="docutils literal notranslate"><span class="pre">xpdui</span></code> at the unix prompt (command line) in a terminal
 window at the XPD computer you begin an ipython session and preload an ipython
-profile (called <code class="docutils literal"><span class="pre">collection</span></code>) that contains all the software to run the NSLS-II
+profile (called <code class="docutils literal notranslate"><span class="pre">collection</span></code>) that contains all the software to run the NSLS-II
 data collection software.</p>
-<p>You can tell when you are in the <code class="docutils literal"><span class="pre">collection</span></code> environment
-because you will see <code class="docutils literal"><span class="pre">(collection-yyQn.x)</span></code> at the beginning of the command-line.
-<code class="docutils literal"><span class="pre">yy</span></code> stands for year and <code class="docutils literal"><span class="pre">Qn.x</span></code> tells detailed information about the
-version. For example, <code class="docutils literal"><span class="pre">collection-17Q1.0</span></code> would mean the fist version of
-quarter 1, in 2017.When you are not in the environment you won’t see that. There is also an analysis environment, which is currently called <code class="docutils literal"><span class="pre">analysis</span></code>,
-that is very similar to the <code class="docutils literal"><span class="pre">collection</span></code> environment but it is for data
+<p>You can tell when you are in the <code class="docutils literal notranslate"><span class="pre">collection</span></code> environment
+because you will see <code class="docutils literal notranslate"><span class="pre">(collection-yyQn.x)</span></code> at the beginning of the command-line.
+<code class="docutils literal notranslate"><span class="pre">yy</span></code> stands for year and <code class="docutils literal notranslate"><span class="pre">Qn.x</span></code> tells detailed information about the
+version. For example, <code class="docutils literal notranslate"><span class="pre">collection-17Q1.0</span></code> would mean the fist version of
+quarter 1, in 2017.When you are not in the environment you won’t see that. There is also an analysis environment, which is currently called <code class="docutils literal notranslate"><span class="pre">analysis</span></code>,
+that is very similar to the <code class="docutils literal notranslate"><span class="pre">collection</span></code> environment but it is for data
 analysis functions and you cannot control any XPD hardware from it.  This may
 be run on a different computer than the control software, as long as it can see
-the NSLS-II data database.   This environment is activated by typing <code class="docutils literal"><span class="pre">ianalysis</span></code>
+the NSLS-II data database.   This environment is activated by typing <code class="docutils literal notranslate"><span class="pre">ianalysis</span></code>
 in a fresh terminal on one of the XPD linux computers.</p>
-<p>Inside the <code class="docutils literal"><span class="pre">collection-yyQn.x</span></code> environment you can type commands that will control the
+<p>Inside the <code class="docutils literal notranslate"><span class="pre">collection-yyQn.x</span></code> environment you can type commands that will control the
 diffractometer, collect data, and also extract data from the NSLS-II database.
 The NSLS-II data acquisition environment is powerful and flexible, but there is a
 stiff learning curve to using it.  We have therefore added a layer on top that
-is a package of programs called <code class="docutils literal"><span class="pre">xpdAcq</span></code> that are designed to make the data
+is a package of programs called <code class="docutils literal notranslate"><span class="pre">xpdAcq</span></code> that are designed to make the data
 acquisition at XPD easier and more robust for most people.  We strongly suggest
 that you use the xpdacq functions as much as possible.</p>
 <div class="section" id="nsls-ii-data-philosophy">
@@ -221,7 +221,7 @@ that you use the xpdacq functions as much as possible.</p>
 authorized users.  For this to succeed it is important to be able to find the
 data when it is desired.  The basic philosophy at NSLS-II is therefore to
 tag every dataset with unique-ID tags, and to save rich metadata with each saved
-frame that can be searched on to find the data.  The <code class="docutils literal"><span class="pre">xpdAcq</span></code> package is designed
+frame that can be searched on to find the data.  The <code class="docutils literal notranslate"><span class="pre">xpdAcq</span></code> package is designed
 to make the user inputs easier when collecting data, and to facilitate the saving
 of rich and correct metadata with the saved data for easier retrieval later.  It is
 hoped that this will greatly speed up and facilitate users’ later data analysis
@@ -238,20 +238,20 @@ reduction software) it is important that a complete stack of metadata is saved
 with each scan.  The philosophy of the xpdAcq software is to accomplish this.</p>
 <p>Metadata comes from a number of sources: beamtime information, sample information, scan information, and
 information coming from hardware during the experiment (such as sample temperature, for example).
-With this in mind, <code class="docutils literal"><span class="pre">xpdAcq</span></code> assumes that you may be doing multiple scans on the same sample,
+With this in mind, <code class="docutils literal notranslate"><span class="pre">xpdAcq</span></code> assumes that you may be doing multiple scans on the same sample,
 and so we define a scan as the union of a scan-plan (which contains all the parameters of the
 scan you want to run) and a sample.  Beamtime metadata consists of the SAF number, PI name,
 list of experimenters and so on and is set up by the beamline scientist at the beginning of your
 beamtime.  There can be a wealth of information about your sample that you want to save.  To make
 this easier, we provide an excel spreadsheet that you can fill in before (or during) your experiment
 that contains information about each separate sample that you will run.
-When you run a scan using <code class="docutils literal"><span class="pre">xrun</span></code> and specifying a scan-plan and a sample,
-<code class="docutils literal"><span class="pre">xpdAcq</span></code> will take all the beamtime metadata, the sample metadata, and all the parameters of the scan,
+When you run a scan using <code class="docutils literal notranslate"><span class="pre">xrun</span></code> and specifying a scan-plan and a sample,
+<code class="docutils literal notranslate"><span class="pre">xpdAcq</span></code> will take all the beamtime metadata, the sample metadata, and all the parameters of the scan,
 and save it in the scan header in the metadata store, linked to the actual dataset itself. You may also
-specify more metadata to save when the scan is run by specifying it in <code class="docutils literal"><span class="pre">xrun</span></code>.   Additional metadata
-are also saved, such as a link to the <code class="docutils literal"><span class="pre">xpdAcq</span></code>’s best guess at the right dark-collection to use for correcting
+specify more metadata to save when the scan is run by specifying it in <code class="docutils literal notranslate"><span class="pre">xrun</span></code>.   Additional metadata
+are also saved, such as a link to the <code class="docutils literal notranslate"><span class="pre">xpdAcq</span></code>’s best guess at the right dark-collection to use for correcting
 your scan data, calibration parameters for the experimental setup, and so on.  These can be overridden during analysis
-so don’t worry if they are incorrectly saved, but following the preferred <code class="docutils literal"><span class="pre">xpdAcq</span></code> workflow during data collection
+so don’t worry if they are incorrectly saved, but following the preferred <code class="docutils literal notranslate"><span class="pre">xpdAcq</span></code> workflow during data collection
 can save you a lot of  time later by making these guesses correct.   Hardware generated metadata, such as sample temperature,
 are also saved and can be retrieved later.</p>
 <p>Later you will be able to use the scan metadata to search for your scans from the XPD database.  For example, a search

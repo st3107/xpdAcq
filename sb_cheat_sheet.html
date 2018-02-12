@@ -185,22 +185,22 @@
             
   <div class="section" id="cheat-sheet">
 <span id="sb-cheat-sheet"></span><h1>Cheat Sheet<a class="headerlink" href="#cheat-sheet" title="Permalink to this headline">¶</a></h1>
-<p>Please use this page as a reminder and to copy  and paste code snippets into your <code class="docutils literal"><span class="pre">collection-yyQn.x</span></code>
-and <code class="docutils literal"><span class="pre">analysis</span></code> ipython terminals.</p>
+<p>Please use this page as a reminder and to copy  and paste code snippets into your <code class="docutils literal notranslate"><span class="pre">collection-yyQn.x</span></code>
+and <code class="docutils literal notranslate"><span class="pre">analysis</span></code> ipython terminals.</p>
 <p>To understand in more detail what the code does, please go to <a class="reference internal" href="xpdusers.html#xpdu"><span class="std std-ref">For XPD Users</span></a></p>
 <div class="section" id="start-a-beamtime">
 <h2>Start a beamtime<a class="headerlink" href="#start-a-beamtime" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>run <code class="docutils literal"><span class="pre">xpdui</span></code> to start a collection ipython environment</li>
+<li>run <code class="docutils literal notranslate"><span class="pre">xpdui</span></code> to start a collection ipython environment</li>
 <li>run the end-beamtime sequence if it has not been run</li>
 </ol>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">bt</span> <span class="o">=</span> <span class="n">_end_beamtime</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">bt</span> <span class="o">=</span> <span class="n">_end_beamtime</span><span class="p">()</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="3">
 <li>run the start-beamtime sequence</li>
 </ol>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">bt</span> <span class="o">=</span> <span class="n">_start_beamtime</span><span class="p">(</span><span class="n">PI_last</span><span class="o">=&lt;</span><span class="n">last_name_of_pi_on_the_SAF</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">saf_num</span><span class="o">=&lt;</span><span class="n">saf_number</span><span class="o">&gt;</span><span class="p">,</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">bt</span> <span class="o">=</span> <span class="n">_start_beamtime</span><span class="p">(</span><span class="n">PI_last</span><span class="o">=&lt;</span><span class="n">last_name_of_pi_on_the_SAF</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">saf_num</span><span class="o">=&lt;</span><span class="n">saf_number</span><span class="o">&gt;</span><span class="p">,</span>
                      <span class="n">experimenters</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Emma&#39;</span><span class="p">,</span> <span class="s1">&#39;Watson&#39;</span><span class="p">,</span> <span class="s1">&#39;Tim&#39;</span><span class="p">,</span> <span class="s1">&#39;Liu&#39;</span><span class="p">],</span>
                      <span class="n">wavelength</span><span class="o">=</span><span class="mf">0.184649</span><span class="p">)</span>
 </pre></div>
@@ -208,22 +208,22 @@ and <code class="docutils literal"><span class="pre">analysis</span></code> ipyt
 <ol class="arabic simple" start="4">
 <li>link bt to xrun</li>
 </ol>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">xrun</span><span class="o">.</span><span class="n">beamtime</span> <span class="o">=</span> <span class="n">bt</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">xrun</span><span class="o">.</span><span class="n">beamtime</span> <span class="o">=</span> <span class="n">bt</span>
 </pre></div>
 </div>
-<p>5. Copy the Excel spreadsheet provided by the experimenters with their samples in it to the <code class="docutils literal"><span class="pre">xpdUser/import</span></code> directory. Check that it has the name <code class="docutils literal"><span class="pre">&lt;saf_number&gt;_samples.xlsx</span></code>
-where the &lt;saf_number&gt; must match that of the current beamtime.  If the user didn’t supply such a thing, then copy the file <code class="docutils literal"><span class="pre">300000_samples.xls</span></code> from the <code class="docutils literal"><span class="pre">xpdConfig</span></code> directory
-(which is at the same level of the directory tree as the <code class="docutils literal"><span class="pre">xpdUser</span></code> directory) to <code class="docutils literal"><span class="pre">xpdUser/import</span></code> and edit the filename so that it has the <code class="docutils literal"><span class="pre">saf_number</span></code> of the current beamtime.</p>
+<p>5. Copy the Excel spreadsheet provided by the experimenters with their samples in it to the <code class="docutils literal notranslate"><span class="pre">xpdUser/import</span></code> directory. Check that it has the name <code class="docutils literal notranslate"><span class="pre">&lt;saf_number&gt;_samples.xlsx</span></code>
+where the &lt;saf_number&gt; must match that of the current beamtime.  If the user didn’t supply such a thing, then copy the file <code class="docutils literal notranslate"><span class="pre">300000_samples.xls</span></code> from the <code class="docutils literal notranslate"><span class="pre">xpdConfig</span></code> directory
+(which is at the same level of the directory tree as the <code class="docutils literal notranslate"><span class="pre">xpdUser</span></code> directory) to <code class="docutils literal notranslate"><span class="pre">xpdUser/import</span></code> and edit the filename so that it has the <code class="docutils literal notranslate"><span class="pre">saf_number</span></code> of the current beamtime.</p>
 <ol class="arabic simple" start="6">
 <li>load the info in the spreadsheet by typing:</li>
 </ol>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">import_sample_info</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">import_sample_info</span><span class="p">()</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">The sample objects may be updated at any time by editing the spreadsheet in the <code class="docutils literal"><span class="pre">xpdUser/import</span></code> directory
-and rerunning <code class="docutils literal"><span class="pre">load_sample_info()</span></code></p>
+<p class="last">The sample objects may be updated at any time by editing the spreadsheet in the <code class="docutils literal notranslate"><span class="pre">xpdUser/import</span></code> directory
+and rerunning <code class="docutils literal notranslate"><span class="pre">load_sample_info()</span></code></p>
 </div>
 <ol class="arabic" start="8">
 <li><p class="first">calibrate the wavelength.</p>

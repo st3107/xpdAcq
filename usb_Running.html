@@ -128,7 +128,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#client-server-metadata-schema">client/server metadata schema</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#overview-with-an-example">Overview with an example</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#when-and-how-to-change-exp-hash-uid">when and how to change <code class="docutils literal"><span class="pre">exp_hash_uid</span></code>?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#when-and-how-to-change-exp-hash-uid">when and how to change <code class="docutils literal notranslate"><span class="pre">exp_hash_uid</span></code>?</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#user-defined-folder-tag">User defined folder tag</a></li>
@@ -226,15 +226,15 @@ run engines(functions) that you need.  To run a scan you simply pick the run eng
 and give it a predefined Sample object and
 a predefined ScanPlan object, then hit return and sit back, your scan will be carried out.</p>
 <p>The allowed scan types are:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">xrun</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">scanplan</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">xrun</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">scanplan</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><code class="docutils literal"><span class="pre">xrun</span></code> stands for “XPD run” which is a our main run engine. Full API documentation can be found <a class="reference internal" href="api_doc.html#xrun-api"><span class="std std-ref">xrun API Documentation</span></a></p>
+<p><code class="docutils literal notranslate"><span class="pre">xrun</span></code> stands for “XPD run” which is a our main run engine. Full API documentation can be found <a class="reference internal" href="api_doc.html#xrun-api"><span class="std std-ref">xrun API Documentation</span></a></p>
 <p>Here are some examples of a workflow.  Assume a Ni_calibrant sample is loaded on the diffractometer
-and the <code class="docutils literal"><span class="pre">Ni</span></code> Sample object is created as well as all the <code class="docutils literal"><span class="pre">ScanPlan</span></code> we need.
-We will start by doing a scan with <code class="docutils literal"><span class="pre">Sample</span></code> object <code class="docutils literal"><span class="pre">Setup</span></code> on our <code class="docutils literal"><span class="pre">ct_1</span></code> ScanPlan.</p>
-<p>Remember, always start with <code class="docutils literal"><span class="pre">bt.list()</span></code></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bt</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
+and the <code class="docutils literal notranslate"><span class="pre">Ni</span></code> Sample object is created as well as all the <code class="docutils literal notranslate"><span class="pre">ScanPlan</span></code> we need.
+We will start by doing a scan with <code class="docutils literal notranslate"><span class="pre">Sample</span></code> object <code class="docutils literal notranslate"><span class="pre">Setup</span></code> on our <code class="docutils literal notranslate"><span class="pre">ct_1</span></code> ScanPlan.</p>
+<p>Remember, always start with <code class="docutils literal notranslate"><span class="pre">bt.list()</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bt</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
 
 
 <span class="go">ScanPlans:</span>
@@ -262,7 +262,7 @@ We will start by doing a scan with <code class="docutils literal"><span class="p
 </div>
 <p>The Sample object I want has list index 0 and the ScanPlan has list index 2.
 Let’s try to make sure everything is ok.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">xrun</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">xrun</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="go">INFO: requested exposure time = 1 - &gt; computed exposure time= 1.0</span>
 <span class="go">INFO: No calibration file found in config_base. Scan will still keep going on</span>
 <span class="go">INFO: no mask has been associated with current glbl</span>
@@ -277,7 +277,7 @@ Let’s try to make sure everything is ok.</p>
 <p>OK, it seems to work, let’s do some testing to see how much intensity we need.
 We will do three setup scans with 1.5 seconds and 100.5 seconds exposure
 and then compare them.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">xrun</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>  <span class="c1">#1.5 seconds</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">xrun</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>  <span class="c1">#1.5 seconds</span>
 <span class="go">INFO: requested exposure time = 1.5 - &gt; computed exposure time= 1.5</span>
 <span class="go">INFO: No calibration file found in config_base. Scan will still keep going on</span>
 <span class="go">INFO: no mask has been associated with current glbl</span>
@@ -301,9 +301,9 @@ and then compare them.</p>
 <span class="go">generator count [&#39;981e70&#39;] (scan num: 6)</span>
 </pre></div>
 </div>
-<p>It seems that the 2 second scans are the best, so let’s do[b] with desired <code class="docutils literal"><span class="pre">Sample</span></code>
+<p>It seems that the 2 second scans are the best, so let’s do[b] with desired <code class="docutils literal notranslate"><span class="pre">Sample</span></code>
 to get the first data-set.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;In [13]: xrun(0, 8)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;In [13]: xrun(0, 8)</span>
 <span class="go">INFO: requested exposure time = 100.5 - &gt; computed exposure time= 100.5</span>
 <span class="go">INFO: closing shutter...</span>
 <span class="go">INFO: taking dark frame....</span>
@@ -328,25 +328,25 @@ to get the first data-set.</p>
 </div>
 <div class="section" id="automated-dark-collection">
 <span id="auto-dark"></span><h2>Automated dark collection<a class="headerlink" href="#automated-dark-collection" title="Permalink to this headline">¶</a></h2>
-<p>You might have found something weird when you ran the <code class="docutils literal"><span class="pre">xrun</span></code> command:</p>
+<p>You might have found something weird when you ran the <code class="docutils literal notranslate"><span class="pre">xrun</span></code> command:</p>
 <p><em>I only requested one ``xrun`` but the program runs two scans</em></p>
 <p>So what happened?</p>
-<p>That is a feature called auto-dark subtraction in <code class="docutils literal"><span class="pre">xpdAcq</span></code>.
-When you are running your experiment, <code class="docutils literal"><span class="pre">xpdAcq</span></code> checks if you have
+<p>That is a feature called auto-dark subtraction in <code class="docutils literal notranslate"><span class="pre">xpdAcq</span></code>.
+When you are running your experiment, <code class="docutils literal notranslate"><span class="pre">xpdAcq</span></code> checks if you have
 collected a <strong>fresh and appropriate</strong> dark frame every time it collects a scan.
 The definition of <strong>fresh and appropriate</strong> is:</p>
 <div class="section" id="nice-and-fresh">
 <h3><strong>Nice and fresh</strong><a class="headerlink" href="#nice-and-fresh" title="Permalink to this headline">¶</a></h3>
 <blockquote>
-<div><div class="highlight-none"><div class="highlight"><pre><span></span>Given a certain period T (``dark window``), there exists a dark frame
+<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Given a certain period T (``dark window``), there exists a dark frame
 with the same **total exposure time** and exactly the same **acquisition time**
 as the light frame we are about collect.
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p>At <strong>XPD</strong>, the area detector is running in <code class="docutils literal"><span class="pre">continuous</span> <span class="pre">acquisition</span></code> mode,
-which means detector keeps <strong>reading</strong> but only <strong>saves</strong> images when <code class="docutils literal"><span class="pre">xpdAcq</span></code>
+<p>At <strong>XPD</strong>, the area detector is running in <code class="docutils literal notranslate"><span class="pre">continuous</span> <span class="pre">acquisition</span></code> mode,
+which means detector keeps <strong>reading</strong> but only <strong>saves</strong> images when <code class="docutils literal notranslate"><span class="pre">xpdAcq</span></code>
 tells it to save, with the desired exposure time.</p>
 <p>In short,</p>
 <ul class="last simple">
@@ -356,30 +356,30 @@ This can take values between 0.1s to 5s.</li>
 </ul>
 </div>
 <p>Automated dark collection is enabled by default and it can be turned off by:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">glbl</span><span class="p">[</span><span class="s1">&#39;auto_dark&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">False</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">glbl</span><span class="p">[</span><span class="s1">&#39;auto_dark&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">False</span>
 <span class="n">glbl</span><span class="p">[</span><span class="s1">&#39;shutter_control&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">False</span>
 </pre></div>
 </div>
 <p>And the duration of your dark window can be modified by:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">glbl</span><span class="p">[</span><span class="s1">&#39;dk_window&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">200</span> <span class="c1"># in minutes. default is 3000 minutes</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">glbl</span><span class="p">[</span><span class="s1">&#39;dk_window&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">200</span> <span class="c1"># in minutes. default is 3000 minutes</span>
 </pre></div>
 </div>
-<p>Having <code class="docutils literal"><span class="pre">auto_dark</span></code> set to <code class="docutils literal"><span class="pre">True</span></code> is strongly recommended as this enables
-<code class="docutils literal"><span class="pre">xpdAcq</span></code> to do automated dark frame subtraction when you pull out data from the
+<p>Having <code class="docutils literal notranslate"><span class="pre">auto_dark</span></code> set to <code class="docutils literal notranslate"><span class="pre">True</span></code> is strongly recommended as this enables
+<code class="docutils literal notranslate"><span class="pre">xpdAcq</span></code> to do automated dark frame subtraction when you pull out data from the
 centralized <strong>NSLSL-II</strong> server.</p>
 </div></blockquote>
 </div>
 </div>
 <div class="section" id="automated-calibration-capture">
 <span id="auto-calib"></span><h2>Automated calibration capture<a class="headerlink" href="#automated-calibration-capture" title="Permalink to this headline">¶</a></h2>
-<p>Often times, keeping track of which calibration file is associated with a specific scan is very tiring. <code class="docutils literal"><span class="pre">xpdAcq</span></code> makes this easier or you. Before every
+<p>Often times, keeping track of which calibration file is associated with a specific scan is very tiring. <code class="docutils literal notranslate"><span class="pre">xpdAcq</span></code> makes this easier or you. Before every
 scan is being collected, the program goes to grab the most recent calibration
-parameters in <code class="docutils literal"><span class="pre">xpdUser/config_base</span></code> and load them as part of the
+parameters in <code class="docutils literal notranslate"><span class="pre">xpdUser/config_base</span></code> and load them as part of the
 metadata so that you can reference them whenever you want, and make in-situ data
 reduction possible!</p>
 <div class="section" id="quick-guide-of-calibration-steps-with-pyfai">
 <span id="calib-manual"></span><h3>Quick guide of calibration steps with pyFAI<a class="headerlink" href="#quick-guide-of-calibration-steps-with-pyfai" title="Permalink to this headline">¶</a></h3>
-<p>1. We assume that you have run <code class="docutils literal"><span class="pre">run_calibration()</span></code> in the <code class="docutils literal"><span class="pre">collection</span></code> window
+<p>1. We assume that you have run <code class="docutils literal notranslate"><span class="pre">run_calibration()</span></code> in the <code class="docutils literal notranslate"><span class="pre">collection</span></code> window
 with Ni as your calibrant.  This will automatically expose the Ni, and after a
 pause a 2D plot window should pop up on the acquisition computer, looking
 something like this:</p>
@@ -399,22 +399,22 @@ ring you have selected.  Then repeat this for the other four rings you will sele
 <a class="reference internal image-reference" href="_images/calib_07.png"><img alt="_images/calib_07.png" class="align-center" src="_images/calib_07.png" style="width: 400px; height: 300px;" /></a>
 </div></blockquote>
 <ol class="arabic" start="2">
-<li><p class="first">If you don’t like what you have selected, you can exit out using <code class="docutils literal"><span class="pre">CTL-C</span></code> and start again
+<li><p class="first">If you don’t like what you have selected, you can exit out using <code class="docutils literal notranslate"><span class="pre">CTL-C</span></code> and start again
 by running <cite>run_calibration()</cite>.  However, if you are happy with your selections accept them by first
-making the collection terminal window active by clicking on it, then hitting <code class="docutils literal"><span class="pre">&lt;enter&gt;</span></code>.</p>
+making the collection terminal window active by clicking on it, then hitting <code class="docutils literal notranslate"><span class="pre">&lt;enter&gt;</span></code>.</p>
 <p>You will now follow the instructions coming from PyFAI.  It asks you to supply the
 indices of the rings you have selected.  Because PyFAI was written by a computer
 scientist and not a scientist, <strong>the first ring has number 0</strong>, the second has
 number 1, the third has number 2 and the 6th has number 5.</p>
 <p>If everything has gone well, after supplying all the indices, PyFAI will pop
 up a number of plots that can give an expert eye some indication of the quality
-of the calibration.  We recommend that you type <code class="docutils literal"><span class="pre">recalib</span></code> and
-then <code class="docutils literal"><span class="pre">&lt;enter&gt;</span></code> when prompted to
+of the calibration.  We recommend that you type <code class="docutils literal notranslate"><span class="pre">recalib</span></code> and
+then <code class="docutils literal notranslate"><span class="pre">&lt;enter&gt;</span></code> when prompted to
 “modify parameters”. This will cause pyFAI to refine the ring selection.
 If the dashed lines look as if they are lining up well with
 the peaks you have a good calibration.  If not, <cite>CTL-C</cite> and start again.  If yes,
-activate the terminal window by clicking on it, hit <code class="docutils literal"><span class="pre">&lt;enter&gt;</span></code> at the command prompt
-then type <code class="docutils literal"><span class="pre">done</span></code>.</p>
+activate the terminal window by clicking on it, hit <code class="docutils literal notranslate"><span class="pre">&lt;enter&gt;</span></code> at the command prompt
+then type <code class="docutils literal notranslate"><span class="pre">done</span></code>.</p>
 </li>
 </ol>
 <blockquote>
@@ -427,17 +427,17 @@ sure you follow the instruction exactly.</p>
 </div>
 </div></blockquote>
 <ol class="arabic" start="3">
-<li><p class="first">You are done! <code class="docutils literal"><span class="pre">xpdAcq</span></code> has saved the calibration parameters and will store them will all subsequent scans until you
+<li><p class="first">You are done! <code class="docutils literal notranslate"><span class="pre">xpdAcq</span></code> has saved the calibration parameters and will store them will all subsequent scans until you
 run another calibration.</p>
-<p>To see the current calibration parameters, type <code class="docutils literal"><span class="pre">show_calib()</span></code>.</p>
+<p>To see the current calibration parameters, type <code class="docutils literal notranslate"><span class="pre">show_calib()</span></code>.</p>
 <p>You can also find the calibration parameters in a file called
-<code class="docutils literal"><span class="pre">pyFAI_calib.yml</span></code> in <code class="docutils literal"><span class="pre">.../xpdUser/config_base</span></code></p>
+<code class="docutils literal notranslate"><span class="pre">pyFAI_calib.yml</span></code> in <code class="docutils literal notranslate"><span class="pre">.../xpdUser/config_base</span></code></p>
 </li>
 </ol>
 <ol class="arabic simple" start="3">
 <li>To clean up you can close all the PyFai windows, including
 the 1D integration and 2D regrouping results that pop out (see below).
-Return to the <code class="docutils literal"><span class="pre">Quick</span> <span class="pre">start</span> <span class="pre">tutorial</span></code> by hitting the browser back-arrow.</li>
+Return to the <code class="docutils literal notranslate"><span class="pre">Quick</span> <span class="pre">start</span> <span class="pre">tutorial</span></code> by hitting the browser back-arrow.</li>
 </ol>
 <blockquote>
 <div><a class="reference internal image-reference" href="_images/calib_09.png"><img alt="_images/calib_09.png" class="align-center" src="_images/calib_09.png" style="width: 400px; height: 300px;" /></a>
@@ -447,24 +447,24 @@ Return to the <code class="docutils literal"><span class="pre">Quick</span> <spa
 <div class="section" id="sample-metadata-imported-from-spreadsheet">
 <span id="import-sample"></span><h2>Sample metadata imported from spreadsheet<a class="headerlink" href="#sample-metadata-imported-from-spreadsheet" title="Permalink to this headline">¶</a></h2>
 <p>In order to facilitate retrospective operation on data, we suggest you to enter
-as much information as you can and that is the main philosophy behind <code class="docutils literal"><span class="pre">xpdAcq</span></code>.</p>
+as much information as you can and that is the main philosophy behind <code class="docutils literal notranslate"><span class="pre">xpdAcq</span></code>.</p>
 <p>Typing in sample metadata during beamtime is always less efficient and it wastes
 your time so a pre-populated excel sheet with all metadata entered beforehand
 turns out to be the solution.</p>
 <p>In order import sample metadata from spreadsheet, we would need you to have a
-pre-filled spreadsheet with name <code class="docutils literal"><span class="pre">&lt;saf_number&gt;_sample.xls</span></code> sit in <code class="docutils literal"><span class="pre">xpduser/import</span></code>
+pre-filled spreadsheet with name <code class="docutils literal notranslate"><span class="pre">&lt;saf_number&gt;_sample.xls</span></code> sit in <code class="docutils literal notranslate"><span class="pre">xpduser/import</span></code>
 directory. Then the import process is simply:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">import_sample_info</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">import_sample_info</span><span class="p">()</span>
 </pre></div>
 </div>
-<p><code class="docutils literal"><span class="pre">xpdAcq</span></code> will grab the <code class="docutils literal"><span class="pre">saf_number</span></code> and <code class="docutils literal"><span class="pre">bt</span></code> for current beamtime, so make sure you have your spreadsheet named with proper format. For example, if your SAF number is <code class="docutils literal"><span class="pre">300179</span></code>, then you should have your pre-populated spreadsheet with the name as <code class="docutils literal"><span class="pre">300179_sample.xls</span></code>, sit inside <code class="docutils literal"><span class="pre">xpdUser/import</span></code> directory.</p>
+<p><code class="docutils literal notranslate"><span class="pre">xpdAcq</span></code> will grab the <code class="docutils literal notranslate"><span class="pre">saf_number</span></code> and <code class="docutils literal notranslate"><span class="pre">bt</span></code> for current beamtime, so make sure you have your spreadsheet named with proper format. For example, if your SAF number is <code class="docutils literal notranslate"><span class="pre">300179</span></code>, then you should have your pre-populated spreadsheet with the name as <code class="docutils literal notranslate"><span class="pre">300179_sample.xls</span></code>, sit inside <code class="docutils literal notranslate"><span class="pre">xpdUser/import</span></code> directory.</p>
 <p>To parse the information filled inside your spreadsheet, we have designed
 several rules and here are the explantion to each of the rules.</p>
 <div class="section" id="comma-separated-fields">
 <h3>comma separated fields<a class="headerlink" href="#comma-separated-fields" title="Permalink to this headline">¶</a></h3>
 <blockquote>
-<div><p>Files with information entities are separated by a comma <code class="docutils literal"><span class="pre">,</span></code>.</p>
-<p>Each separated by <code class="docutils literal"><span class="pre">,</span></code> will be individually searchable later.</p>
+<div><p>Files with information entities are separated by a comma <code class="docutils literal notranslate"><span class="pre">,</span></code>.</p>
+<p>Each separated by <code class="docutils literal notranslate"><span class="pre">,</span></code> will be individually searchable later.</p>
 <p>Fields following this parsing rule are:</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -472,26 +472,26 @@ several rules and here are the explantion to each of the rules.</p>
 <col width="72%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">cif</span> <span class="pre">name</span></code></td>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">cif</span> <span class="pre">name</span></code></td>
 <td>pointer of potential structures for your sample, if any.</td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">User</span> <span class="pre">supplied</span> <span class="pre">tags</span></code></td>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">User</span> <span class="pre">supplied</span> <span class="pre">tags</span></code></td>
 <td>any comment you want to put on for this measurement.</td>
 </tr>
 </tbody>
 </table>
-<p>Example on <code class="docutils literal"><span class="pre">User</span> <span class="pre">supplied</span> <span class="pre">tags</span></code>:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>background, standard --&gt; background, standard
+<p>Example on <code class="docutils literal notranslate"><span class="pre">User</span> <span class="pre">supplied</span> <span class="pre">tags</span></code>:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>background, standard --&gt; background, standard
 </pre></div>
 </div>
-<p>And a search on either <code class="docutils literal"><span class="pre">background</span></code> or``standard`` later on will include
+<p>And a search on either <code class="docutils literal notranslate"><span class="pre">background</span></code> or``standard`` later on will include
 this header.</p>
 </div></blockquote>
 </div>
 <div class="section" id="name-fields">
 <h3>name fields<a class="headerlink" href="#name-fields" title="Permalink to this headline">¶</a></h3>
 <blockquote>
-<div><p>Fields that are used to store a person’s name in <code class="docutils literal"><span class="pre">first</span> <span class="pre">name</span> <span class="pre">last</span> <span class="pre">name</span></code> format.</p>
+<div><p>Fields that are used to store a person’s name in <code class="docutils literal notranslate"><span class="pre">first</span> <span class="pre">name</span> <span class="pre">last</span> <span class="pre">name</span></code> format.</p>
 <p>Each person’s first and last name will be searchable later on.</p>
 <p>Fields following this parsing rule are:</p>
 <table border="1" class="docutils">
@@ -500,22 +500,22 @@ this header.</p>
 <col width="72%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">Collaborators</span></code></td>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">Collaborators</span></code></td>
 <td>name of your collaborators</td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">Sample</span> <span class="pre">Maker</span></code></td>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">Sample</span> <span class="pre">Maker</span></code></td>
 <td>name of your sample maker</td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">Lead</span> <span class="pre">Experimenters</span></code></td>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">Lead</span> <span class="pre">Experimenters</span></code></td>
 <td>a person who is going to lead this experiment at beamline</td>
 </tr>
 </tbody>
 </table>
 <p>Example on name fields:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>Maxwell Terban, Benjamin Frandsen ----&gt; Maxwell, Terban, Benjamin, Frandsen
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Maxwell Terban, Benjamin Frandsen ----&gt; Maxwell, Terban, Benjamin, Frandsen
 </pre></div>
 </div>
-<p>A search on either <code class="docutils literal"><span class="pre">Maxwell</span></code> or <code class="docutils literal"><span class="pre">Terban</span></code> or <code class="docutils literal"><span class="pre">Benjamin</span></code> or <code class="docutils literal"><span class="pre">Frandsen</span></code>
+<p>A search on either <code class="docutils literal notranslate"><span class="pre">Maxwell</span></code> or <code class="docutils literal notranslate"><span class="pre">Terban</span></code> or <code class="docutils literal notranslate"><span class="pre">Benjamin</span></code> or <code class="docutils literal notranslate"><span class="pre">Frandsen</span></code>
 later will include this header.</p>
 </div></blockquote>
 </div>
@@ -532,36 +532,36 @@ accelerated data reduction workflow.</p>
 <col width="82%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">Phase</span> <span class="pre">Info</span></code></td>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">Phase</span> <span class="pre">Info</span></code></td>
 <td>field to specify phase information and chemical composition of
 your sample</td>
 </tr>
 </tbody>
 </table>
 <p>phase string will be expect to be enter in a form as
-<code class="docutils literal"><span class="pre">phase_1:</span> <span class="pre">amount,</span> <span class="pre">phase_2:</span> <span class="pre">amount</span></code>.</p>
+<code class="docutils literal notranslate"><span class="pre">phase_1:</span> <span class="pre">amount,</span> <span class="pre">phase_2:</span> <span class="pre">amount</span></code>.</p>
 <p>An example of 0.9% sodium chloride solution will be:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>Nacl: 0.09, H20: 0.91
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Nacl: 0.09, H20: 0.91
 </pre></div>
 </div>
-<p>This <code class="docutils literal"><span class="pre">Phase</span> <span class="pre">Info</span></code> will be parsed as:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;sample_composition&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;Na&#39;</span><span class="p">:</span><span class="mf">0.09</span><span class="p">,</span> <span class="s1">&#39;Cl&#39;</span><span class="p">:</span><span class="mf">0.09</span><span class="p">,</span> <span class="sb">`H`</span><span class="p">:</span><span class="mf">1.82</span><span class="p">,</span> <span class="sb">`O`</span><span class="p">:</span><span class="mf">0.91</span><span class="p">},</span>
+<p>This <code class="docutils literal notranslate"><span class="pre">Phase</span> <span class="pre">Info</span></code> will be parsed as:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;sample_composition&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;Na&#39;</span><span class="p">:</span><span class="mf">0.09</span><span class="p">,</span> <span class="s1">&#39;Cl&#39;</span><span class="p">:</span><span class="mf">0.09</span><span class="p">,</span> <span class="sb">`H`</span><span class="p">:</span><span class="mf">1.82</span><span class="p">,</span> <span class="sb">`O`</span><span class="p">:</span><span class="mf">0.91</span><span class="p">},</span>
  <span class="s1">&#39;sample_phase&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;NaCl&#39;</span><span class="p">:</span><span class="mf">0.09</span><span class="p">,</span> <span class="s1">&#39;H20&#39;</span><span class="p">:</span><span class="mf">0.91</span><span class="p">},</span>
  <span class="s1">&#39;composition_string&#39;</span><span class="p">:</span> <span class="s1">&#39;Na0.09Cl0.09H1.82O0.91&#39;</span><span class="p">}</span>
 </pre></div>
 </div>
-<p><code class="docutils literal"><span class="pre">composition_string</span></code> is designed for data reduction software going to be
-used. Under <code class="docutils literal"><span class="pre">xpdAcq</span></code> framework, we will assume
+<p><code class="docutils literal notranslate"><span class="pre">composition_string</span></code> is designed for data reduction software going to be
+used. Under <code class="docutils literal notranslate"><span class="pre">xpdAcq</span></code> framework, we will assume
 <a class="reference external" href="http://www.diffpy.org/products/pdfgetx3.html">pdfgetx3</a></p>
-<p>As before, a search on <code class="docutils literal"><span class="pre">Na</span></code> or <code class="docutils literal"><span class="pre">Cl</span></code> or <code class="docutils literal"><span class="pre">H</span></code> or <code class="docutils literal"><span class="pre">O</span></code> will include this
-header. Also a search on <code class="docutils literal"><span class="pre">Nacl=0.09</span></code> will include this header as well.</p>
+<p>As before, a search on <code class="docutils literal notranslate"><span class="pre">Na</span></code> or <code class="docutils literal notranslate"><span class="pre">Cl</span></code> or <code class="docutils literal notranslate"><span class="pre">H</span></code> or <code class="docutils literal notranslate"><span class="pre">O</span></code> will include this
+header. Also a search on <code class="docutils literal notranslate"><span class="pre">Nacl=0.09</span></code> will include this header as well.</p>
 </div></blockquote>
 </div>
 <div class="section" id="dictonary-like-fields">
 <h3>dictonary-like fields<a class="headerlink" href="#dictonary-like-fields" title="Permalink to this headline">¶</a></h3>
 <blockquote>
-<div><p>Fields that are utilized to store information as <code class="docutils literal"><span class="pre">key-value</span> <span class="pre">pair</span></code> format.
-Standard format of it is <code class="docutils literal"><span class="pre">key:</span> <span class="pre">value</span></code> and it also follows the comma-separate rule</p>
+<div><p>Fields that are utilized to store information as <code class="docutils literal notranslate"><span class="pre">key-value</span> <span class="pre">pair</span></code> format.
+Standard format of it is <code class="docutils literal notranslate"><span class="pre">key:</span> <span class="pre">value</span></code> and it also follows the comma-separate rule</p>
 <p>Fields following this parsing rule are:</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -569,14 +569,14 @@ Standard format of it is <code class="docutils literal"><span class="pre">key:</
 <col width="49%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">structrual</span> <span class="pre">database</span> <span class="pre">ID</span> <span class="pre">for</span> <span class="pre">phases</span></code></td>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">structrual</span> <span class="pre">database</span> <span class="pre">ID</span> <span class="pre">for</span> <span class="pre">phases</span></code></td>
 <td>database name and the ID for
 sample phases</td>
 </tr>
 </tbody>
 </table>
 <p>Example on dictionary-like fields:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>ICSD:41120, CCDC:850926 ----&gt; {&#39;ICSD&#39;: &#39;41120&#39;, &#39;CCDC&#39;: &#39;850926&#39;}
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ICSD:41120, CCDC:850926 ----&gt; {&#39;ICSD&#39;: &#39;41120&#39;, &#39;CCDC&#39;: &#39;850926&#39;}
 </pre></div>
 </div>
 </div></blockquote>
@@ -591,7 +591,7 @@ will be parsed based on the contents you type in with above parsing rule.</p>
 you would see:</p>
 </li>
 </ul>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="n">import_sample_info</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="n">import_sample_info</span><span class="p">()</span>
 <span class="o">***</span> <span class="n">End</span> <span class="n">of</span> <span class="kn">import</span> <span class="nn">Sample</span> <span class="nn">object</span> <span class="o">***</span>
 
 <span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">bt</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
@@ -636,16 +636,16 @@ experimental setup, for example, crystalline peaks due to the beam hitting a shu
 Sample freely. Linking the background with the sample together also makes the
 data-reduction workflow easier.</p>
 <p>We specify this grouping by entering background sample name into the
-<code class="docutils literal"><span class="pre">Sample-name</span> <span class="pre">of</span> <span class="pre">sample</span> <span class="pre">background</span></code>  column in the spreadsheet. You can
+<code class="docutils literal notranslate"><span class="pre">Sample-name</span> <span class="pre">of</span> <span class="pre">sample</span> <span class="pre">background</span></code>  column in the spreadsheet. You can
 fill in the <em>Sample Name of your background</em> to whichever sample you want to relate.</p>
 <p>For example, in our <a class="reference external" href="https://groups.google.com/forum/?utm_medium=email&amp;utm_source=footer#!topic/xpd-users/_6NSRWg_-l0">spreadsheet template</a> we created pure background
 objects kapton_1mmOD, kapton_0.9mmOD and kapton_0.5mmOD
 and we link Ni with background kapton_1mmOD by specifying it
-at <code class="docutils literal"><span class="pre">Sample-name</span> <span class="pre">of</span> <span class="pre">sample</span> <span class="pre">background</span></code> column.</p>
+at <code class="docutils literal notranslate"><span class="pre">Sample-name</span> <span class="pre">of</span> <span class="pre">sample</span> <span class="pre">background</span></code> column.</p>
 <p>A proper linking between <strong>Sample</strong> and <strong>Background</strong> can be seen
-from metadata stored inside the <code class="docutils literal"><span class="pre">Sample</span></code> object. As usual, let’s
+from metadata stored inside the <code class="docutils literal notranslate"><span class="pre">Sample</span></code> object. As usual, let’s
 interrogate the metadata:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span><span class="p">[]:</span> <span class="n">bt</span><span class="o">.</span><span class="n">samples</span><span class="o">.</span><span class="n">get_md</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>  <span class="c1"># that&#39;s for example, index depends on</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span><span class="p">[]:</span> <span class="n">bt</span><span class="o">.</span><span class="n">samples</span><span class="o">.</span><span class="n">get_md</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>  <span class="c1"># that&#39;s for example, index depends on</span>
                              <span class="c1"># your spreadsheet</span>
 <span class="n">out</span><span class="p">[]:</span>
 <span class="p">{</span><span class="s1">&#39;bkgd_sample_name&#39;</span><span class="p">:</span> <span class="s1">&#39;kapton_0.9mmOD&#39;</span><span class="p">,</span>
@@ -654,8 +654,8 @@ interrogate the metadata:</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>The example above shows your <code class="docutils literal"><span class="pre">Sample</span></code> with index <code class="docutils literal"><span class="pre">15</span></code> has been
-linked with background <code class="docutils literal"><span class="pre">kapton_0.9mmOD</span></code>. This can largely speeds up
+<p>The example above shows your <code class="docutils literal notranslate"><span class="pre">Sample</span></code> with index <code class="docutils literal notranslate"><span class="pre">15</span></code> has been
+linked with background <code class="docutils literal notranslate"><span class="pre">kapton_0.9mmOD</span></code>. This can largely speeds up
 the automated data-reduction workflow that we will have in the future!</p>
 </li>
 </ul>
@@ -726,7 +726,7 @@ alpha is 3 standard deviations.</dd>
 <p>To use the auto-masker once, creating masks used for subsequent images,
 just run the command:</p>
 <blockquote>
-<div><div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">run_mask_builder</span><span class="p">()</span>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">run_mask_builder</span><span class="p">()</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -739,7 +739,7 @@ images.</p>
 <span id="client-server-md"></span><h2>client/server metadata schema<a class="headerlink" href="#client-server-metadata-schema" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="overview-with-an-example">
 <h3>Overview with an example<a class="headerlink" href="#overview-with-an-example" title="Permalink to this headline">¶</a></h3>
-<p>The <code class="docutils literal"><span class="pre">client/server</span></code> schema associate different data with a centralized
+<p>The <code class="docutils literal notranslate"><span class="pre">client/server</span></code> schema associate different data with a centralized
 mapping, which would allow a more flexible way to link data. Let’s take
 calibration as an example. Ideally one will perform a calibration run
 before collecting any data so that subsequent runs will be referenced to
@@ -750,43 +750,43 @@ the data collected prior to the calibration will not be able to associated
 with given geometry in a systematic way; it relies on experimenter to
 identify which data should be grouped and this add complexities of
 analyzing data after the beamtime.</p>
-<p>The <code class="docutils literal"><span class="pre">client/server</span></code> schema is designed to solve the problem described above.
-At the beginning of the beamtime, an unique <code class="docutils literal"><span class="pre">exp_hash_uid</span></code> is generated.
-Every subsequent run will inserted with the metadata <code class="docutils literal"><span class="pre">client_uid=exp_hash_uid</span></code>
-while the calibration run will have <code class="docutils literal"><span class="pre">server_uid=exp_hash_uid</span></code> in the metadata.
+<p>The <code class="docutils literal notranslate"><span class="pre">client/server</span></code> schema is designed to solve the problem described above.
+At the beginning of the beamtime, an unique <code class="docutils literal notranslate"><span class="pre">exp_hash_uid</span></code> is generated.
+Every subsequent run will inserted with the metadata <code class="docutils literal notranslate"><span class="pre">client_uid=exp_hash_uid</span></code>
+while the calibration run will have <code class="docutils literal notranslate"><span class="pre">server_uid=exp_hash_uid</span></code> in the metadata.
 Therefore, by querying scans with the matched client/server uid, production runs
 and calibration runs are linked by regardless the order in time. Furthermore,
-this <code class="docutils literal"><span class="pre">client/server</span></code> schema would allow the recalibration if any factor related
+this <code class="docutils literal notranslate"><span class="pre">client/server</span></code> schema would allow the recalibration if any factor related
 to defining experimental geometry, such as wavelength, was known to be in accurate.</p>
-<p>The <code class="docutils literal"><span class="pre">client/server</span></code> logic can be extended to other kinds of mapping as well.
-Currently, <code class="docutils literal"><span class="pre">xpdAcq</span></code> utilizes this logic in associating calibration runs with
+<p>The <code class="docutils literal notranslate"><span class="pre">client/server</span></code> logic can be extended to other kinds of mapping as well.
+Currently, <code class="docutils literal notranslate"><span class="pre">xpdAcq</span></code> utilizes this logic in associating calibration runs with
 production runs.</p>
 </div>
 <div class="section" id="when-and-how-to-change-exp-hash-uid">
-<h3>when and how to change <code class="docutils literal"><span class="pre">exp_hash_uid</span></code>?<a class="headerlink" href="#when-and-how-to-change-exp-hash-uid" title="Permalink to this headline">¶</a></h3>
-<p>It’s strongly suggested to update the <code class="docutils literal"><span class="pre">exp_hash_uid</span></code> whenever there is
+<h3>when and how to change <code class="docutils literal notranslate"><span class="pre">exp_hash_uid</span></code>?<a class="headerlink" href="#when-and-how-to-change-exp-hash-uid" title="Permalink to this headline">¶</a></h3>
+<p>It’s strongly suggested to update the <code class="docutils literal notranslate"><span class="pre">exp_hash_uid</span></code> whenever there is
 a sensible change to your experimental setup, for example, different detectors,
 changes in sample stages, fluctuation of ring current and so on. In this way,
 the data that is referenced to the same experiment condition will be more
 tightly associated and will make future data analysis easier as direct comparison
 is possible.</p>
-<p>To update the <code class="docutils literal"><span class="pre">exp_hash_uid</span></code>, please type following command in the <code class="docutils literal"><span class="pre">collection</span></code>
+<p>To update the <code class="docutils literal notranslate"><span class="pre">exp_hash_uid</span></code>, please type following command in the <code class="docutils literal notranslate"><span class="pre">collection</span></code>
 terminal of your ipython.</p>
-<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="n">update_exp_hash_uid</span><span class="p">()</span>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">update_exp_hash_uid</span><span class="p">()</span>
 
 <span class="c1"># example output</span>
 <span class="c1">#INFO: experiment hash uid has been updated to 3020835e-9cb3-4c63-9bf4-4834bf5e865f</span>
 </pre></div>
 </div>
-<p>Once <code class="docutils literal"><span class="pre">exp_hash_uid</span></code> is updated, all subsequent runs will have the
-updated <code class="docutils literal"><span class="pre">client_uid</span></code> metadata and calibration runs will has this new uid
-as <code class="docutils literal"><span class="pre">server_uid</span></code>.</p>
+<p>Once <code class="docutils literal notranslate"><span class="pre">exp_hash_uid</span></code> is updated, all subsequent runs will have the
+updated <code class="docutils literal notranslate"><span class="pre">client_uid</span></code> metadata and calibration runs will has this new uid
+as <code class="docutils literal notranslate"><span class="pre">server_uid</span></code>.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">The idea of <code class="docutils literal"><span class="pre">hash</span></code> is borrowed from computer science. It means we conceptually
+<p class="last">The idea of <code class="docutils literal notranslate"><span class="pre">hash</span></code> is borrowed from computer science. It means we conceptually
 represent all experiment related factors, ranging from the instruments inside
 and outside the hutch, synchrotron beam current to ambient temperature, as a
-unique identifier, <code class="docutils literal"><span class="pre">uid</span></code>. Therefore, this identifier could be use for mapping
+unique identifier, <code class="docutils literal notranslate"><span class="pre">uid</span></code>. Therefore, this identifier could be use for mapping
 data that shares common experiment related factors.</p>
 </div>
 </div>
@@ -794,11 +794,11 @@ data that shares common experiment related factors.</p>
 <div class="section" id="user-defined-folder-tag">
 <span id="folder-tag"></span><h2>User defined folder tag<a class="headerlink" href="#user-defined-folder-tag" title="Permalink to this headline">¶</a></h2>
 <p>You can also add metadata to the run by adding key word arguments to the run eg
-<code class="docutils literal"><span class="pre">xrun(0,</span> <span class="pre">8,</span> <span class="pre">my_scan_tag='hello</span> <span class="pre">world')</span></code>. Some pieces of metadata are special,
-like <code class="docutils literal"><span class="pre">folder_tag</span></code>. When <code class="docutils literal"><span class="pre">folder_tag</span></code> is added
-(eg <code class="docutils literal"><span class="pre">xrun(0,</span> <span class="pre">8,</span> <span class="pre">folder_tag='after_saxs')</span></code> then the <code class="docutils literal"><span class="pre">after_saxs</span></code> will be
+<code class="docutils literal notranslate"><span class="pre">xrun(0,</span> <span class="pre">8,</span> <span class="pre">my_scan_tag='hello</span> <span class="pre">world')</span></code>. Some pieces of metadata are special,
+like <code class="docutils literal notranslate"><span class="pre">folder_tag</span></code>. When <code class="docutils literal notranslate"><span class="pre">folder_tag</span></code> is added
+(eg <code class="docutils literal notranslate"><span class="pre">xrun(0,</span> <span class="pre">8,</span> <span class="pre">folder_tag='after_saxs')</span></code> then the <code class="docutils literal notranslate"><span class="pre">after_saxs</span></code> will be
 added to the file path where the data is saved
-(eg <code class="docutils literal"><span class="pre">&lt;.../tiff_base/sample_name/after_saxs/mask/file_name&gt;</span></code>).</p>
+(eg <code class="docutils literal notranslate"><span class="pre">&lt;.../tiff_base/sample_name/after_saxs/mask/file_name&gt;</span></code>).</p>
 <p>Let’s <a class="reference internal" href="usb_QuickAssess.html#usb-quickassess"><span class="std std-ref">take a quick look at our data</span></a></p>
 </div>
 </div>
