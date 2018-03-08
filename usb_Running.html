@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Running scans &mdash; xpdAcq 0.7.0 documentation</title>
+  <title>Running scans &mdash; xpdAcq 0.7.1 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="xpdAcq 0.7.0 documentation" href="index.html"/>
+    <link rel="top" title="xpdAcq 0.7.1 documentation" href="index.html"/>
         <link rel="up" title="For XPD Users" href="xpdusers.html"/>
         <link rel="next" title="Initial assessment of your data" href="usb_QuickAssess.html"/>
         <link rel="prev" title="Where did all my Sample and Scan objects go?????" href="usb_Where.html"/> 
@@ -123,7 +123,6 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#auto-masking">Auto-masking</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#applied-masks">Applied masks</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#using-the-auto-masker">Using the auto-masker</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#client-server-metadata-schema">client/server metadata schema</a><ul>
@@ -265,7 +264,6 @@ Let’s try to make sure everything is ok.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">xrun</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="go">INFO: requested exposure time = 1 - &gt; computed exposure time= 1.0</span>
 <span class="go">INFO: No calibration file found in config_base. Scan will still keep going on</span>
-<span class="go">INFO: no mask has been associated with current glbl</span>
 <span class="go">+-----------+------------+------------+</span>
 <span class="go">|   seq_num |       time |  pe1_image |</span>
 <span class="go">+-----------+------------+------------+</span>
@@ -280,7 +278,6 @@ and then compare them.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">xrun</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>  <span class="c1">#1.5 seconds</span>
 <span class="go">INFO: requested exposure time = 1.5 - &gt; computed exposure time= 1.5</span>
 <span class="go">INFO: No calibration file found in config_base. Scan will still keep going on</span>
-<span class="go">INFO: no mask has been associated with current glbl</span>
 <span class="go">+-----------+------------+------------+</span>
 <span class="go">|   seq_num |       time |  pe1_image |</span>
 <span class="go">+-----------+------------+------------+</span>
@@ -292,7 +289,6 @@ and then compare them.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">setupscan</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>  <span class="c1">#100.5 seconds</span>
 <span class="go">INFO: requested exposure time = 100.5 - &gt; computed exposure time= 100.5</span>
 <span class="go">INFO: No calibration file found in config_base. Scan will still keep going on</span>
-<span class="go">INFO: no mask has been associated with current glbl</span>
 <span class="go">+-----------+------------+------------+</span>
 <span class="go">|   seq_num |       time |  pe1_image |</span>
 <span class="go">+-----------+------------+------------+</span>
@@ -308,7 +304,6 @@ to get the first data-set.</p>
 <span class="go">INFO: closing shutter...</span>
 <span class="go">INFO: taking dark frame....</span>
 <span class="go">INFO: No calibration file found in config_base. Scan will still keep going on</span>
-<span class="go">INFO: no mask has been associated with current glbl</span>
 <span class="go">+-----------+------------+------------+</span>
 <span class="go">|   seq_num |       time |  pe1_image |</span>
 <span class="go">+-----------+------------+------------+</span>
@@ -317,7 +312,6 @@ to get the first data-set.</p>
 <span class="go">generator count [&#39;d770c7&#39;] (scan num: 7)</span>
 <span class="go">opening shutter...</span>
 <span class="go">INFO: No calibration file found in config_base. Scan will still keep going on</span>
-<span class="go">INFO: no mask has been associated with current glbl</span>
 <span class="go">+-----------+------------+------------+</span>
 <span class="go">|   seq_num |       time |  pe1_image |</span>
 <span class="go">+-----------+------------+------------+</span>
@@ -721,19 +715,6 @@ alpha is 3 standard deviations.</dd>
 </li>
 </ol>
 </div>
-<div class="section" id="using-the-auto-masker">
-<h3>Using the auto-masker<a class="headerlink" href="#using-the-auto-masker" title="Permalink to this headline">¶</a></h3>
-<p>To use the auto-masker once, creating masks used for subsequent images,
-just run the command:</p>
-<blockquote>
-<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">run_mask_builder</span><span class="p">()</span>
-</pre></div>
-</div>
-</div></blockquote>
-<p>This will take a shot and mask it. This mask will then be saved and loaded
-into subsequent experiment <cite>run_headers</cite> allowing them to be used for the next
-images.</p>
-</div>
 </div>
 <div class="section" id="client-server-metadata-schema">
 <span id="client-server-md"></span><h2>client/server metadata schema<a class="headerlink" href="#client-server-metadata-schema" title="Permalink to this headline">¶</a></h2>
@@ -847,7 +828,7 @@ added to the file path where the data is saved
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.7.0',
+            VERSION:'0.7.1',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

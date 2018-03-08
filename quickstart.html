@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Quick Start &mdash; xpdAcq 0.7.0 documentation</title>
+  <title>Quick Start &mdash; xpdAcq 0.7.1 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="xpdAcq 0.7.0 documentation" href="index.html"/>
+    <link rel="top" title="xpdAcq 0.7.1 documentation" href="index.html"/>
         <link rel="next" title="For XPD Users" href="xpdusers.html"/>
         <link rel="prev" title="xpdAcq documentation" href="index.html"/> 
 
@@ -441,19 +441,6 @@ run <code class="docutils literal notranslate"><span class="pre">run_calibration
 pipeline. Following workflow will be useful if you wish to build the mask
 manually from a specific experimental setup.</p>
 </div>
-<p>The standard mask removes problematic pixels at the edge of the detector, shadows
-the beamstop, and uses an auto-masking scheme to get rid of outlier pixels.
-The automasking has been extensively tested on a low-scattering sample so our mask
-building function has been designed to run on data from an empty kapton tube.
-Load an empty kapton tube, or something similar, on the diffractometer, then in your <code class="docutils literal notranslate"><span class="pre">collection-yyQn.x</span></code> terminal type</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">run_mask_builder</span><span class="p">()</span> <span class="c1"># be patient, the process takes 10 minutes!</span>
-</pre></div>
-</div>
-<p>A mask will be generated based on the image collected from this sample. This mask
-will be saved in the header of all future scans until you run <code class="docutils literal notranslate"><span class="pre">run_mask_builder()</span></code>
-again.  You will always be able to extract your data unmasked, or apply a different mask,
-at analysis time, but if this mask works well, it will save you a lot of time later if
-you do this step now.</p>
 <p>You can look at the 2D image with and without the mask in <code class="docutils literal notranslate"><span class="pre">SrXgui</span></code>.
 You can load the mask file by clicking the ‘folder’ icon by the “Mask file” field
 in SrXgui, navigating
@@ -888,7 +875,7 @@ into the <code class="docutils literal notranslate"><span class="pre">collection
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.7.0',
+            VERSION:'0.7.1',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
