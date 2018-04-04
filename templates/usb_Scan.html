@@ -1,0 +1,362 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ScanPlan objects &mdash; xpdAcq 0.7.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="xpdAcq 0.7.1 documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> xpdAcq
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.7
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quick Start</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../xpdusers.html">For XPD Users</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api_doc.html">API Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../beamlinestaff.html">For Beamline Staff</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">xpdAcq Change Log</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">xpdAcq</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>ScanPlan objects</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/templates/usb_Scan.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="scanplan-objects">
+<span id="usb-scan"></span><h1>ScanPlan objects<a class="headerlink" href="#scanplan-objects" title="Permalink to this headline">¶</a></h1>
+<p>Firstly, what is a scanplan?  A scanplan is a grouped set of detector exposures.  The set may
+contain just one exposure (we call that a count scan, <code class="docutils literal notranslate"><span class="pre">'ct'</span></code> ).  Or it may be a series of exposures
+taken one after the other, possibly with a delay between.  We
+call that a time-series (or <code class="docutils literal notranslate"><span class="pre">'tseries'</span></code> ).  We also support two kinds of temperature related scanplans, which are temperature ramp, <code class="docutils literal notranslate"><span class="pre">'Tramp'</span></code> and temperature list, <code class="docutils literal notranslate"><span class="pre">Tlist</span></code>. More are also on the way, but
+these simple scanplans may also be combined together in scripts, giving the user significant
+control over how to construct their experiment.
+Firstly, what is a ScanPlan?  A <code class="docutils literal notranslate"><span class="pre">ScanPlan</span></code> is a grouped set of detector exposures.  The set may
+contain just one exposure (we call that a count scan, <code class="docutils literal notranslate"><span class="pre">ct</span></code> ).  Or it may be a series of exposures
+taken one after the other, possibly with a delay between.  We call that a time-series (or <code class="docutils literal notranslate"><span class="pre">tseries</span></code> ).
+Other temperature-related plans supported are temperature ramp, <code class="docutils literal notranslate"><span class="pre">Tramp</span></code> and temperature list scan, <code class="docutils literal notranslate"><span class="pre">Tlist</span></code>.
+More are also on the way, but these simple <code class="docutils literal notranslate"><span class="pre">ScanPlan</span></code> may also be combined together in scripts,
+giving the user significant control over how to construct their experiment.</p>
+<p>To run a scan we need a <code class="docutils literal notranslate"><span class="pre">ScanPlan</span></code> and a <code class="docutils literal notranslate"><span class="pre">Sample</span></code>.  The <code class="docutils literal notranslate"><span class="pre">ScanPlan</span></code> is the detailed description of
+what the scan will do, but it doesn’t generate <em>any</em> scan until it is run on a particular sample.
+Separating a scan into a plan and an execution (which is different than how SPEC works
+for those old enough) makes it very easy to run a number of different samples with the
+exact same <code class="docutils literal notranslate"><span class="pre">ScanPlan</span></code>, or (if you really want to) to collect dark images with exactly the same scan pattern, and so on.
+We also want to save scan metadata accurately when the scan is actually run.  To ensure this,
+each scan object takes the scanplan parameters and it uses the same parameters
+both to run the scan at run-time, and to save them, along with the sample information,
+in the metadata for each exposure.</p>
+<p>With this in mind, the workflow is that <em>we never edit a ScanPlan and rerun it</em> (stop that you SPEC people!).
+What we do is that we <strong>create a new ScanPlan object</strong>,
+every time we want to do a different, <em>even slightly different</em>, scan. These are all
+saved for reload and will be sent home with you at the end of the experiment.</p>
+<div class="section" id="setting-up-scanplans">
+<h2>Setting up ScanPlans<a class="headerlink" href="#setting-up-scanplans" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">ScanPlan</span></code> takes <code class="docutils literal notranslate"><span class="pre">Beamtime</span></code>, scanplan and corresponding arguments. Let’s type <code class="docutils literal notranslate"><span class="pre">ScanPlan?</span></code> and hit return to find out more:</p>
+<dl class="function">
+<dt id="xpdacq.beamtime.ScanPlan">
+<code class="descclassname">xpdacq.beamtime.</code><code class="descname">ScanPlan</code><span class="sig-paren">(</span><em>beamtime</em>, <em>plan_func</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#xpdacq.beamtime.ScanPlan" title="Permalink to this definition">¶</a></dt>
+<dd><p>class that carries scan plan with corresponding experimental arguements</p>
+<p>after creation, this Sample object will be related to Beamtime
+object given as argument and will be available in bt.list()</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>beamtime</strong> (<em>xpdacq.beamtime.Beamtime</em>) – object representing current beamtime.</li>
+<li><strong>plan_func</strong> – predefined plan function. For complete list of available functions,
+please refere to <a class="reference external" href="http://xpdacq.github.io">http://xpdacq.github.io</a> for more information.</li>
+<li><strong>args</strong> – positional arguments corresponding to plan function in used.</li>
+<li><strong>kwargs</strong> – keyword arguments corresponding to plan function in used.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<p>A <cite>ct</cite> (count) scan with 5s exposure time linked to Beamtime object <cite>bt</cite>.
+&gt;&gt;&gt; ScanPlan(bt, ct, 5)</p>
+<p><cite>ScanPlan</cite> class also takes keyword arguments.
+&gt;&gt;&gt; ScanPlan(bt, ct, exposure=5)</p>
+<p>Please refer to <a class="reference external" href="http://xpdacq.github.io">http://xpdacq.github.io</a> for more examples.</p>
+</dd></dl>
+
+<p>Here are some examples of valid count-type ScanPlan definitions:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sc</span> <span class="o">=</span> <span class="n">ScanPlan</span><span class="p">(</span><span class="n">bt</span><span class="p">,</span> <span class="n">ct</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>                      <span class="c1"># the simplest count scan definition</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>A few things to note:</dt>
+<dd><ul class="first last simple">
+<li>First argument is always <code class="docutils literal notranslate"><span class="pre">bt</span></code>, the <code class="docutils literal notranslate"><span class="pre">Beamtime</span></code> object.</li>
+<li>The second argument is always the scanplan. In the example above, we
+are using <em>count</em>, so we use <code class="docutils literal notranslate"><span class="pre">ct</span></code> as the second argument.</li>
+<li>The scan parameter is fed in after scan type, starting from the third positional argument.</li>
+</ul>
+</dd>
+<dt>Types of ScanPlan available in current version:</dt>
+<dd><ul class="first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">ct</span></code> just exposes the detector for a number of seconds. e.g.,  <code class="docutils literal notranslate"><span class="pre">ScanPlan(bt,</span> <span class="pre">ct,</span> <span class="pre">17.5)</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">tseries</span></code> executes a series of <code class="docutils literal notranslate"><span class="pre">num</span></code> counts of exposure time <code class="docutils literal notranslate"><span class="pre">exposure</span></code> seconds with  a delay of <code class="docutils literal notranslate"><span class="pre">delay</span></code> seconds between them.  e.g., <code class="docutils literal notranslate"><span class="pre">ScanPlan(bt,</span> <span class="pre">tseries,</span> <span class="pre">1,</span> <span class="pre">59,</span> <span class="pre">50)</span></code> will measure 50 scans of 1 second with a delay of 59 seconds in between each of them.</li>
+<li><code class="docutils literal notranslate"><span class="pre">Tramp</span></code> executes a temperature ramp from <code class="docutils literal notranslate"><span class="pre">'startingT'</span></code> to <code class="docutils literal notranslate"><span class="pre">'endingT'</span></code> in temperature steps of <code class="docutils literal notranslate"><span class="pre">Tstep</span></code> with exposure time of <code class="docutils literal notranslate"><span class="pre">exposure</span></code>.  e.g., <code class="docutils literal notranslate"><span class="pre">ScanPlan(bt,</span> <span class="pre">Tramp,</span> <span class="pre">1,</span> <span class="pre">200,</span> <span class="pre">500,</span> <span class="pre">5)</span></code> will automatically change the temperature,
+starting at 200 K and ending at 500 K, measuring a scan of 1 s at every 5 K step. The temperature controller will hold at each temperature until the temperature stabilizes before starting the measurement.</li>
+<li><code class="docutils literal notranslate"><span class="pre">Tlist</span></code> exposes the detector for a given exposure time <code class="docutils literal notranslate"><span class="pre">exposure</span></code>
+in seconds at each temperature from a user-defined temperature
+list. For example, <code class="docutils literal notranslate"><span class="pre">ScanPlan(bt,</span> <span class="pre">Tlist,</span> <span class="pre">20,</span> <span class="pre">[250,</span> <span class="pre">180,</span> <span class="pre">200,</span> <span class="pre">230])</span></code>
+will drive the temperature controller to 250K, 180K, 200K and 230K
+and expose the detector for 20 seconds after the temperature
+controller equilibrates at each of the temperatures.</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="summary-table-on-scanplan">
+<h2>Summary table on ScanPlan:<a class="headerlink" href="#summary-table-on-scanplan" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="8%" />
+<col width="34%" />
+<col width="58%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">ScanPlan</th>
+<th class="head">Syntax</th>
+<th class="head">Summary</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">ct</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">ScanPlan(bt,</span> <span class="pre">ct,</span> <span class="pre">17.5)</span></code></td>
+<td>a count scan for 17.5s</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">tseries</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">ScanPlan(bt,</span> <span class="pre">tseries,</span> <span class="pre">1,</span> <span class="pre">59,</span> <span class="pre">50)</span></code></td>
+<td>time series with 1s count time, 59s delay and 50 repeats</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">Tramp</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">ScanPlan(bt,</span> <span class="pre">Tramp</span> <span class="pre">,</span> <span class="pre">1,</span> <span class="pre">200,</span> <span class="pre">500,</span> <span class="pre">5)</span></code></td>
+<td>temperature series with 1s count time, starting from 300k to 200k with 5k per step</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">Tlist</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">ScanPlan(bt,</span> <span class="pre">Tlist,</span> <span class="pre">5,</span> <span class="pre">[250,</span> <span class="pre">180,</span> <span class="pre">200,</span> <span class="pre">230])</span></code></td>
+<td>exposure detector for 5s at 250K, 180K, 200K and 230K</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>OK, it is time to <a class="reference internal" href="../usb_Running.html#usb-running"><span class="std std-ref">run our scans</span></a></p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright (c) 2016 trustees of Columbia University in the City of New York.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.7.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

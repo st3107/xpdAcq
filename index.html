@@ -105,7 +105,7 @@
 <li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="release_note.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">xpdAcq Change Log</a></li>
 </ul>
 
             
@@ -184,14 +184,78 @@ that needs less Python experience than the current native bluesky interface.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">xrun</span><span class="p">(</span><span class="n">sample</span><span class="o">-</span><span class="n">info</span><span class="p">,</span> <span class="n">scan</span><span class="o">-</span><span class="n">info</span><span class="p">)</span> <span class="c1">#run this Sample with this Scan-Plan</span>
 </pre></div>
 </div>
-<p>To get started, please go to <a class="reference internal" href="quickstart.html#quick-start"><span class="std std-ref">Quick Start</span></a></p>
+<p>To get started, please go to <a class="reference internal" href="templates/quickstart.html#quick-start"><span class="std std-ref">Quick Start</span></a></p>
 <p>If you have suggestions for new features in xpdAcq, or want to report a bug or simply ask a question about
 the software, please post it as a new thread at <a class="reference external" href="https://groups.google.com/forum/#!forum/xpd-users;context-place=overview">XPD-Users</a></p>
+<div class="section" id="xpdacq-change-log">
+<h3>xpdAcq Change Log<a class="headerlink" href="#xpdacq-change-log" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="v0-7-1">
+<h4>v0.7.1<a class="headerlink" href="#v0-7-1" title="Permalink to this headline">¶</a></h4>
+<p><strong>Added:</strong></p>
+<ul class="simple">
+<li>Requirements folder</li>
+</ul>
+<p><strong>Changed:</strong></p>
+<ul class="simple">
+<li>Release template now uses proper version in license</li>
+<li>Travis now uses the requirements folder</li>
+</ul>
+<p><strong>Deprecated:</strong></p>
+<ul class="simple">
+<li>Replace most <code class="docutils literal notranslate"><span class="pre">shutil</span></code> functionalities with native Unix commands
+called by <code class="docutils literal notranslate"><span class="pre">subprocess</span></code> to have a clear picture on the system response.</li>
+</ul>
+<p><strong>Fixed:</strong></p>
+<ul class="simple">
+<li>Add <code class="docutils literal notranslate"><span class="pre">--timeout</span></code> option to rsync during <code class="docutils literal notranslate"><span class="pre">_end_beamtime</span></code> to allow
+temporally disconnect.</li>
+<li>Exclude hidden files from the <code class="docutils literal notranslate"><span class="pre">_end_beamtime</span></code> archival. Those files
+are mainly used as configurations by local applications and are less
+likely to be reusable even if user requests them.</li>
+</ul>
 </div>
-<div class="section" id="what-s-new">
-<h2>What’s new?<a class="headerlink" href="#what-s-new" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="current-version-v0-6-0">
-<h3>current version : <code class="docutils literal notranslate"><span class="pre">v0.6.0</span></code><a class="headerlink" href="#current-version-v0-6-0" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="v0-7-0">
+<h4>v0.7.0<a class="headerlink" href="#v0-7-0" title="Permalink to this headline">¶</a></h4>
+<p><strong>Added:</strong></p>
+<p>None</p>
+<ul class="simple">
+<li>Filter positions are recorded in metadata on each xrun.</li>
+<li>Added verification step: Beamline scientists must verify longterm beamline config file at the start of a new beamtime.</li>
+<li>Automatically display current filter positions (<code class="docutils literal notranslate"><span class="pre">In</span></code> or <code class="docutils literal notranslate"><span class="pre">Out</span></code>) from for every <code class="docutils literal notranslate"><span class="pre">xrun</span></code>.</li>
+</ul>
+<p><strong>Changed:</strong></p>
+<ul class="simple">
+<li>Change the filepath structure in <code class="docutils literal notranslate"><span class="pre">glbl</span></code> to align with the update
+at XPD. All <code class="docutils literal notranslate"><span class="pre">xf28id1</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">xf28id2</span></code>, including hostname and
+nfs-mount drives.</li>
+</ul>
+<p><strong>Deprecated:</strong></p>
+<ul class="simple">
+<li>Remove static mask injection. Mask is now handled by the analysis
+pipeline dynamically.</li>
+</ul>
+<p><strong>Fixed:</strong></p>
+<ul class="simple">
+<li>Instruction in <code class="docutils literal notranslate"><span class="pre">run_calibration</span></code>. There is a specific print statement
+to tell the user to finish the interactive calibration process in the
+analysis terminal.</li>
+<li>Fix <code class="docutils literal notranslate"><span class="pre">_end_beamtime</span></code>. Details about the fixes are:<ul>
+<li>Use rsync while archiving <code class="docutils literal notranslate"><span class="pre">xpdUser</span></code> so that user can see
+the progress. (rsync lists files have been transferred)</li>
+<li>More sophisticated logic when flushing xpdUser directory.
+Now the function will tell the user to close files used by
+the current process, instead of throwing an error and failing
+the process.</li>
+<li>Some cleaning in the logic. Program will remove the remote
+archive if user doesn’t confirm to flush the local directory
+so that we could potentially avoid having multiple copies at
+the remote location.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="v0-6-0">
+<h4>v0.6.0<a class="headerlink" href="#v0-6-0" title="Permalink to this headline">¶</a></h4>
 <p>This is a stable release of <code class="docutils literal notranslate"><span class="pre">xpdAcq</span></code> software.</p>
 <p>This version is fully documented and extensively tested.</p>
 <p>New features introduced to this version:</p>
@@ -225,6 +289,92 @@ temperature-list scans (Tlist)
 <p>Additional built-in scan types will be added in future releases.</p>
 </li>
 </ul>
+</div>
+<div class="section" id="v0-5-2">
+<h4>v0.5.2<a class="headerlink" href="#v0-5-2" title="Permalink to this headline">¶</a></h4>
+<p>This is a stable release of <code class="docutils literal notranslate"><span class="pre">xpdAcq</span></code> software.</p>
+<p>Addition to all the features of <code class="docutils literal notranslate"><span class="pre">v0.5.0</span></code>, new features introduced to this version are:</p>
+<blockquote>
+<div><ul class="simple">
+<li>functionality to reload beamtime configuration when reenter into <code class="docutils literal notranslate"><span class="pre">ipython</span></code> session</li>
+<li>improved logic of importing metadata from a spreadsheet, information is parsed in a
+way that facilitates data driven studies.</li>
+<li>new ScanPlan: temperature list scan <code class="docutils literal notranslate"><span class="pre">Tlist</span></code>. User can collect data at desired
+temperature points.</li>
+</ul>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">v0.5.2</span></code> supports following built-in scans:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>single-frame (ct)
+time-series (tseries)
+temperature-series scans (Tramp)
+temperature-list scans (Tlist)
+</pre></div>
+</div>
+<p>Additional built-in scan types will be added in future releases.</p>
+<p><code class="docutils literal notranslate"><span class="pre">v0.5.2</span></code> also supports following automated logics :</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="usb_Running.html#auto-dark"><span class="std std-ref">automated dark subtraction</span></a></li>
+<li><a class="reference internal" href="usb_Running.html#auto-calib"><span class="std std-ref">automated calibration capture</span></a></li>
+<li><a class="reference internal" href="usb_Running.html#auto-mask"><span class="std std-ref">automated mask per image</span></a></li>
+</ul>
+</div></blockquote>
+<p>This version is fully documented and extensively tested.</p>
+</div>
+<div class="section" id="v0-5-0">
+<h4>v0.5.0<a class="headerlink" href="#v0-5-0" title="Permalink to this headline">¶</a></h4>
+<p>This is a stable release of <code class="docutils literal notranslate"><span class="pre">xpdAcq</span></code> software.</p>
+<p>New features introduced to this version:</p>
+<blockquote>
+<div><ul class="simple">
+<li>flexibility of running customized <code class="docutils literal notranslate"><span class="pre">bluesky</span></code> plans while keeping <code class="docutils literal notranslate"><span class="pre">xpdAcq</span></code> dark collection logic.</li>
+<li>ability of importing metadata from a spreadsheet, open the door for data driven studies.</li>
+<li>data reduction tools:<ul>
+<li>azimuthal integration using <code class="docutils literal notranslate"><span class="pre">pyFAI</span></code> as the back-end</li>
+<li>auto-masking based on statistics on pixel counts</li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">v0.5.0</span></code> supports three kinds of built-in scans:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>single-frame (ct)
+time-series (tseries)
+temperature-series scans (Tramp)
+</pre></div>
+</div>
+<p>Additional built-in scan types will be added in future releases.</p>
+<p><code class="docutils literal notranslate"><span class="pre">v0.5.0</span></code> supports following automated logics :</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="usb_Running.html#auto-dark"><span class="std std-ref">automated dark subtraction</span></a></li>
+<li><a class="reference internal" href="usb_Running.html#auto-calib"><span class="std std-ref">automated calibration capture</span></a></li>
+<li><a class="reference internal" href="usb_Running.html#auto-mask"><span class="std std-ref">automated mask per image</span></a></li>
+</ul>
+</div></blockquote>
+<p>This version is fully documented and extensively tested.</p>
+</div>
+<div class="section" id="v0-3-0">
+<h4>v0.3.0<a class="headerlink" href="#v0-3-0" title="Permalink to this headline">¶</a></h4>
+<p>This is the first full, stable, release, of xpdAcq software.
+It offers functionality to acquire data at XPD but with very limited
+tools yet to analyze it.
+Future releases will focus more on analysis functionalities.
+<code class="docutils literal notranslate"><span class="pre">v0.3.0</span></code> is still a limited functionality release in that it only supports three kinds of scans:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>single-frame (ct)
+time-series (tseries)
+temperature-series scans (Tramp)
+</pre></div>
+</div>
+<p>Additional scan types will be added in future releases.</p>
+<dl class="docutils">
+<dt>However, it does support:</dt>
+<dd><ul class="first last simple">
+<li>automated dark subtraction</li>
+<li>automated calibration capture.</li>
+</ul>
+</dd>
+</dl>
+<p>This version is fully documented and extensively tested.</p>
 <div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
@@ -236,6 +386,9 @@ temperature-list scans (Tlist)
 <div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
 </div>
 </div>
 </div>

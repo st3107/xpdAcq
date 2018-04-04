@@ -137,7 +137,7 @@
 <li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="release_note.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">xpdAcq Change Log</a></li>
 </ul>
 
             
@@ -301,7 +301,7 @@ that there is a clean start for your experiment.  However, if later in your expe
 your terminals, then you type at the command line <code class="docutils literal notranslate"><span class="pre">xpdui</span></code> in the collection terminal for the collection environment
 and type <code class="docutils literal notranslate"><span class="pre">setup_analysis</span></code> for in the analysis terminal for analysis environment.</p>
 <p>2. Make sure that the software has been properly configured for your beamtime. In
-your <code class="docutils literal notranslate"><span class="pre">collection-yyQn.x</span></code> terminal, type:</p>
+your <code class="docutils literal notranslate"><span class="pre">collection-17Q1.0</span></code> terminal, type:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">bt</span><span class="o">.</span><span class="n">md</span>
 </pre></div>
 </div>
@@ -322,7 +322,7 @@ or if you forgot something have the IS fetch it for you from the archive later.<
 <p>1. Analysis is done in a separate (but very similar) environment to acquisition.
 This will be in a separate terminal window.
 Use the instructions given above for <code class="docutils literal notranslate"><span class="pre">collection</span></code> to check you have found the right terminal window.
-For data analysis <code class="docutils literal notranslate"><span class="pre">show_env()</span></code> should return something like <code class="docutils literal notranslate"><span class="pre">analysis-17Q3.0</span></code>.</p>
+For data analysis <code class="docutils literal notranslate"><span class="pre">show_env()</span></code> should return something like <code class="docutils literal notranslate"><span class="pre">analysis-17Q1.1</span></code>.</p>
 <ol class="arabic simple" start="2">
 <li>The analysis pipeline will start up automatically.</li>
 </ol>
@@ -364,7 +364,7 @@ collection environment.</p>
 <div class="section" id="quick-look-at-some-data">
 <h3>0.5 quick look at some data<a class="headerlink" href="#quick-look-at-some-data" title="Permalink to this headline">¶</a></h3>
 <p>Place any sample, but maybe the Ni calibrant, at the sample position.  Let’s make sure we are getting a nice
-Ni diffraction pattern. In your <code class="docutils literal notranslate"><span class="pre">collection-yyQn.x</span></code> terminal type:</p>
+Ni diffraction pattern. In your <code class="docutils literal notranslate"><span class="pre">collection-17Q1.0</span></code> terminal type:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">xrun</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># will run an exposure of 60 seconds on your setup sample</span>
 <span class="n">save_last_tiff</span><span class="p">()</span> <span class="c1"># will save the image in the .../xpdUser/tiff_base/Setup directory</span>
 </pre></div>
@@ -394,7 +394,7 @@ defined format (a template file may be found at <a class="reference external" hr
 <p>If the IS didn’t already do it, save your sample xls file to the <code class="docutils literal notranslate"><span class="pre">.../xpdUser/import</span></code> directory using the name
 <code class="docutils literal notranslate"><span class="pre">&lt;saf_number&gt;_sample.xlsx</span></code>, where you replace <code class="docutils literal notranslate"><span class="pre">&lt;saf_number&gt;</span></code> with the number
 of the safety approval form associated with your experiment.  If you are not sure
-what your <code class="docutils literal notranslate"><span class="pre">saf_number</span></code> is you can get it by typing the following command in your <code class="docutils literal notranslate"><span class="pre">``collection-yyQn.x</span></code> terminal:</p>
+what your <code class="docutils literal notranslate"><span class="pre">saf_number</span></code> is you can get it by typing the following command in your <code class="docutils literal notranslate"><span class="pre">collection-17Q1.0</span></code> terminal:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">bt</span>
 <span class="n">Out</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
 <span class="p">{</span><span class="s1">&#39;bt_experimenters&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Tim&#39;</span><span class="p">,</span> <span class="s1">&#39;Liu&#39;</span><span class="p">],</span>
@@ -418,7 +418,7 @@ we recommend to just edit existing or add new samples to the sheet but not to de
 <div class="section" id="calibration">
 <h3>2. Calibration<a class="headerlink" href="#calibration" title="Permalink to this headline">¶</a></h3>
 <p>run this first, then run it again each time the geometry of your measurement changes.</p>
-<p>Place the Ni calibrant at the sample position, close the hutch and open the shutter then type in your <code class="docutils literal notranslate"><span class="pre">collection-yyQn.x</span></code> terminal:</p>
+<p>Place the Ni calibrant at the sample position, close the hutch and open the shutter then type in your <code class="docutils literal notranslate"><span class="pre">collection-17Q1.0</span></code> terminal:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">run_calibration</span><span class="p">()</span> <span class="c1"># default values (calibrant_file=&#39;Ni.D&#39; and exposure=5) don&#39;t need to be typed</span>
 </pre></div>
 </div>
@@ -426,7 +426,7 @@ we recommend to just edit existing or add new samples to the sheet but not to de
 <p class="first admonition-title">Note</p>
 <ul class="last simple">
 <li>Instruction of the calibration steps: <a class="reference internal" href="usb_Running.html#calib-manual"><span class="std std-ref">Quick guide of calibration steps with pyFAI</span></a></li>
-<li>Full API documentation: <a class="reference internal" href="api_doc.html#calib-api"><span class="std std-ref">run_calibration API Documentation</span></a></li>
+<li>Full API documentation: <a class="reference internal" href="templates/api_doc.html#calib-api"><span class="std std-ref">run_calibration API Documentation</span></a></li>
 <li>Documentation of <code class="docutils literal notranslate"><span class="pre">pyFAI</span></code> calibration gui <a class="reference external" href="http://pyfai.readthedocs.io/en/latest/usage/cookbook/calibrate.html#start-pyfai-calib">link</a></li>
 </ul>
 </div>
@@ -460,7 +460,7 @@ as determined by the auto-masking process.</p>
 <h3>4. measuring a dataset from a sample: overview<a class="headerlink" href="#measuring-a-dataset-from-a-sample-overview" title="Permalink to this headline">¶</a></h3>
 <p>Now it is time to collect some data.  Load one of your samples on the diffractometer
 and close up the hutch.  To collect a dataset from a sample you will type at the
-<code class="docutils literal notranslate"><span class="pre">collection-yyQn.x</span></code> terminal: <code class="docutils literal notranslate"><span class="pre">xrun(&lt;sample-object&gt;,&lt;ScanPlan-object&gt;)</span></code></p>
+<code class="docutils literal notranslate"><span class="pre">collection-17Q1.0</span></code> terminal: <code class="docutils literal notranslate"><span class="pre">xrun(&lt;sample-object&gt;,&lt;ScanPlan-object&gt;)</span></code></p>
 <p>where the <code class="docutils literal notranslate"><span class="pre">&lt;sample-object&gt;</span></code> contains sample information from the Excel spreadsheet,
 and <code class="docutils literal notranslate"><span class="pre">&lt;ScanPlan-object&gt;</span></code> contains information about the scan.  You will make your
 own <code class="docutils literal notranslate"><span class="pre">ScanPlan</span></code> objects, as we describe below, but once they are made you can reuse
@@ -595,7 +595,7 @@ and that they are correctly linked to the samples for which they are the backgro
 <blockquote>
 <div><ol class="arabic simple">
 <li>Load the background sample (e.g., empty kapton tube) on the instrument</li>
-<li>In your <code class="docutils literal notranslate"><span class="pre">collection-yyQn.x</span></code> terminal type</li>
+<li>In your <code class="docutils literal notranslate"><span class="pre">collection-17Q1.0</span></code> terminal type</li>
 </ol>
 <blockquote>
 <div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">bt</span><span class="o">.</span><span class="n">list_bkg</span><span class="p">()</span>
@@ -605,7 +605,7 @@ and that they are correctly linked to the samples for which they are the backgro
 at position 3 in the list.</p>
 </div></blockquote>
 <ol class="arabic simple" start="3">
-<li>Then in the <code class="docutils literal notranslate"><span class="pre">collection-yyQn.x</span></code> terminal, you will type <code class="docutils literal notranslate"><span class="pre">xrun</span></code> giving as arguments the background sample-object with a <code class="docutils literal notranslate"><span class="pre">ct</span></code> ScanPlan object of the desired exposure.</li>
+<li>Then in the <code class="docutils literal notranslate"><span class="pre">collection-17Q1.0</span></code> terminal, you will type <code class="docutils literal notranslate"><span class="pre">xrun</span></code> giving as arguments the background sample-object with a <code class="docutils literal notranslate"><span class="pre">ct</span></code> ScanPlan object of the desired exposure.</li>
 </ol>
 <blockquote>
 <div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># if you are running this as a tutorial don&#39;t type this.  It will take &gt;30 mins to complete because</span>
@@ -642,7 +642,7 @@ them:</p>
 <h2>Get your data<a class="headerlink" href="#get-your-data" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="save-images-and-metadata-from-scans">
 <span id="save-data"></span><h3>1. Save images and metadata from scans<a class="headerlink" href="#save-images-and-metadata-from-scans" title="Permalink to this headline">¶</a></h3>
-<p>These commands can be run in the <code class="docutils literal notranslate"><span class="pre">collection-yyQn.x</span></code> or the <code class="docutils literal notranslate"><span class="pre">analysis-yyQn.x</span></code> ipython environments.</p>
+<p>These commands can be run in the <code class="docutils literal notranslate"><span class="pre">collection-17Q1.0</span></code> or the <code class="docutils literal notranslate"><span class="pre">analysis-17Q1.1</span></code> ipython environments.</p>
 <p>Data are saved in the directory <code class="docutils literal notranslate"><span class="pre">.../xpdUser/tiff_base/&lt;sample_name&gt;</span></code> where <code class="docutils literal notranslate"><span class="pre">&lt;sample_name&gt;</span></code> is the name of the
 sample that you used in the sample spreadsheet, and is the name of the <code class="docutils literal notranslate"><span class="pre">Sample</span></code> object.</p>
 <p><strong>save images from last scan:</strong></p>
@@ -663,7 +663,7 @@ the scan finishes.  You can then play around with them and take them home as you
 you write a script to run your experiment, it will typically have <code class="docutils literal notranslate"><span class="pre">xrun(&lt;#&gt;,&lt;#&gt;)</span></code> followed by
 <code class="docutils literal notranslate"><span class="pre">integrate_and_save_last()</span></code></p>
 <p>The following
-functions are more useful for running in the <code class="docutils literal notranslate"><span class="pre">analysis-yyQn.x</span></code> environment to fetch scans from the database
+functions are more useful for running in the <code class="docutils literal notranslate"><span class="pre">analysis-17Q1.1</span></code> environment to fetch scans from the database
 selectively if you don’t want a dump of every scan.</p>
 <p><strong>save images from last 2 scans:</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">h</span> <span class="o">=</span> <span class="n">db</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span>
@@ -687,8 +687,8 @@ more information on headers is <a class="reference external" href="http://nsls-i
 </pre></div>
 </div>
 <p>You could use this instead of <code class="docutils literal notranslate"><span class="pre">save_last_tiff()</span></code> as part of your acquisition
-sequence by typing it in the <code class="docutils literal notranslate"><span class="pre">collection-yyQn.x</span></code> environment.</p>
-<p>Or use these in the <code class="docutils literal notranslate"><span class="pre">analysis-yyQn.x</span></code> environment to be analyzing data over here as
+sequence by typing it in the <code class="docutils literal notranslate"><span class="pre">collection-17Q1.0</span></code> environment.</p>
+<p>Or use these in the <code class="docutils literal notranslate"><span class="pre">analysis-17Q1.1</span></code> environment to be analyzing data over here as
 the data are being collected over there…</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">h</span> <span class="o">=</span> <span class="n">db</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span>                               <span class="c1"># the last 2 scans</span>
 <span class="n">integrate_and_save</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">save_image</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>   <span class="c1"># saves a copy of the 1D diffraction pattern</span>
@@ -797,7 +797,7 @@ fed up waiting for it to finish” case).  See below for handling this.</p>
 <div class="section" id="recovering-from-the-paused-state-caused-by-an-interrupt">
 <h3>Recovering from the paused state caused by an interrupt<a class="headerlink" href="#recovering-from-the-paused-state-caused-by-an-interrupt" title="Permalink to this headline">¶</a></h3>
 <p>After a pause, when you are ready to continue working, type one of these commands
-into the <code class="docutils literal notranslate"><span class="pre">collection-yyQn.x</span></code> environment:</p>
+into the <code class="docutils literal notranslate"><span class="pre">collection-17Q1.0</span></code> environment:</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="26%" />

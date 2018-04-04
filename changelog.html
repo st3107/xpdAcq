@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Release Notes &mdash; xpdAcq 0.7.1 documentation</title>
+  <title>xpdAcq Change Log &mdash; xpdAcq 0.7.1 documentation</title>
   
 
   
@@ -105,10 +105,13 @@
 <li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
 </ul>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Release Notes</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#v0-5-2"><code class="docutils literal notranslate"><span class="pre">v0.5.2</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#v0-5-0"><code class="docutils literal notranslate"><span class="pre">v0.5.0</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#v0-3-0"><code class="docutils literal notranslate"><span class="pre">v0.3.0</span></code></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">xpdAcq Change Log</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#v0-7-1">v0.7.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v0-7-0">v0.7.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v0-6-0">v0.6.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v0-5-2">v0.5.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v0-5-0">v0.5.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v0-3-0">v0.3.0</a></li>
 </ul>
 </li>
 </ul>
@@ -155,13 +158,13 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Release Notes</li>
+      <li>xpdAcq Change Log</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/release_note.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/changelog.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -174,10 +177,111 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="release-notes">
-<span id="release-note"></span><h1>Release Notes<a class="headerlink" href="#release-notes" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="xpdacq-change-log">
+<h1>xpdAcq Change Log<a class="headerlink" href="#xpdacq-change-log" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="v0-7-1">
+<h2>v0.7.1<a class="headerlink" href="#v0-7-1" title="Permalink to this headline">¶</a></h2>
+<p><strong>Added:</strong></p>
+<ul class="simple">
+<li>Requirements folder</li>
+</ul>
+<p><strong>Changed:</strong></p>
+<ul class="simple">
+<li>Release template now uses proper version in license</li>
+<li>Travis now uses the requirements folder</li>
+</ul>
+<p><strong>Deprecated:</strong></p>
+<ul class="simple">
+<li>Replace most <code class="docutils literal notranslate"><span class="pre">shutil</span></code> functionalities with native Unix commands
+called by <code class="docutils literal notranslate"><span class="pre">subprocess</span></code> to have a clear picture on the system response.</li>
+</ul>
+<p><strong>Fixed:</strong></p>
+<ul class="simple">
+<li>Add <code class="docutils literal notranslate"><span class="pre">--timeout</span></code> option to rsync during <code class="docutils literal notranslate"><span class="pre">_end_beamtime</span></code> to allow
+temporally disconnect.</li>
+<li>Exclude hidden files from the <code class="docutils literal notranslate"><span class="pre">_end_beamtime</span></code> archival. Those files
+are mainly used as configurations by local applications and are less
+likely to be reusable even if user requests them.</li>
+</ul>
+</div>
+<div class="section" id="v0-7-0">
+<h2>v0.7.0<a class="headerlink" href="#v0-7-0" title="Permalink to this headline">¶</a></h2>
+<p><strong>Added:</strong></p>
+<p>None</p>
+<ul class="simple">
+<li>Filter positions are recorded in metadata on each xrun.</li>
+<li>Added verification step: Beamline scientists must verify longterm beamline config file at the start of a new beamtime.</li>
+<li>Automatically display current filter positions (<code class="docutils literal notranslate"><span class="pre">In</span></code> or <code class="docutils literal notranslate"><span class="pre">Out</span></code>) from for every <code class="docutils literal notranslate"><span class="pre">xrun</span></code>.</li>
+</ul>
+<p><strong>Changed:</strong></p>
+<ul class="simple">
+<li>Change the filepath structure in <code class="docutils literal notranslate"><span class="pre">glbl</span></code> to align with the update
+at XPD. All <code class="docutils literal notranslate"><span class="pre">xf28id1</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">xf28id2</span></code>, including hostname and
+nfs-mount drives.</li>
+</ul>
+<p><strong>Deprecated:</strong></p>
+<ul class="simple">
+<li>Remove static mask injection. Mask is now handled by the analysis
+pipeline dynamically.</li>
+</ul>
+<p><strong>Fixed:</strong></p>
+<ul class="simple">
+<li>Instruction in <code class="docutils literal notranslate"><span class="pre">run_calibration</span></code>. There is a specific print statement
+to tell the user to finish the interactive calibration process in the
+analysis terminal.</li>
+<li>Fix <code class="docutils literal notranslate"><span class="pre">_end_beamtime</span></code>. Details about the fixes are:<ul>
+<li>Use rsync while archiving <code class="docutils literal notranslate"><span class="pre">xpdUser</span></code> so that user can see
+the progress. (rsync lists files have been transferred)</li>
+<li>More sophisticated logic when flushing xpdUser directory.
+Now the function will tell the user to close files used by
+the current process, instead of throwing an error and failing
+the process.</li>
+<li>Some cleaning in the logic. Program will remove the remote
+archive if user doesn’t confirm to flush the local directory
+so that we could potentially avoid having multiple copies at
+the remote location.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="v0-6-0">
+<h2>v0.6.0<a class="headerlink" href="#v0-6-0" title="Permalink to this headline">¶</a></h2>
+<p>This is a stable release of <code class="docutils literal notranslate"><span class="pre">xpdAcq</span></code> software.</p>
+<p>This version is fully documented and extensively tested.</p>
+<p>New features introduced to this version:</p>
+<ul>
+<li><p class="first">Integration with automated data reduction pipeline. Now live visualization and
+automated data-saving is supported. For the details about the pipeline, please
+refer to <a class="reference external" href="http://xpdacq.github.io/xpdAn/">xpdAn documentation</a>.</p>
+</li>
+<li><p class="first">Advanced shutter control logic for temperature-ramping scan plan,
+<code class="docutils literal notranslate"><span class="pre">Tlist</span></code> and <code class="docutils literal notranslate"><span class="pre">Tramp</span></code>. By default, shutter will remain closed in
+between exposures, which prevent detector from burning. This behavior can
+be overridden, leaving the fast shutter open for the entire scan.
+Please refer to the function docstring by typing <code class="docutils literal notranslate"><span class="pre">Tlist?</span></code> or
+<code class="docutils literal notranslate"><span class="pre">Tramp?</span></code> in the <code class="docutils literal notranslate"><span class="pre">collection</span></code> terminal for more details.</p>
+</li>
+<li><p class="first">Refined metadata logic. We implement <code class="docutils literal notranslate"><span class="pre">client-server</span></code> logic which
+would largely enhance the linking between associated scans. For
+more details, please refer to <a class="reference internal" href="usb_Running.html#client-server-md"><span class="std std-ref">client/server metadata schema</span></a>.</p>
+</li>
+<li><p class="first">Now programs takes in user defined folder tag so that it’s easier to
+separate data into subfolders with memorable names. Please refer to
+<a class="reference internal" href="usb_Running.html#folder-tag"><span class="std std-ref">User defined folder tag</span></a>.</p>
+</li>
+<li><p class="first">Current version supports following built-in scans:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>single-frame (ct)
+time-series (tseries)
+temperature-series scans (Tramp)
+temperature-list scans (Tlist)
+</pre></div>
+</div>
+<p>Additional built-in scan types will be added in future releases.</p>
+</li>
+</ul>
+</div>
 <div class="section" id="v0-5-2">
-<h2><code class="docutils literal notranslate"><span class="pre">v0.5.2</span></code><a class="headerlink" href="#v0-5-2" title="Permalink to this headline">¶</a></h2>
+<h2>v0.5.2<a class="headerlink" href="#v0-5-2" title="Permalink to this headline">¶</a></h2>
 <p>This is a stable release of <code class="docutils literal notranslate"><span class="pre">xpdAcq</span></code> software.</p>
 <p>Addition to all the features of <code class="docutils literal notranslate"><span class="pre">v0.5.0</span></code>, new features introduced to this version are:</p>
 <blockquote>
@@ -208,7 +312,7 @@ temperature-list scans (Tlist)
 <p>This version is fully documented and extensively tested.</p>
 </div>
 <div class="section" id="v0-5-0">
-<h2><code class="docutils literal notranslate"><span class="pre">v0.5.0</span></code><a class="headerlink" href="#v0-5-0" title="Permalink to this headline">¶</a></h2>
+<h2>v0.5.0<a class="headerlink" href="#v0-5-0" title="Permalink to this headline">¶</a></h2>
 <p>This is a stable release of <code class="docutils literal notranslate"><span class="pre">xpdAcq</span></code> software.</p>
 <p>New features introduced to this version:</p>
 <blockquote>
@@ -240,7 +344,7 @@ temperature-series scans (Tramp)
 <p>This version is fully documented and extensively tested.</p>
 </div>
 <div class="section" id="v0-3-0">
-<h2><code class="docutils literal notranslate"><span class="pre">v0.3.0</span></code><a class="headerlink" href="#v0-3-0" title="Permalink to this headline">¶</a></h2>
+<h2>v0.3.0<a class="headerlink" href="#v0-3-0" title="Permalink to this headline">¶</a></h2>
 <p>This is the first full, stable, release, of xpdAcq software.
 It offers functionality to acquire data at XPD but with very limited
 tools yet to analyze it.
