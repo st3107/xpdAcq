@@ -15,6 +15,7 @@
 ./_sources/beamlinestaff.rst.txt
 ./_sources/changelog.rst.txt
 ./_sources/cheat_sheet.rst.txt
+./_sources/configuration.rst.txt
 ./_sources/features.rst.txt
 ./_sources/index.rst.txt
 ./_sources/installation.rst.txt
@@ -74,6 +75,7 @@
 ./beamlinestaff.html
 ./changelog.html
 ./cheat_sheet.html
+./configuration.html
 ./features.html
 ./genindex.html
 ./index.html
