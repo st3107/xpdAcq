@@ -29,7 +29,7 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Setting up your XPD acuisition objects" href="usb_Experiment.html" />
+    <link rel="next" title="Setting up your XPD acquisition objects" href="usb_Experiment.html" />
     <link rel="prev" title="Overview of the bsui+xpdAcq environment" href="sb_icollection.html" /> 
 
   
@@ -91,7 +91,7 @@
 <li class="toctree-l2"><a class="reference internal" href="sb_overview.html">Overview of xpd acquisition environment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sb_icollection.html">Overview of the bsui+xpdAcq environment</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Setting up your Beamtime</a></li>
-<li class="toctree-l2"><a class="reference internal" href="usb_Experiment.html">Setting up your XPD acuisition objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usb_Experiment.html">Setting up your XPD acquisition objects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="usb_Scan.html">ScanPlan objects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="usb_Where.html">Where did all my Sample and Scan objects go?????</a></li>
 <li class="toctree-l2"><a class="reference internal" href="usb_Where.html#bt-list-is-your-friends">bt.list() is your friends</a></li>
@@ -99,6 +99,7 @@
 <li class="toctree-l2"><a class="reference internal" href="usb_Running.html">Running scans</a></li>
 <li class="toctree-l2"><a class="reference internal" href="usb_QuickAssess.html">Initial assessment of your data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="usb_GlobalOptions.html">xpdAcq Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robot.html">Using the Robot</a></li>
 </ul>
 </li>
 </ul>
@@ -271,10 +272,10 @@ and hit return.  So far, there is only 1 object, the <cite>bt</cite> object with
 <p>speak to your beamline scientist as there may be other aspects of the
 environment setup that need to be fixed. If you ever do have to create
 (we call it <cite>instantiate</cite>) a new <code class="docutils literal notranslate"><span class="pre">bt</span></code> object, it is done like this:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bt</span> <span class="o">=</span> <span class="n">Beamtime</span><span class="p">(</span><span class="s1">&#39;Billinge&#39;</span><span class="p">,</span><span class="mi">300256</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Simon&#39;</span><span class="p">,</span><span class="s1">&#39;Billinge&#39;</span><span class="p">,</span> <span class="s1">&#39;Chia-Hao&#39;</span><span class="p">,</span><span class="s1">&#39;Liu&#39;</span><span class="p">],</span> <span class="mf">0.18326</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bt</span> <span class="o">=</span> <span class="n">Beamtime</span><span class="p">(</span><span class="s1">&#39;Billinge&#39;</span><span class="p">,</span> <span class="mi">300256</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Simon&#39;</span><span class="p">,</span><span class="s1">&#39;Billinge&#39;</span><span class="p">,</span> <span class="s1">&#39;Chia-Hao&#39;</span><span class="p">,</span><span class="s1">&#39;Liu&#39;</span><span class="p">],</span> <span class="mf">0.18326</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>We will assume that <code class="docutils literal notranslate"><span class="pre">bt</span></code> exists.  Now, we move on to the next step, <a class="reference internal" href="usb_Experiment.html#usb-experiment"><span class="std std-ref">Setting up your XPD acuisition objects</span></a> within our beamtime.</p>
+<p>We will assume that <code class="docutils literal notranslate"><span class="pre">bt</span></code> exists.  Now, we move on to the next step, <a class="reference internal" href="usb_Experiment.html#usb-experiment"><span class="std std-ref">Setting up your XPD acquisition objects</span></a> within our beamtime.</p>
 </div>
 
 
@@ -285,7 +286,7 @@ environment setup that need to be fixed. If you ever do have to create
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="usb_Experiment.html" class="btn btn-neutral float-right" title="Setting up your XPD acuisition objects" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="usb_Experiment.html" class="btn btn-neutral float-right" title="Setting up your XPD acquisition objects" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="sb_icollection.html" class="btn btn-neutral" title="Overview of the bsui+xpdAcq environment" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

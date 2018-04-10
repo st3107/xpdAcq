@@ -523,7 +523,7 @@ When the scan has completed, type</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">integrate_and_save_last</span><span class="p">()</span>    <span class="c1">#remember you can use tab-complete to see what is available</span>
 </pre></div>
 </div>
-<p>This function saves the just-measured dataset as a tif file in the <code class="docutils literal notranslate"><span class="pre">.../xpdUser/tiff_base/Setup</span></code>
+<p>This function saves the just-measured dataset as a tiff file in the <code class="docutils literal notranslate"><span class="pre">.../xpdUser/tiff_base/Setup</span></code>
 directory (as long as you are using the Setup sample-object at position 0).  To view the raw
 data, find your SrXgui window, and use the instructions above to play around with the image.</p>
 <p>One of the best ways to see if you have enough counts in your measurement is to look at the
@@ -608,14 +608,14 @@ at position 3 in the list.</p>
 <span class="c1"># but to test it you could replace bt.scanplan[3] with bt.scanplan[0]....</span>
 
 <span class="c1"># referencing objects explicitly...or...</span>
-<span class="n">xrun</span><span class="p">(</span><span class="n">bt</span><span class="o">.</span><span class="n">samples</span><span class="p">[</span><span class="s1">&#39;kepton_1mmOD&#39;</span><span class="p">],</span> <span class="n">bt</span><span class="o">.</span><span class="n">scanplan</span><span class="p">[</span><span class="s1">&#39;ct_900&#39;</span><span class="p">])</span>
+<span class="n">xrun</span><span class="p">(</span><span class="n">bt</span><span class="o">.</span><span class="n">samples</span><span class="p">[</span><span class="s1">&#39;kapton_1mmOD&#39;</span><span class="p">],</span> <span class="n">bt</span><span class="o">.</span><span class="n">scanplan</span><span class="p">[</span><span class="s1">&#39;ct_900&#39;</span><span class="p">])</span>
 
 <span class="c1"># inexplicit: give reference to ``Sample`` and ``ScanPlan`` index from the ``bt`` list.</span>
 <span class="n">xrun</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div></blockquote>
-<p>More details are avaliable <a class="reference internal" href="usb_Running.html#background-obj"><span class="std std-ref">here</span></a>.</p>
+<p>More details are available <a class="reference internal" href="usb_Running.html#background-obj"><span class="std std-ref">here</span></a>.</p>
 <p>How long should you run your background scan for? See discussion <a class="reference external" href="https://groups.google.com/forum/#!topic/xpd-users/RvGa4pmDbqY">here</a>
 but for kapton we often do it for 15-30 minutes, though it can be highly dependent
 on the scattering properties of your sample.  For example, strongly scattering samples

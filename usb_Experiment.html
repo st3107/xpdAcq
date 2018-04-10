@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Setting up your XPD acuisition objects &mdash; xpdAcq 0.7.1 documentation</title>
+  <title>Setting up your XPD acquisition objects &mdash; xpdAcq 0.7.1 documentation</title>
   
 
   
@@ -91,7 +91,7 @@
 <li class="toctree-l2"><a class="reference internal" href="sb_overview.html">Overview of xpd acquisition environment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sb_icollection.html">Overview of the bsui+xpdAcq environment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="usb_Beamtime.html">Setting up your Beamtime</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Setting up your XPD acuisition objects</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Setting up your XPD acquisition objects</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#hierarchy-of-sample-objects">Hierarchy of Sample objects</a></li>
 </ul>
@@ -103,6 +103,7 @@
 <li class="toctree-l2"><a class="reference internal" href="usb_Running.html">Running scans</a></li>
 <li class="toctree-l2"><a class="reference internal" href="usb_QuickAssess.html">Initial assessment of your data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="usb_GlobalOptions.html">xpdAcq Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robot.html">Using the Robot</a></li>
 </ul>
 </li>
 </ul>
@@ -164,7 +165,7 @@
         
           <li><a href="xpdusers.html">For XPD Users</a> &raquo;</li>
         
-      <li>Setting up your XPD acuisition objects</li>
+      <li>Setting up your XPD acquisition objects</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -183,8 +184,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="setting-up-your-xpd-acuisition-objects">
-<span id="usb-experiment"></span><h1>Setting up your XPD acuisition objects<a class="headerlink" href="#setting-up-your-xpd-acuisition-objects" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="setting-up-your-xpd-acquisition-objects">
+<span id="usb-experiment"></span><h1>Setting up your XPD acquisition objects<a class="headerlink" href="#setting-up-your-xpd-acquisition-objects" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
 <p>The basic workflow is</p>
@@ -227,7 +228,7 @@ beamtime : xpdacq.beamtime.Beamtime
 sample_md : dict
  dictionary contains all sample related metadata
 kwargs :
- keyword arguments for extr metadata
+ keyword arguments for extra metadata
 
 Examples
 --------
@@ -301,7 +302,7 @@ the metadata from the beamtime object <code class="docutils literal notranslate"
 </div>
 <p>Here, careful inspection will indicate that among various <code class="docutils literal notranslate"><span class="pre">Sample</span></code> objects,
 there are different sample-ID <code class="docutils literal notranslate"><span class="pre">sa_uid</span></code> and <code class="docutils literal notranslate"><span class="pre">sample_name</span></code> but all the <code class="docutils literal notranslate"><span class="pre">beamtime</span></code>
-leve metadata are the same as the other samples (because this series of samples
+level metadata are the same as the other samples (because this series of samples
 is being done at the same beamtime!).</p>
 <p>Hopefully you are getting the picture.  We will hand these sample
 objects to the run engine when each scan is launched and

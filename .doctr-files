@@ -20,6 +20,7 @@
 ./_sources/index.rst.txt
 ./_sources/installation.rst.txt
 ./_sources/quickstart.rst.txt
+./_sources/robot.rst.txt
 ./_sources/sb_cheat_sheet.rst.txt
 ./_sources/sb_endBeamtime.rst.txt
 ./_sources/sb_icollection.rst.txt
@@ -85,6 +86,7 @@
 ./installation.html
 ./objects.inv
 ./quickstart.html
+./robot.html
 ./sb_cheat_sheet.html
 ./sb_endBeamtime.html
 ./sb_icollection.html

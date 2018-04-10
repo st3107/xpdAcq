@@ -91,7 +91,7 @@
 <li class="toctree-l2"><a class="reference internal" href="sb_overview.html">Overview of xpd acquisition environment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sb_icollection.html">Overview of the bsui+xpdAcq environment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="usb_Beamtime.html">Setting up your Beamtime</a></li>
-<li class="toctree-l2"><a class="reference internal" href="usb_Experiment.html">Setting up your XPD acuisition objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usb_Experiment.html">Setting up your XPD acquisition objects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="usb_Scan.html">ScanPlan objects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="usb_Where.html">Where did all my Sample and Scan objects go?????</a></li>
 <li class="toctree-l2"><a class="reference internal" href="usb_Where.html#bt-list-is-your-friends">bt.list() is your friends</a></li>
@@ -109,7 +109,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#comma-separated-fields">comma separated fields</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#name-fields">name fields</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#phase-string">phase string</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#dictonary-like-fields">dictonary-like fields</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dictionary-like-fields">dictionary-like fields</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#sample-objects">Sample Objects</a></li>
 </ul>
 </li>
@@ -127,6 +127,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="usb_QuickAssess.html">Initial assessment of your data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="usb_GlobalOptions.html">xpdAcq Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robot.html">Using the Robot</a></li>
 </ul>
 </li>
 </ul>
@@ -353,7 +354,7 @@ This can take values between 0.1s to 5s.</li>
 </div>
 <p>Having <code class="docutils literal notranslate"><span class="pre">auto_dark</span></code> set to <code class="docutils literal notranslate"><span class="pre">True</span></code> is strongly recommended as this enables
 <code class="docutils literal notranslate"><span class="pre">xpdAcq</span></code> to do automated dark frame subtraction when you pull out data from the
-centralized <strong>NSLSL-II</strong> server.</p>
+centralized <strong>NSLS-II</strong> server.</p>
 </div></blockquote>
 </div>
 </div>
@@ -376,7 +377,7 @@ something like this:</p>
 tool</strong> at the tool bar to zoom in to something that looks like the figure below.
 The magnifying tool is enabled by clicking on the button on the toolbar that
 looks like a magnifying glass.</p>
-<p>Now we will select five rings that PyFai will use to do the calibration.  To do this
+<p>Now we will select five rings that PyFAI will use to do the calibration.  To do this
 click on the magnifying glass button again to deselect the magnifying tool so the cursor
 looks like an arrow.  You will place the tip
 of the arrow on the first ring and then <strong>RIGHT click</strong>.  you will see dots going around the
@@ -422,7 +423,7 @@ run another calibration.</p>
 </li>
 </ol>
 <ol class="arabic simple" start="3">
-<li>To clean up you can close all the PyFai windows, including
+<li>To clean up you can close all the PyFAI windows, including
 the 1D integration and 2D regrouping results that pop out (see below).
 Return to the <code class="docutils literal notranslate"><span class="pre">Quick</span> <span class="pre">start</span> <span class="pre">tutorial</span></code> by hitting the browser back-arrow.</li>
 </ol>
@@ -446,7 +447,7 @@ directory. Then the import process is simply:</p>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">xpdAcq</span></code> will grab the <code class="docutils literal notranslate"><span class="pre">saf_number</span></code> and <code class="docutils literal notranslate"><span class="pre">bt</span></code> for current beamtime, so make sure you have your spreadsheet named with proper format. For example, if your SAF number is <code class="docutils literal notranslate"><span class="pre">300179</span></code>, then you should have your pre-populated spreadsheet with the name as <code class="docutils literal notranslate"><span class="pre">300179_sample.xls</span></code>, sit inside <code class="docutils literal notranslate"><span class="pre">xpdUser/import</span></code> directory.</p>
 <p>To parse the information filled inside your spreadsheet, we have designed
-several rules and here are the explantion to each of the rules.</p>
+several rules and here are the explanation to each of the rules.</p>
 <div class="section" id="comma-separated-fields">
 <h3>comma separated fields<a class="headerlink" href="#comma-separated-fields" title="Permalink to this headline">¶</a></h3>
 <blockquote>
@@ -544,8 +545,8 @@ used. Under <code class="docutils literal notranslate"><span class="pre">xpdAcq<
 header. Also a search on <code class="docutils literal notranslate"><span class="pre">Nacl=0.09</span></code> will include this header as well.</p>
 </div></blockquote>
 </div>
-<div class="section" id="dictonary-like-fields">
-<h3>dictonary-like fields<a class="headerlink" href="#dictonary-like-fields" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="dictionary-like-fields">
+<h3>dictionary-like fields<a class="headerlink" href="#dictionary-like-fields" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>Fields that are utilized to store information as <code class="docutils literal notranslate"><span class="pre">key-value</span> <span class="pre">pair</span></code> format.
 Standard format of it is <code class="docutils literal notranslate"><span class="pre">key:</span> <span class="pre">value</span></code> and it also follows the comma-separate rule</p>
@@ -556,7 +557,7 @@ Standard format of it is <code class="docutils literal notranslate"><span class=
 <col width="49%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">structrual</span> <span class="pre">database</span> <span class="pre">ID</span> <span class="pre">for</span> <span class="pre">phases</span></code></td>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">structural</span> <span class="pre">database</span> <span class="pre">ID</span> <span class="pre">for</span> <span class="pre">phases</span></code></td>
 <td>database name and the ID for
 sample phases</td>
 </tr>

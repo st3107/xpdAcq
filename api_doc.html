@@ -30,7 +30,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="For Beamline Staff" href="beamlinestaff.html" />
-    <link rel="prev" title="xpdAcq Configuration" href="usb_GlobalOptions.html" /> 
+    <link rel="prev" title="Using the Robot" href="robot.html" /> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -277,7 +277,7 @@ and contain the required keys.</p>
 </div>
 <dl class="method">
 <dt id="xpdacq.xpdacq.CustomizedRunEngine.__call__">
-<code class="descname">__call__</code><span class="sig-paren">(</span><em>sample</em>, <em>plan</em>, <em>subs=None</em>, <em>*</em>, <em>verify_write=False</em>, <em>dark_strategy=&lt;function periodic_dark&gt;</em>, <em>**metadata_kw</em><span class="sig-paren">)</span><a class="headerlink" href="#xpdacq.xpdacq.CustomizedRunEngine.__call__" title="Permalink to this definition">¶</a></dt>
+<code class="descname">__call__</code><span class="sig-paren">(</span><em>sample</em>, <em>plan</em>, <em>subs=None</em>, <em>*</em>, <em>verify_write=False</em>, <em>dark_strategy=&lt;function periodic_dark&gt;</em>, <em>robot=False</em>, <em>**metadata_kw</em><span class="sig-paren">)</span><a class="headerlink" href="#xpdacq.xpdacq.CustomizedRunEngine.__call__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Execute a plan</p>
 <p>Any keyword arguments other than those listed below will
 be interpreted as metadata and recorded with the run.</p>
@@ -286,7 +286,7 @@ be interpreted as metadata and recorded with the run.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>sample</strong> (<em>int</em><em> or </em><em>dict-like</em>) – Sample metadata. If a beamtime object is linked,
+<li><strong>sample</strong> (<em>int</em><em> or </em><em>dict-like</em><em> or </em><em>list of int</em><em> or </em><em>dict-like</em>) – Sample metadata. If a beamtime object is linked,
 an integer will be interpreted as the index appears in the
 <code class="docutils literal notranslate"><span class="pre">bt.list()</span></code> method, corresponding metadata will be passed.
 A customized dict can also be passed as the sample
@@ -314,6 +314,7 @@ NSLS-II. Therefore, False by default.</li>
 to the logic of matching dark frame and light frame with
 the sample exposure time and frame rate. Details can be
 found at <code class="docutils literal notranslate"><span class="pre">http://xpdacq.github.io/xpdAcq/usb_Running.html#automated-dark-collection</span></code></li>
+<li><strong>robot</strong> (<em>bool</em><em>, </em><em>optional</em>) – If true run the scan as a robot scan, defaults to False</li>
 <li><strong>metadata_kw</strong> – Extra keyword arguments for specifying metadata in the
 run time. If the extra metdata has the same key as the
 <code class="docutils literal notranslate"><span class="pre">sample</span></code>, <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> will be raised.</li>
@@ -346,7 +347,7 @@ run time. If the extra metdata has the same key as the
         <a href="beamlinestaff.html" class="btn btn-neutral float-right" title="For Beamline Staff" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="usb_GlobalOptions.html" class="btn btn-neutral" title="xpdAcq Configuration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="robot.html" class="btn btn-neutral" title="Using the Robot" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
