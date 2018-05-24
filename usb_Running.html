@@ -770,10 +770,12 @@ data that shares common experiment related factors.</p>
 <span id="folder-tag"></span><h2>User defined folder tag<a class="headerlink" href="#user-defined-folder-tag" title="Permalink to this headline">¶</a></h2>
 <p>You can also add metadata to the run by adding key word arguments to the run eg
 <code class="docutils literal notranslate"><span class="pre">xrun(0,</span> <span class="pre">8,</span> <span class="pre">my_scan_tag='hello</span> <span class="pre">world')</span></code>. Some pieces of metadata are special,
-like <code class="docutils literal notranslate"><span class="pre">folder_tag</span></code>. When <code class="docutils literal notranslate"><span class="pre">folder_tag</span></code> is added
-(eg <code class="docutils literal notranslate"><span class="pre">xrun(0,</span> <span class="pre">8,</span> <span class="pre">folder_tag='after_saxs')</span></code> then the <code class="docutils literal notranslate"><span class="pre">after_saxs</span></code> will be
-added to the file path where the data is saved
-(eg <code class="docutils literal notranslate"><span class="pre">&lt;.../tiff_base/sample_name/after_saxs/mask/file_name&gt;</span></code>).</p>
+like <code class="docutils literal notranslate"><span class="pre">folder_tag_list</span></code>. When <code class="docutils literal notranslate"><span class="pre">folder_tag_list</span></code> is added
+(eg <code class="docutils literal notranslate"><span class="pre">xrun(0,</span> <span class="pre">8,</span> <span class="pre">folder_tag_list=['status',</span> <span class="pre">'sample_name',</span> <span class="pre">bt_piLast'],</span> <span class="pre">status='after_saxs')</span></code>
+the values for those keys will be added to the file path in the same order as
+the list
+(eg <code class="docutils literal notranslate"><span class="pre">&lt;.../tiff_base/after_saxs/Ni/billinge/mask/file_name&gt;</span></code> for an experiment
+on Nickel run by the Billinge group).</p>
 <p>Let’s <a class="reference internal" href="usb_QuickAssess.html#usb-quickassess"><span class="std std-ref">take a quick look at our data</span></a></p>
 </div>
 </div>
