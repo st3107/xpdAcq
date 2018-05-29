@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>xpdAcq Change Log &mdash; xpdAcq 0.8.0rc2 documentation</title>
+  <title>xpdAcq Change Log &mdash; xpdAcq 0.8.1 documentation</title>
   
 
   
@@ -99,6 +99,7 @@
 </ul>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">xpdAcq Change Log</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#v0-8-1">v0.8.1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#v0-8-0rc2">v0.8.0rc2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#v0-8-0rc">v0.8.0rc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#v0-7-2">v0.7.2</a><ul>
@@ -178,6 +179,11 @@
             
   <div class="section" id="xpdacq-change-log">
 <h1>xpdAcq Change Log<a class="headerlink" href="#xpdacq-change-log" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="v0-8-1">
+<h2>v0.8.1<a class="headerlink" href="#v0-8-1" title="Permalink to this headline">¶</a></h2>
+<p><strong>Added:</strong></p>
+<p>Shutter control in <code class="docutils literal notranslate"><span class="pre">tseries</span></code> scan plan. By default, the shutter will only be open before collecting the data and close afterwards for protecting sample. Default behavior can be overridden by passing argument <code class="docutils literal notranslate"><span class="pre">auto_shutter=False</span></code> while creating scan plan. Please use <code class="docutils literal notranslate"><span class="pre">tseries?</span></code> in <code class="docutils literal notranslate"><span class="pre">ipython</span></code> session for full doc.</p>
+</div>
 <div class="section" id="v0-8-0rc2">
 <h2>v0.8.0rc2<a class="headerlink" href="#v0-8-0rc2" title="Permalink to this headline">¶</a></h2>
 <p><strong>Changed:</strong></p>
@@ -460,7 +466,7 @@ temperature-series scans (Tramp)
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.8.0rc2',
+            VERSION:'0.8.1',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
