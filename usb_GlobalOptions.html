@@ -211,6 +211,16 @@ interrogate the default values by typing:</p>
 </div>
 <p>changes made to <code class="docutils literal notranslate"><span class="pre">glbl</span></code> will be recovered after coming back to <code class="docutils literal notranslate"><span class="pre">ipython</span></code> session.
 So you don’t have to redo the changes from time to time.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">glbl</span></code> also has a <code class="docutils literal notranslate"><span class="pre">swap</span></code> method. This method allows you to
+temporarally change the value of a key in the <code class="docutils literal notranslate"><span class="pre">glbl</span></code>. For instance</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">glbl</span><span class="o">.</span><span class="n">swap</span><span class="p">(</span><span class="n">dk_window</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
+    <span class="n">xrun</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This will run the scan with a dark window of 1000 seconds. However all
+subsequent scans would have their dark window set to the old dark window.
+This is very useful for overnight scans where the state of the <code class="docutils literal notranslate"><span class="pre">glbl</span></code>
+might not be remembered.</p>
 </div></blockquote>
 </div>
 <div class="section" id="device-related-options">
