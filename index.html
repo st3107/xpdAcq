@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>xpdAcq documentation &mdash; xpdAcq 0.8.1 documentation</title>
+  <title>xpdAcq documentation &mdash; xpdAcq 0.8.2 documentation</title>
   
 
   
@@ -184,6 +184,32 @@ the software, please post it as a new thread at <a class="reference external" hr
 <h3>xpdAcq Change Log<a class="headerlink" href="#xpdacq-change-log" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
+</div>
+<div class="section" id="v0-8-2">
+<h1>v0.8.2<a class="headerlink" href="#v0-8-2" title="Permalink to this headline">¶</a></h1>
+<p><strong>Added:</strong></p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">swap</span></code> capability to the <code class="docutils literal notranslate"><span class="pre">glbl</span></code> so that vars can be swapped out via
+context manager</li>
+</ul>
+<p><strong>Changed:</strong></p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">Beamtime.robot_location_number</span></code> takes in a geometry to specify the sample
+geometry</li>
+<li>Reduce summary field of callable argument in <code class="docutils literal notranslate"><span class="pre">ScanPlan</span></code> with only
+its <code class="docutils literal notranslate"><span class="pre">__name__</span></code>. Before it use <code class="docutils literal notranslate"><span class="pre">__repr__</span></code> which includes hash and
+special characters that is prone to generate illegal filename for yaml.</li>
+</ul>
+<p><strong>Removed:</strong></p>
+<ul class="simple">
+<li>Exception for non-robot multi-sample experiments, since they could happen
+and we do support this behavior</li>
+</ul>
+<p><strong>Fixed:</strong></p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">per_step</span></code> argument in <code class="docutils literal notranslate"><span class="pre">Tlist</span></code>. Before this argument is always
+overridden by default.</li>
+</ul>
 </div>
 <div class="section" id="v0-8-1">
 <h1>v0.8.1<a class="headerlink" href="#v0-8-1" title="Permalink to this headline">¶</a></h1>
@@ -467,7 +493,7 @@ temperature-series scans (Tramp)
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.8.1',
+            VERSION:'0.8.2',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
