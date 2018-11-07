@@ -92,6 +92,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">API Documentation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#run-calibration-api-documentation">run_calibration API Documentation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#xrun-api-documentation">xrun API Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#scanplan-api-documentation">ScanPlan API Documentation</a></li>
 </ul>
 </li>
 </ul>
@@ -330,6 +331,178 @@ run time. If the extra metdata has the same key as the
 </table>
 </dd></dl>
 
+</dd></dl>
+
+</div>
+<div class="section" id="scanplan-api-documentation">
+<span id="scanplan-api"></span><h2>ScanPlan API Documentation<a class="headerlink" href="#scanplan-api-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="xpdacq.beamtime.ct">
+<code class="descclassname">xpdacq.beamtime.</code><code class="descname">ct</code><span class="sig-paren">(</span><em>dets</em>, <em>exposure</em><span class="sig-paren">)</span><a class="headerlink" href="#xpdacq.beamtime.ct" title="Permalink to this definition">¶</a></dt>
+<dd><p>Take one reading from area detector with given exposure time</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>dets</strong> (<em>list</em>) – list of ‘readable’ objects. default to area detector
+linked to xpdAcq.</li>
+<li><strong>exposure</strong> (<em>float</em>) – total time of exposrue in seconds</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>area detector being triggered will  always be the one configured
+in global state. To find out which these are, please using
+following commands:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">xpd_configuration</span><span class="p">[</span><span class="s1">&#39;area_det&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>to see which device is being linked</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="xpdacq.beamtime.Tramp">
+<code class="descclassname">xpdacq.beamtime.</code><code class="descname">Tramp</code><span class="sig-paren">(</span><em>dets</em>, <em>exposure</em>, <em>Tstart</em>, <em>Tstop</em>, <em>Tstep</em>, <em>*</em>, <em>per_step=&lt;function _shutter_step&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#xpdacq.beamtime.Tramp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Collect data over a range of temperatures</p>
+<p>This plan sets the sample temperature using a temp_controller device
+and exposes a detector for a set time at each temperature.
+It also has logic for equilibrating the temperature before each
+acquisition. By default it closes the fast shutter at XPD in between
+exposures. This behavior may be overridden, leaving the fast shutter
+open for the entire scan. Please see below.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>dets</strong> (<em>list</em>) – list of ‘readable’ objects. default to the temperature
+controller and area detector linked to xpdAcq.</li>
+<li><strong>exposure</strong> (<em>float</em>) – exposure time at each temperature step in seconds.</li>
+<li><strong>Tstart</strong> (<em>float</em>) – starting point of temperature sequence.</li>
+<li><strong>Tstop</strong> (<em>float</em>) – stoping point of temperature sequence.</li>
+<li><strong>Tstep</strong> (<em>float</em>) – step size between Tstart and Tstop of this sequence.</li>
+<li><strong>per_step</strong> (<em>callable</em><em>, </em><em>optional</em>) – <p>hook for customizing action at each temperature point.
+Tramp uses this for opening and closing the shutter at each
+temperature acquisition.</p>
+<p>Default behavior:
+`` open shutter - collect data - close shutter ``</p>
+<p>To make shutter always open during the temperature ramp,
+pass <code class="docutils literal notranslate"><span class="pre">None</span></code> to this argument. See <code class="docutils literal notranslate"><span class="pre">Notes</span></code> below for more
+detailed information.</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>1. To see which area detector and temperature controller
+will be used, type the following commands:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">xpd_configuration</span><span class="p">[</span><span class="s1">&#39;area_det&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">xpd_configuration</span><span class="p">[</span><span class="s1">&#39;temp_controller&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>2. To change the default behavior to shutter-always-open,
+please pass the argument for <code class="docutils literal notranslate"><span class="pre">per_step</span></code> in the <code class="docutils literal notranslate"><span class="pre">ScanPlan</span></code>
+definition, as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ScanPlan</span><span class="p">(</span><span class="n">bt</span><span class="p">,</span> <span class="n">Tramp</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">per_step</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This will create a <code class="docutils literal notranslate"><span class="pre">Tramp</span></code> ScanPlan, with shutter always
+open during the ramping.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="xpdacq.beamtime.Tlist">
+<code class="descclassname">xpdacq.beamtime.</code><code class="descname">Tlist</code><span class="sig-paren">(</span><em>dets</em>, <em>exposure</em>, <em>T_list</em>, <em>*</em>, <em>per_step=&lt;function _shutter_step&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#xpdacq.beamtime.Tlist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Collect data over a list of user-specific temperatures</p>
+<p>This plan sets the sample temperature using a temp_controller device
+and exposes a detector for a set time at each temperature.
+It also has logic for equilibrating the temperature before each
+acquisition. By default it closes the fast shutter at XPD in between
+exposures. This behavior may be overridden, leaving the fast shutter
+open for the entire scan. Please see below.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>dets</strong> (<em>list</em>) – list of ‘readable’ objects. default to the temperature
+controller and area detector linked to xpdAcq.</li>
+<li><strong>exposure</strong> (<em>float</em>) – total time of exposure in seconds</li>
+<li><strong>T_list</strong> (<em>list</em>) – a list of temperatures where a scan will be run</li>
+<li><strong>per_step</strong> (<em>callable</em><em>, </em><em>optional</em>) – <p>hook for customizing action at each temperature point.
+Tramp uses this for opening and closing the shutter at each
+temperature acquisition.</p>
+<p>Default behavior:
+`` open shutter - collect data - close shutter ``</p>
+<p>To make shutter always open during the temperature ramp,
+pass <code class="docutils literal notranslate"><span class="pre">None</span></code> to this argument. See <code class="docutils literal notranslate"><span class="pre">Notes</span></code> below for more
+detailed information.</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>1. To see which area detector and temperature controller
+will be used, type the following commands:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">xpd_configuration</span><span class="p">[</span><span class="s1">&#39;area_det&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">xpd_configuration</span><span class="p">[</span><span class="s1">&#39;temp_controller&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>2. To change the default behavior to shutter-always-open,
+please pass the argument for <code class="docutils literal notranslate"><span class="pre">per_step</span></code> in the <code class="docutils literal notranslate"><span class="pre">ScanPlan</span></code>
+definition, as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ScanPlan</span><span class="p">(</span><span class="n">bt</span><span class="p">,</span> <span class="n">Tlist</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="p">[</span><span class="mi">300</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">198</span><span class="p">],</span> <span class="n">per_step</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This will create a <code class="docutils literal notranslate"><span class="pre">Tlist</span></code> ScanPlan, with shutter always
+open during the ramping.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="xpdacq.beamtime.tseries">
+<code class="descclassname">xpdacq.beamtime.</code><code class="descname">tseries</code><span class="sig-paren">(</span><em>dets</em>, <em>exposure</em>, <em>delay</em>, <em>num</em>, <em>auto_shutter=True</em><span class="sig-paren">)</span><a class="headerlink" href="#xpdacq.beamtime.tseries" title="Permalink to this definition">¶</a></dt>
+<dd><p>time series scan with area detector.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>dets</strong> (<em>list</em>) – list of ‘readable’ objects. default to area detector
+linked to xpdAcq.</li>
+<li><strong>exposure</strong> (<em>float</em>) – exposure time at each reading from area detector in seconds</li>
+<li><strong>delay</strong> (<em>float</em>) – delay between two consecutive readings from area detector in seconds</li>
+<li><strong>num</strong> (<em>int</em>) – total number of readings</li>
+<li><strong>auto_shutter</strong> (<em>bool</em><em>, </em><em>optional</em>) – <p>Option on whether delegates shutter control to <code class="docutils literal notranslate"><span class="pre">xpdAcq</span></code>. If True,
+following behavior will take place:</p>
+<p>`` open shutter - collect data - close shutter ``</p>
+<p>To make shutter stay open during <code class="docutils literal notranslate"><span class="pre">tseries</span></code> scan,
+pass <code class="docutils literal notranslate"><span class="pre">False</span></code> to this argument. See <code class="docutils literal notranslate"><span class="pre">Notes</span></code> below for more
+detailed information.</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>To see which area detector and shutter will be used, type the
+following commands:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">xpd_configuration</span><span class="p">[</span><span class="s1">&#39;area_det&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">xpd_configuration</span><span class="p">[</span><span class="s1">&#39;shutter&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>To override default behavior and keep the shutter open throughout
+scan , create ScanPlan with following syntax:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ScanPlan</span><span class="p">(</span><span class="n">bt</span><span class="p">,</span> <span class="n">tseries</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </div>
