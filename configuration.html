@@ -187,24 +187,24 @@ following locations</p>
 <p>Where <code class="docutils literal notranslate"><span class="pre">&lt;python&gt;</span></code> is the path to the python executable being run.</p>
 <p>Here is an example configuration file:</p>
 <blockquote>
-<div><div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">ARCHIVE_BASE_DIR_NAME</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">.userBeamtimeArchive</span>
-<span class="l l-Scalar l-Scalar-Plain">ARCHIVE_ROOT_DIR</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">~/acqsim/archive</span>
-<span class="l l-Scalar l-Scalar-Plain">BASE_DIR</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">~/acqsim</span>
-<span class="l l-Scalar l-Scalar-Plain">BEAMLINE_HOST_NAME</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">[</span><span class="nv">xf28id2-ws2</span><span class="p p-Indicator">,</span> <span class="nv">xf28id2-ws3</span><span class="p p-Indicator">]</span>
-<span class="l l-Scalar l-Scalar-Plain">BEAMLINE_ID</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">28-ID-2</span>
-<span class="l l-Scalar l-Scalar-Plain">BLCONFIG_DIR_NAME</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">xpdConfig</span>
-<span class="l l-Scalar l-Scalar-Plain">BLCONFIG_NAME</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">XPD_beamline_config.yml</span>
-<span class="l l-Scalar l-Scalar-Plain">CALIB_CONFIG_NAME</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">xpdAcq_calib_info.yml</span>
-<span class="l l-Scalar l-Scalar-Plain">DARK_WINDOW</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">3000</span>
-<span class="l l-Scalar l-Scalar-Plain">FACILITY</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">sim</span>
-<span class="l l-Scalar l-Scalar-Plain">FRAME_ACQUIRE_TIME</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0.1</span>
-<span class="l l-Scalar l-Scalar-Plain">GLBL_YAML_NAME</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">glbl.yml</span>
-<span class="l l-Scalar l-Scalar-Plain">GROUP</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">sim</span>
-<span class="l l-Scalar l-Scalar-Plain">HOME_DIR_NAME</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">xpdUser</span>
-<span class="l l-Scalar l-Scalar-Plain">IMAGE_FIELD</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">pe1_image</span>
-<span class="l l-Scalar l-Scalar-Plain">OWNER</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">sim</span>
-<span class="l l-Scalar l-Scalar-Plain">SIMULATION</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="l l-Scalar l-Scalar-Plain">SHUTTER_CONF</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">{</span><span class="nv">close</span><span class="p p-Indicator">:</span> <span class="nv">0</span><span class="p p-Indicator">,</span> <span class="nv">open</span><span class="p p-Indicator">:</span> <span class="nv">60</span><span class="p p-Indicator">}</span>
+<div><div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">ARCHIVE_BASE_DIR_NAME</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">.userBeamtimeArchive</span>
+<span class="nt">ARCHIVE_ROOT_DIR</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">~/acqsim/archive</span>
+<span class="nt">BASE_DIR</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">~/acqsim</span>
+<span class="nt">BEAMLINE_HOST_NAME</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">xf28id2-ws2</span><span class="p p-Indicator">,</span> <span class="nv">xf28id2-ws3</span><span class="p p-Indicator">]</span>
+<span class="nt">BEAMLINE_ID</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">28-ID-2</span>
+<span class="nt">BLCONFIG_DIR_NAME</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">xpdConfig</span>
+<span class="nt">BLCONFIG_NAME</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">XPD_beamline_config.yml</span>
+<span class="nt">CALIB_CONFIG_NAME</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">xpdAcq_calib_info.yml</span>
+<span class="nt">DARK_WINDOW</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">3000</span>
+<span class="nt">FACILITY</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">sim</span>
+<span class="nt">FRAME_ACQUIRE_TIME</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.1</span>
+<span class="nt">GLBL_YAML_NAME</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">glbl.yml</span>
+<span class="nt">GROUP</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">sim</span>
+<span class="nt">HOME_DIR_NAME</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">xpdUser</span>
+<span class="nt">IMAGE_FIELD</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">pe1_image</span>
+<span class="nt">OWNER</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">sim</span>
+<span class="nt">SIMULATION</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nt">SHUTTER_CONF</span><span class="p">:</span> <span class="p p-Indicator">{</span><span class="nt">close</span><span class="p">:</span> <span class="nv">0</span><span class="p p-Indicator">,</span><span class="nt"> open</span><span class="p">:</span> <span class="nv">60</span><span class="p p-Indicator">}</span>
 </pre></div>
 </div>
 </div></blockquote>
