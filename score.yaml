@@ -1,0 +1,60 @@
+section_order:
+  - build
+  - python -m pip install -e . --no-deps --ignore-installed --no-cache-dir -vvv
+  - run
+  - test
+  - docs
+install: pip install .
+build:
+  pip:
+    default:
+      conda: setuptools
+  python:
+    default:
+      conda: python=$TRAVIS_PYTHON_VERSION
+run:
+  bluesky:
+    default: {conda: bluesky}
+  databroker:
+    default: {conda: databroker}
+  ipython:
+    default: {conda: ipython}
+  numpy:
+    default: {conda: numpy}
+  ophyd:
+    default: {conda: ophyd}
+  pyfai:
+    default: {conda: pyfai}
+  pyyaml:
+    default: {conda: pyyaml}
+  xlrd:
+    default: {conda: xlrd}
+  xpdan:
+    default: {conda: xpdan}
+    bleeding: {orch: xpdan}
+  xpdconf:
+    default: {conda: xpdconf}
+  xpdsim:
+    default: {conda: xpdsim}
+test:
+  pytest:
+    default:
+      conda: pytest
+  flake8:
+    default:
+      conda: flake8
+  codecov:
+    default:
+      conda: codecov
+  coverage:
+    default:
+      conda: coverage
+docs:
+  doctr:
+    default: {conda: doctr}
+  sphinx:
+    default: {conda: sphinx}
+  sphinx_rtd_theme:
+    default: {conda: sphinx_rtd_theme}
+  recommonmark:
+    default: {conda: recommonmark}
