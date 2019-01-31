@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>xpdAcq documentation &mdash; xpdAcq 0.8.3 documentation</title>
+  <title>xpdAcq documentation &mdash; xpdAcq 0.9.0 documentation</title>
   
 
   
@@ -57,7 +57,7 @@
             
             
               <div class="version">
-                0.8
+                0.9
               </div>
             
           
@@ -184,6 +184,20 @@ the software, please post it as a new thread at <a class="reference external" hr
 <h3>xpdAcq Change Log<a class="headerlink" href="#xpdacq-change-log" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
+</div>
+<div class="section" id="v0-9-0">
+<h1>v0.9.0<a class="headerlink" href="#v0-9-0" title="Permalink to this headline">¶</a></h1>
+<p><strong>Changed:</strong></p>
+<ul class="simple">
+<li><cite>endbeamtime</cite> process renames the local <cite>xpdUser</cite> to
+<cite>xpdUser_&lt;archive_name&gt;</cite> first before archiving and transferring
+file to remote location. This is to make sure the next beamtime
+will not be blocked by the backup process of last beamtime.</li>
+</ul>
+<p><strong>Fixed:</strong></p>
+<ul class="simple">
+<li>Try except for new pyFAI calibration api vs old</li>
+</ul>
 </div>
 <div class="section" id="v0-8-3">
 <h1>v0.8.3<a class="headerlink" href="#v0-8-3" title="Permalink to this headline">¶</a></h1>

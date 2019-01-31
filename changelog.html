@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>xpdAcq Change Log &mdash; xpdAcq 0.8.3 documentation</title>
+  <title>xpdAcq Change Log &mdash; xpdAcq 0.9.0 documentation</title>
   
 
   
@@ -57,7 +57,7 @@
             
             
               <div class="version">
-                0.8
+                0.9
               </div>
             
           
@@ -98,6 +98,7 @@
 </ul>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">xpdAcq Change Log</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#v0-9-0">v0.9.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#v0-8-3">v0.8.3</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#v0-8-2">v0.8.2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#v0-8-1">v0.8.1</a></li>
@@ -180,6 +181,20 @@
             
   <div class="section" id="xpdacq-change-log">
 <h1>xpdAcq Change Log<a class="headerlink" href="#xpdacq-change-log" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="v0-9-0">
+<h2>v0.9.0<a class="headerlink" href="#v0-9-0" title="Permalink to this headline">¶</a></h2>
+<p><strong>Changed:</strong></p>
+<ul class="simple">
+<li><cite>endbeamtime</cite> process renames the local <cite>xpdUser</cite> to
+<cite>xpdUser_&lt;archive_name&gt;</cite> first before archiving and transferring
+file to remote location. This is to make sure the next beamtime
+will not be blocked by the backup process of last beamtime.</li>
+</ul>
+<p><strong>Fixed:</strong></p>
+<ul class="simple">
+<li>Try except for new pyFAI calibration api vs old</li>
+</ul>
+</div>
 <div class="section" id="v0-8-3">
 <h2>v0.8.3<a class="headerlink" href="#v0-8-3" title="Permalink to this headline">¶</a></h2>
 <p><strong>Added:</strong></p>
