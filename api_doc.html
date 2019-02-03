@@ -174,7 +174,7 @@
 <span id="calib-api"></span><h2>run_calibration API Documentation<a class="headerlink" href="#run-calibration-api-documentation" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="xpdacq.calib.run_calibration">
-<code class="descclassname">xpdacq.calib.</code><code class="descname">run_calibration</code><span class="sig-paren">(</span><em>exposure=5</em>, <em>dark_sub_bool=True</em>, <em>calibrant=None</em>, <em>phase_info=None</em>, <em>wavelength=None</em>, <em>detector=None</em>, <em>*</em>, <em>RE_instance=None</em>, <em>parallel=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#xpdacq.calib.run_calibration" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">xpdacq.calib.</code><code class="descname">run_calibration</code><span class="sig-paren">(</span><em>exposure=5</em>, <em>dark_sub_bool=True</em>, <em>calibrant=None</em>, <em>phase_info=None</em>, <em>detector=None</em>, <em>*</em>, <em>RE_instance=None</em>, <em>wait_for_cal=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#xpdacq.calib.run_calibration" title="Permalink to this definition">¶</a></dt>
 <dd><p>function to run entire calibration process.</p>
 <p>Entire process includes:</p>
 <ol class="arabic simple">
@@ -209,16 +209,13 @@ information, please visit:
 <a class="reference external" href="http://xpdacq.github.io/usb_Running.html#phase-string">http://xpdacq.github.io/usb_Running.html#phase-string</a>
 If both <code class="docutils literal notranslate"><span class="pre">calibrant</span></code> and <code class="docutils literal notranslate"><span class="pre">phase_info</span></code> arguments are not provided,
 this field will be defaulted to <code class="docutils literal notranslate"><span class="pre">Ni</span></code>.</li>
-<li><strong>wavelength</strong> (<em>float</em><em>, </em><em>optional</em>) – x-ray wavelength in angstrom. default to value stored in
-existing Beamtime object</li>
 <li><strong>detector</strong> (<em>str</em><em> or </em><em>pyFAI.detector.Detector instance</em><em>, </em><em>optional.</em>) – detector used to collect data. default value is ‘perkin-elmer’.
 other allowed values are in pyFAI documentation.</li>
 <li><strong>RE_instance</strong> (<em>bluesky.run_engine.RunEngine instance</em><em>, </em><em>optional</em>) – instance of run engine. Default is xrun. Do not change under
 normal circumstances.</li>
-<li><strong>parallel</strong> (<em>bool</em><em>, </em><em>optional</em>) – Tag for whether run the calibration step in a separte
-process. Running in parallel in principle yields better resource
-allocation. Default is <code class="docutils literal notranslate"><span class="pre">True</span></code>, only change to <code class="docutils literal notranslate"><span class="pre">False</span></code> if
-error is raised.</li>
+<li><strong>wait_for_cal</strong> (<em>bool</em>) – If True wait for the new calibration to be produced before giving up
+xrun control, otherwise give up control at the end of the scan.
+Defaults to True</li>
 <li><strong>kwargs</strong> – Additional keyword argument for calibration. please refer to
 pyFAI documentation for all options.</li>
 </ul>
