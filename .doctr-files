@@ -26,6 +26,7 @@
 ./_sources/sb_icollection.rst.txt
 ./_sources/sb_newBeamtime.rst.txt
 ./_sources/sb_overview.rst.txt
+./_sources/tomo.rst.txt
 ./_sources/troubleshooting.rst.txt
 ./_sources/usb_Beamtime.rst.txt
 ./_sources/usb_Experiment.rst.txt
@@ -111,6 +112,7 @@
 ./sb_overview.html
 ./search.html
 ./searchindex.js
+./tomo.html
 ./troubleshooting.html
 ./usb_Beamtime.html
 ./usb_Experiment.html
