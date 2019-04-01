@@ -180,22 +180,20 @@
 <dd><p>function to run entire calibration process.</p>
 <p>Entire process includes:</p>
 <ol class="arabic simple">
-<li>collect calibration image,</li>
-<li>trigger pyFAI interactive calibration process,</li>
-<li>store calibration parameters as a yaml file</li>
+<li><p>collect calibration image,</p></li>
+<li><p>trigger pyFAI interactive calibration process,</p></li>
+<li><p>store calibration parameters as a yaml file</p></li>
 </ol>
 <p>calibration parameters will be saved under xpdUser/config_base/
 and this set of parameters will be injected as metadata to
 subsequent scans until you perform this process again</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>exposure</strong> (<em>int</em><em>, </em><em>optional</em>) – total exposure time in sec. default is 5s</li>
-<li><strong>dark_sub_bool</strong> (<em>bool</em><em>, </em><em>optional</em>) – option of turn on/off dark subtraction on this calibration
-image. default is True.</li>
-<li><strong>calibrant</strong> (<em>str</em><em>, </em><em>optional</em>) – calibrant being used, default is ‘Ni’.
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>exposure</strong> (<em>int</em><em>, </em><em>optional</em>) – total exposure time in sec. default is 5s</p></li>
+<li><p><strong>dark_sub_bool</strong> (<em>bool</em><em>, </em><em>optional</em>) – option of turn on/off dark subtraction on this calibration
+image. default is True.</p></li>
+<li><p><strong>calibrant</strong> (<em>str</em><em>, </em><em>optional</em>) – calibrant being used, default is ‘Ni’.
 input could be full file path to customized d-spacing file with
 “.D” extension or one of pre-defined calibrant names.
 List of pre-defined calibrant names is:
@@ -203,33 +201,32 @@ List of pre-defined calibrant names is:
 ‘Si_SRM640a’, ‘alpha_Al2O3’, ‘LaB6_SRM660b’, ‘TiO2’, ‘CrOx’,
 ‘LaB6_SRM660c’, ‘CeO2’, ‘Si_SRM640c’, ‘CuO’, ‘Si_SRM640e’,
 ‘PBBA’, ‘ZnO’, ‘Si’, ‘C14H30O’, ‘cristobaltite’, ‘LaB6_SRM660a’,
-‘Au’, ‘Cr2O3’, ‘Si_SRM640b’, ‘LaB6’, ‘Al’, ‘mock’]</li>
-<li><strong>phase_info</strong> (<em>str</em><em>, </em><em>optional</em>) – phase infomation of calibrant, which is required to data
+‘Au’, ‘Cr2O3’, ‘Si_SRM640b’, ‘LaB6’, ‘Al’, ‘mock’]</p></li>
+<li><p><strong>phase_info</strong> (<em>str</em><em>, </em><em>optional</em>) – phase infomation of calibrant, which is required to data
 reduction process. This field will be parsed with the same logic
 as the one used in parsing spreadsheet information. For detailed
 information, please visit:
 <a class="reference external" href="http://xpdacq.github.io/usb_Running.html#phase-string">http://xpdacq.github.io/usb_Running.html#phase-string</a>
 If both <code class="docutils literal notranslate"><span class="pre">calibrant</span></code> and <code class="docutils literal notranslate"><span class="pre">phase_info</span></code> arguments are not provided,
-this field will be defaulted to <code class="docutils literal notranslate"><span class="pre">Ni</span></code>.</li>
-<li><strong>detector</strong> (<em>str</em><em> or </em><em>pyFAI.detector.Detector instance</em><em>, </em><em>optional.</em>) – detector used to collect data. default value is ‘perkin-elmer’.
-other allowed values are in pyFAI documentation.</li>
-<li><strong>RE_instance</strong> (<em>bluesky.run_engine.RunEngine instance</em><em>, </em><em>optional</em>) – instance of run engine. Default is xrun. Do not change under
-normal circumstances.</li>
-<li><strong>wait_for_cal</strong> (<em>bool</em>) – If True wait for the new calibration to be produced before giving up
+this field will be defaulted to <code class="docutils literal notranslate"><span class="pre">Ni</span></code>.</p></li>
+<li><p><strong>detector</strong> (<em>str</em><em> or </em><em>pyFAI.detector.Detector instance</em><em>, </em><em>optional.</em>) – detector used to collect data. default value is ‘perkin-elmer’.
+other allowed values are in pyFAI documentation.</p></li>
+<li><p><strong>RE_instance</strong> (<em>bluesky.run_engine.RunEngine instance</em><em>, </em><em>optional</em>) – instance of run engine. Default is xrun. Do not change under
+normal circumstances.</p></li>
+<li><p><strong>wait_for_cal</strong> (<em>bool</em>) – If True wait for the new calibration to be produced before giving up
 xrun control, otherwise give up control at the end of the scan.
-Defaults to True</li>
-<li><strong>kwargs</strong> – Additional keyword argument for calibration. please refer to
-pyFAI documentation for all options.</li>
+Defaults to True</p></li>
+<li><p><strong>kwargs</strong> – Additional keyword argument for calibration. please refer to
+pyFAI documentation for all options.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="admonition-title">Note</p>
 <p>Details about peak-picking gui from pyFAI documentaion</p>
-<blockquote class="last">
-<div><a class="reference external" href="http://pyfai.readthedocs.io/en/latest/usage/cookbook/calibrate.html#start-pyfai-calibration_md">http://pyfai.readthedocs.io/en/latest/usage/cookbook/calibrate.html#start-pyfai-calibration_md</a></div></blockquote>
+<blockquote>
+<div><p><a class="reference external" href="http://pyfai.readthedocs.io/en/latest/usage/cookbook/calibrate.html#start-pyfai-calibration_md">http://pyfai.readthedocs.io/en/latest/usage/cookbook/calibrate.html#start-pyfai-calibration_md</a></p>
+</div></blockquote>
 </div>
 </dd></dl>
 
@@ -240,16 +237,13 @@ pyFAI documentation for all options.</li>
 <dt id="xpdacq.xpdacq.CustomizedRunEngine">
 <em class="property">class </em><code class="descclassname">xpdacq.xpdacq.</code><code class="descname">CustomizedRunEngine</code><span class="sig-paren">(</span><em>beamtime</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#xpdacq.xpdacq.CustomizedRunEngine" title="Permalink to this definition">¶</a></dt>
 <dd><p>A RunEngine customized for XPD workflows.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>beamtime</strong> (<em>xpdacq.beamtime.Beamtime</em><em> or </em><em>None</em>) – beamtime object that will be linked to. This beamtime object
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>beamtime</strong> (<em>xpdacq.beamtime.Beamtime</em><em> or </em><em>None</em>) – beamtime object that will be linked to. This beamtime object
 provide reference of sample and scanplan indicies. If no
-beamtime object is linked, index-based syntax will not be allowed.</td>
-</tr>
-</tbody>
-</table>
+beamtime object is linked, index-based syntax will not be allowed.</p>
+</dd>
+</dl>
 <dl class="attribute">
 <dt id="xpdacq.xpdacq.CustomizedRunEngine.beamtime">
 <code class="descname">beamtime</code><a class="headerlink" href="#xpdacq.xpdacq.CustomizedRunEngine.beamtime" title="Permalink to this definition">¶</a></dt>
@@ -280,54 +274,50 @@ and contain the required keys.</p>
 <dd><p>Execute a plan</p>
 <p>Any keyword arguments other than those listed below will
 be interpreted as metadata and recorded with the run.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>sample</strong> (<em>int</em><em> or </em><em>dict-like</em><em> or </em><em>list of int</em><em> or </em><em>dict-like</em>) – Sample metadata. If a beamtime object is linked,
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sample</strong> (<em>int</em><em> or </em><em>dict-like</em><em> or </em><em>list of int</em><em> or </em><em>dict-like</em>) – Sample metadata. If a beamtime object is linked,
 an integer will be interpreted as the index appears in the
 <code class="docutils literal notranslate"><span class="pre">bt.list()</span></code> method, corresponding metadata will be passed.
 A customized dict can also be passed as the sample
-metadata.</li>
-<li><strong>plan</strong> (<em>int</em><em> or </em><em>generator</em><em> or </em><em>list of int</em><em> or </em><em>generator</em>) – Scan plan. If a beamtime object is linked, an integer
+metadata.</p></li>
+<li><p><strong>plan</strong> (<em>int</em><em> or </em><em>generator</em><em> or </em><em>list of int</em><em> or </em><em>generator</em>) – Scan plan. If a beamtime object is linked, an integer
 will be interpreted as the index appears in the
 <code class="docutils literal notranslate"><span class="pre">bt.list()</span></code> method, corresponding scan plan will be
 A generator or that yields <code class="docutils literal notranslate"><span class="pre">Msg</span></code> objects (or an iterable
-that returns such a generator) can also be passed.</li>
-<li><strong>subs</strong> (<em>callable</em><em>, </em><em>list</em><em>, or </em><em>dict</em><em>, </em><em>optional</em>) – <p>Temporary subscriptions (a.k.a. callbacks) to be used on
+that returns such a generator) can also be passed.</p></li>
+<li><p><strong>subs</strong> (<em>callable</em><em>, </em><em>list</em><em>, or </em><em>dict</em><em>, </em><em>optional</em>) – <p>Temporary subscriptions (a.k.a. callbacks) to be used on
 this run. Default to None. For convenience, any of the
 following are accepted:</p>
 <ul>
-<li>a callable, which will be subscribed to ‘all’</li>
-<li>a list of callables, which again will be subscribed to ‘all’</li>
-<li>a dictionary, mapping specific subscriptions to callables or
+<li><p>a callable, which will be subscribed to ‘all’</p></li>
+<li><p>a list of callables, which again will be subscribed to ‘all’</p></li>
+<li><p>a dictionary, mapping specific subscriptions to callables or
 lists of callables; valid keys are {‘all’, ‘start’, ‘stop’,
-‘event’, ‘descriptor’}</li>
+‘event’, ‘descriptor’}</p></li>
 </ul>
-</li>
-<li><strong>verify_write</strong> (<em>bool</em><em>, </em><em>optional</em>) – Double check if the data have been written into database.
+</p></li>
+<li><p><strong>verify_write</strong> (<em>bool</em><em>, </em><em>optional</em>) – Double check if the data have been written into database.
 In general data is written in a lossless fashion at the
-NSLS-II. Therefore, False by default.</li>
-<li><strong>dark_strategy</strong> (<em>callable</em><em>, </em><em>optional.</em>) – Protocol of taking dark frame during experiment. Default
+NSLS-II. Therefore, False by default.</p></li>
+<li><p><strong>dark_strategy</strong> (<em>callable</em><em>, </em><em>optional.</em>) – Protocol of taking dark frame during experiment. Default
 to the logic of matching dark frame and light frame with
 the sample exposure time and frame rate. Details can be
-found at <code class="docutils literal notranslate"><span class="pre">http://xpdacq.github.io/xpdAcq/usb_Running.html#automated-dark-collection</span></code></li>
-<li><strong>robot</strong> (<em>bool</em><em>, </em><em>optional</em>) – If true run the scan as a robot scan, defaults to False</li>
-<li><strong>metadata_kw</strong> – Extra keyword arguments for specifying metadata in the
+found at <code class="docutils literal notranslate"><span class="pre">http://xpdacq.github.io/xpdAcq/usb_Running.html#automated-dark-collection</span></code></p></li>
+<li><p><strong>robot</strong> (<em>bool</em><em>, </em><em>optional</em>) – If true run the scan as a robot scan, defaults to False</p></li>
+<li><p><strong>metadata_kw</strong> – Extra keyword arguments for specifying metadata in the
 run time. If the extra metdata has the same key as the
-<code class="docutils literal notranslate"><span class="pre">sample</span></code>, <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> will be raised.</li>
+<code class="docutils literal notranslate"><span class="pre">sample</span></code>, <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> will be raised.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>uids</strong> – list of uids (i.e. RunStart Document uids) of run(s)</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>uids</strong> – list of uids (i.e. RunStart Document uids) of run(s)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -339,19 +329,15 @@ run time. If the extra metdata has the same key as the
 <dt id="xpdacq.beamtime.ct">
 <code class="descclassname">xpdacq.beamtime.</code><code class="descname">ct</code><span class="sig-paren">(</span><em>dets</em>, <em>exposure</em><span class="sig-paren">)</span><a class="headerlink" href="#xpdacq.beamtime.ct" title="Permalink to this definition">¶</a></dt>
 <dd><p>Take one reading from area detector with given exposure time</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>dets</strong> (<em>list</em>) – list of ‘readable’ objects. default to area detector
-linked to xpdAcq.</li>
-<li><strong>exposure</strong> (<em>float</em>) – total time of exposrue in seconds</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dets</strong> (<em>list</em>) – list of ‘readable’ objects. default to area detector
+linked to xpdAcq.</p></li>
+<li><p><strong>exposure</strong> (<em>float</em>) – total time of exposrue in seconds</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Notes</p>
 <p>area detector being triggered will  always be the one configured
 in global state. To find out which these are, please using
@@ -372,18 +358,16 @@ It also has logic for equilibrating the temperature before each
 acquisition. By default it closes the fast shutter at XPD in between
 exposures. This behavior may be overridden, leaving the fast shutter
 open for the entire scan. Please see below.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>dets</strong> (<em>list</em>) – list of ‘readable’ objects. default to the temperature
-controller and area detector linked to xpdAcq.</li>
-<li><strong>exposure</strong> (<em>float</em>) – exposure time at each temperature step in seconds.</li>
-<li><strong>Tstart</strong> (<em>float</em>) – starting point of temperature sequence.</li>
-<li><strong>Tstop</strong> (<em>float</em>) – stoping point of temperature sequence.</li>
-<li><strong>Tstep</strong> (<em>float</em>) – step size between Tstart and Tstop of this sequence.</li>
-<li><strong>per_step</strong> (<em>callable</em><em>, </em><em>optional</em>) – <p>hook for customizing action at each temperature point.
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dets</strong> (<em>list</em>) – list of ‘readable’ objects. default to the temperature
+controller and area detector linked to xpdAcq.</p></li>
+<li><p><strong>exposure</strong> (<em>float</em>) – exposure time at each temperature step in seconds.</p></li>
+<li><p><strong>Tstart</strong> (<em>float</em>) – starting point of temperature sequence.</p></li>
+<li><p><strong>Tstop</strong> (<em>float</em>) – stoping point of temperature sequence.</p></li>
+<li><p><strong>Tstep</strong> (<em>float</em>) – step size between Tstart and Tstop of this sequence.</p></li>
+<li><p><strong>per_step</strong> (<em>callable</em><em>, </em><em>optional</em>) – <p>hook for customizing action at each temperature point.
 Tramp uses this for opening and closing the shutter at each
 temperature acquisition.</p>
 <p>Default behavior:
@@ -391,12 +375,10 @@ temperature acquisition.</p>
 <p>To make shutter always open during the temperature ramp,
 pass <code class="docutils literal notranslate"><span class="pre">None</span></code> to this argument. See <code class="docutils literal notranslate"><span class="pre">Notes</span></code> below for more
 detailed information.</p>
-</li>
+</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Notes</p>
 <p>1. To see which area detector and temperature controller
 will be used, type the following commands:</p>
@@ -424,16 +406,14 @@ It also has logic for equilibrating the temperature before each
 acquisition. By default it closes the fast shutter at XPD in between
 exposures. This behavior may be overridden, leaving the fast shutter
 open for the entire scan. Please see below.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>dets</strong> (<em>list</em>) – list of ‘readable’ objects. default to the temperature
-controller and area detector linked to xpdAcq.</li>
-<li><strong>exposure</strong> (<em>float</em>) – total time of exposure in seconds</li>
-<li><strong>T_list</strong> (<em>list</em>) – a list of temperatures where a scan will be run</li>
-<li><strong>per_step</strong> (<em>callable</em><em>, </em><em>optional</em>) – <p>hook for customizing action at each temperature point.
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dets</strong> (<em>list</em>) – list of ‘readable’ objects. default to the temperature
+controller and area detector linked to xpdAcq.</p></li>
+<li><p><strong>exposure</strong> (<em>float</em>) – total time of exposure in seconds</p></li>
+<li><p><strong>T_list</strong> (<em>list</em>) – a list of temperatures where a scan will be run</p></li>
+<li><p><strong>per_step</strong> (<em>callable</em><em>, </em><em>optional</em>) – <p>hook for customizing action at each temperature point.
 Tramp uses this for opening and closing the shutter at each
 temperature acquisition.</p>
 <p>Default behavior:
@@ -441,12 +421,10 @@ temperature acquisition.</p>
 <p>To make shutter always open during the temperature ramp,
 pass <code class="docutils literal notranslate"><span class="pre">None</span></code> to this argument. See <code class="docutils literal notranslate"><span class="pre">Notes</span></code> below for more
 detailed information.</p>
-</li>
+</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Notes</p>
 <p>1. To see which area detector and temperature controller
 will be used, type the following commands:</p>
@@ -468,28 +446,24 @@ open during the ramping.</p>
 <dt id="xpdacq.beamtime.tseries">
 <code class="descclassname">xpdacq.beamtime.</code><code class="descname">tseries</code><span class="sig-paren">(</span><em>dets</em>, <em>exposure</em>, <em>delay</em>, <em>num</em>, <em>auto_shutter=True</em><span class="sig-paren">)</span><a class="headerlink" href="#xpdacq.beamtime.tseries" title="Permalink to this definition">¶</a></dt>
 <dd><p>time series scan with area detector.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>dets</strong> (<em>list</em>) – list of ‘readable’ objects. default to area detector
-linked to xpdAcq.</li>
-<li><strong>exposure</strong> (<em>float</em>) – exposure time at each reading from area detector in seconds</li>
-<li><strong>delay</strong> (<em>float</em>) – delay between two consecutive readings from area detector in seconds</li>
-<li><strong>num</strong> (<em>int</em>) – total number of readings</li>
-<li><strong>auto_shutter</strong> (<em>bool</em><em>, </em><em>optional</em>) – <p>Option on whether delegates shutter control to <code class="docutils literal notranslate"><span class="pre">xpdAcq</span></code>. If True,
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dets</strong> (<em>list</em>) – list of ‘readable’ objects. default to area detector
+linked to xpdAcq.</p></li>
+<li><p><strong>exposure</strong> (<em>float</em>) – exposure time at each reading from area detector in seconds</p></li>
+<li><p><strong>delay</strong> (<em>float</em>) – delay between two consecutive readings from area detector in seconds</p></li>
+<li><p><strong>num</strong> (<em>int</em>) – total number of readings</p></li>
+<li><p><strong>auto_shutter</strong> (<em>bool</em><em>, </em><em>optional</em>) – <p>Option on whether delegates shutter control to <code class="docutils literal notranslate"><span class="pre">xpdAcq</span></code>. If True,
 following behavior will take place:</p>
 <p>`` open shutter - collect data - close shutter ``</p>
 <p>To make shutter stay open during <code class="docutils literal notranslate"><span class="pre">tseries</span></code> scan,
 pass <code class="docutils literal notranslate"><span class="pre">False</span></code> to this argument. See <code class="docutils literal notranslate"><span class="pre">Notes</span></code> below for more
 detailed information.</p>
-</li>
+</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Notes</p>
 <p>To see which area detector and shutter will be used, type the
 following commands:</p>

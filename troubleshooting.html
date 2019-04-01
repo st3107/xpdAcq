@@ -176,31 +176,31 @@
 <div class="section" id="how-do-i-start-the-collection-ipython-environment-so-i-can-collect-some-data">
 <h2>How do I start the <code class="docutils literal notranslate"><span class="pre">collection</span></code> ipython environment so I can collect some data?<a class="headerlink" href="#how-do-i-start-the-collection-ipython-environment-so-i-can-collect-some-data" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>Activate the XPD data acquisition environment:</li>
+<li><p>Activate the XPD data acquisition environment:</p></li>
 </ol>
 <blockquote>
 <div><ul class="simple">
-<li>In a terminal look to see if it is already activated.  If it is, you should see <code class="docutils literal notranslate"><span class="pre">(collection)</span></code> at the beginning of the line.</li>
+<li><p>In a terminal look to see if it is already activated.  If it is, you should see <code class="docutils literal notranslate"><span class="pre">(collection)</span></code> at the beginning of the line.</p></li>
 </ul>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(collection)xf28id1@xf28id1-ws2:~$
 </pre></div>
 </div>
 <ul class="simple">
-<li>If you don’t see it, type <code class="docutils literal notranslate"><span class="pre">icollection</span></code> at the command prompt then check again.</li>
+<li><p>If you don’t see it, type <code class="docutils literal notranslate"><span class="pre">icollection</span></code> at the command prompt then check again.</p></li>
 </ul>
 </div></blockquote>
 <ol class="arabic simple" start="2">
-<li>Activate the XPD data analysis environment:</li>
+<li><p>Activate the XPD data analysis environment:</p></li>
 </ol>
 <blockquote>
 <div><ul class="simple">
-<li>In a terminal look to see if it is already activated.  If it is, you should see <code class="docutils literal notranslate"><span class="pre">(analysis-dev)</span></code> at the beginning of the line.</li>
+<li><p>In a terminal look to see if it is already activated.  If it is, you should see <code class="docutils literal notranslate"><span class="pre">(analysis-dev)</span></code> at the beginning of the line.</p></li>
 </ul>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(analysis-dev)xf28id1@xf28id1-ws2:~$
 </pre></div>
 </div>
 <ul class="simple">
-<li>If you don’t see it, type <code class="docutils literal notranslate"><span class="pre">ianalysis</span></code> at the command prompt then check again.</li>
+<li><p>If you don’t see it, type <code class="docutils literal notranslate"><span class="pre">ianalysis</span></code> at the command prompt then check again.</p></li>
 </ul>
 </div></blockquote>
 <p><strong>Pro Tip</strong> to avoid overhead that slows down the data acquisition computer, it is
@@ -212,7 +212,7 @@ will be run on the central computer at XPD, and <code class="docutils literal no
 <p>The instrument scientist (IS) should have set up your beamtime hardware and software
 for you.  Let’s check if it is the case.</p>
 <ol class="arabic simple">
-<li>Type <code class="docutils literal notranslate"><span class="pre">bt.md</span></code> and hit return, you should see similar output as following:</li>
+<li><p>Type <code class="docutils literal notranslate"><span class="pre">bt.md</span></code> and hit return, you should see similar output as following:</p></li>
 </ol>
 <blockquote>
 <div><blockquote>
@@ -228,16 +228,16 @@ for you.  Let’s check if it is the case.</p>
 <p>You should see the beamtime (<code class="docutils literal notranslate"><span class="pre">bt</span></code>) metadata (<code class="docutils literal notranslate"><span class="pre">md</span></code>) that has been pre-stored by the IS, and it should contain things like the last name of the PI on the proposal and the SAF number for the beamtime.  If not, please seek out the IS to get your session initialized.</p>
 </div></blockquote>
 <ol class="arabic simple" start="2">
-<li>Check that the wavelength has been set.  Does the correct x-ray wavelength appear inside <code class="docutils literal notranslate"><span class="pre">bt_wavelength</span></code> field, or does it say <code class="docutils literal notranslate"><span class="pre">None</span></code>.  If the latter, you can still collect scans but automated data reduction may not work, so best to grab the IS again.</li>
-<li>Check that the Perkin Elmer detector is correctly set up.</li>
+<li><p>Check that the wavelength has been set.  Does the correct x-ray wavelength appear inside <code class="docutils literal notranslate"><span class="pre">bt_wavelength</span></code> field, or does it say <code class="docutils literal notranslate"><span class="pre">None</span></code>.  If the latter, you can still collect scans but automated data reduction may not work, so best to grab the IS again.</p></li>
+<li><p>Check that the Perkin Elmer detector is correctly set up.</p></li>
 </ol>
 <blockquote>
 <div><ul class="simple">
-<li>Look at the Perkin Elmer screen on the CSS and make sure that <code class="docutils literal notranslate"><span class="pre">Acquire</span></code> mode has been enabled. If Acquire mode is enabled, it should show system information <code class="docutils literal notranslate"><span class="pre">Collecting</span></code> in yellow color. If it hasn’t been activated, please click ‘start’ button.</li>
+<li><p>Look at the Perkin Elmer screen on the CSS and make sure that <code class="docutils literal notranslate"><span class="pre">Acquire</span></code> mode has been enabled. If Acquire mode is enabled, it should show system information <code class="docutils literal notranslate"><span class="pre">Collecting</span></code> in yellow color. If it hasn’t been activated, please click ‘start’ button.</p></li>
 </ul>
 <a class="reference internal image-reference" href="_images/cropped_pe1c_ioc.png"><img alt="_images/cropped_pe1c_ioc.png" class="align-center" src="_images/cropped_pe1c_ioc.png" style="width: 300px; height: 200px;" /></a>
 <ul class="simple">
-<li>Type <code class="docutils literal notranslate"><span class="pre">glbl.area_det</span></code> and return.  It should return:</li>
+<li><p>Type <code class="docutils literal notranslate"><span class="pre">glbl.area_det</span></code> and return.  It should return:</p></li>
 </ul>
 <blockquote>
 <div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="n">glbl</span><span class="o">.</span><span class="n">area_det</span>

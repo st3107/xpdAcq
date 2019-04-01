@@ -313,15 +313,14 @@ couple of important <cite>Gotchas</cite> that you should bear in mind that could
 confusion until you get used to them.</p>
 <blockquote>
 <div><ol class="arabic">
-<li><p class="first">If you create a <cite>new</cite> object with the same type and name as an existing one, the existing one will be <strong>OVERWRITTEN</strong> by the new one!  You will lose the old one forever.</p>
+<li><p>If you create a <cite>new</cite> object with the same type and name as an existing one, the existing one will be <strong>OVERWRITTEN</strong> by the new one!  You will lose the old one forever.</p>
 <p>This is actually a feature of the code (we want each object to be unique and the only thing that makes it unique from one <code class="docutils literal notranslate"><span class="pre">collection</span></code> session to the next is its name and type).
 But please be careful about your naming! Why is it a feature?  You can use this to update an object by redefining it with the same name.</p>
 </li>
-<li><p class="first">At the time of writing, our xpdacq objects incorporate metadata from higher
+<li><p>At the time of writing, our xpdacq objects incorporate metadata from higher
 in the stack (e.g., <code class="docutils literal notranslate"><span class="pre">Sample</span></code> inheriting <code class="docutils literal notranslate"><span class="pre">Beamtime</span></code> metadata) dynamically.
 Any change on <code class="docutils literal notranslate"><span class="pre">Beamtime</span></code> metadata will automatically propagate down
-to all <code class="docutils literal notranslate"><span class="pre">Sample</span></code> and <code class="docutils literal notranslate"><span class="pre">ScanPlan</span></code> objects.</p>
-</li>
+to all <code class="docutils literal notranslate"><span class="pre">Sample</span></code> and <code class="docutils literal notranslate"><span class="pre">ScanPlan</span></code> objects.</p></li>
 </ol>
 </div></blockquote>
 <p>go to <a class="reference internal" href="usb_Scan.html#usb-scan"><span class="std std-ref">ScanPlan objects</span></a></p>

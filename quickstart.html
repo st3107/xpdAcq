@@ -211,47 +211,46 @@ the community</p>
 Carry out the steps in this order to ensure a successful experiment.</p>
 <blockquote>
 <div><ol class="arabic simple">
-<li>If you haven’t already, join <a class="reference external" href="https://groups.google.com/forum/#!forum/xpd-users;context-place=overview">XPD-Users Google group</a> . Look here for answers if you get stuck and if the answer to your question is not already there, please ask it!</li>
-<li><code class="docutils literal notranslate"><span class="pre">run_calibration()</span></code> (rerun if the experiment geometry changes).</li>
-<li>Run <code class="docutils literal notranslate"><span class="pre">bt.list()</span></code> to see what <code class="docutils literal notranslate"><span class="pre">ScanPlans</span></code> and <code class="docutils literal notranslate"><span class="pre">Samples</span></code> you have pre-defined. Define new <code class="docutils literal notranslate"><span class="pre">ScanPlans</span></code> as needed. To add additional samples add them to the sample excel spreadsheet and run <code class="docutils literal notranslate"><span class="pre">import_sample_info()</span></code>.</li>
-<li>Run setup scans on your sample to assess data quality and required exposure time by running <code class="docutils literal notranslate"><span class="pre">xrun(0,</span> <span class="pre">&lt;a_count_ScanPlan&gt;)</span></code>.</li>
-<li>Your data will be automatically saved and visualized via the analysis pipleine.</li>
+<li><p>If you haven’t already, join <a class="reference external" href="https://groups.google.com/forum/#!forum/xpd-users;context-place=overview">XPD-Users Google group</a> . Look here for answers if you get stuck and if the answer to your question is not already there, please ask it!</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">run_calibration()</span></code> (rerun if the experiment geometry changes).</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">bt.list()</span></code> to see what <code class="docutils literal notranslate"><span class="pre">ScanPlans</span></code> and <code class="docutils literal notranslate"><span class="pre">Samples</span></code> you have pre-defined. Define new <code class="docutils literal notranslate"><span class="pre">ScanPlans</span></code> as needed. To add additional samples add them to the sample excel spreadsheet and run <code class="docutils literal notranslate"><span class="pre">import_sample_info()</span></code>.</p></li>
+<li><p>Run setup scans on your sample to assess data quality and required exposure time by running <code class="docutils literal notranslate"><span class="pre">xrun(0,</span> <span class="pre">&lt;a_count_ScanPlan&gt;)</span></code>.</p></li>
+<li><p>Your data will be automatically saved and visualized via the analysis pipleine.</p></li>
 </ol>
 <blockquote>
 <div><ul>
-<li><p class="first">The data will be saved in <code class="docutils literal notranslate"><span class="pre">.../xpdUser/tiff_base/&lt;Sample_name_from_spreadsheet&gt;</span></code>.</p>
-</li>
-<li><p class="first">The pipeline will save:</p>
+<li><p>The data will be saved in <code class="docutils literal notranslate"><span class="pre">.../xpdUser/tiff_base/&lt;Sample_name_from_spreadsheet&gt;</span></code>.</p></li>
+<li><p>The pipeline will save:</p>
 <blockquote>
 <div><ol class="arabic simple">
-<li>Dark corrected image (as <code class="docutils literal notranslate"><span class="pre">.tiff</span></code>)</li>
-<li>Mask (as <code class="docutils literal notranslate"><span class="pre">.msk</span></code>)</li>
-<li>I(Q) (as <code class="docutils literal notranslate"><span class="pre">.chi</span></code>)</li>
-<li>I(tth) (as <code class="docutils literal notranslate"><span class="pre">.chi</span></code>)</li>
-<li>G(r) (as <code class="docutils literal notranslate"><span class="pre">.gr</span></code>)</li>
-<li>Calibration parameters (as <code class="docutils literal notranslate"><span class="pre">.poni</span></code>, if applicable)</li>
+<li><p>Dark corrected image (as <code class="docutils literal notranslate"><span class="pre">.tiff</span></code>)</p></li>
+<li><p>Mask (as <code class="docutils literal notranslate"><span class="pre">.msk</span></code>)</p></li>
+<li><p>I(Q) (as <code class="docutils literal notranslate"><span class="pre">.chi</span></code>)</p></li>
+<li><p>I(tth) (as <code class="docutils literal notranslate"><span class="pre">.chi</span></code>)</p></li>
+<li><p>G(r) (as <code class="docutils literal notranslate"><span class="pre">.gr</span></code>)</p></li>
+<li><p>Calibration parameters (as <code class="docutils literal notranslate"><span class="pre">.poni</span></code>, if applicable)</p></li>
 </ol>
 </div></blockquote>
 </li>
-<li><p class="first">The pipeline will visualize the:</p>
+<li><p>The pipeline will visualize the:</p>
 <blockquote>
 <div><ol class="arabic simple">
-<li>Dark corrected image</li>
-<li>Mask</li>
-<li>I(Q)</li>
-<li>I(tth)</li>
-<li>F(Q)</li>
-<li>G(r)</li>
+<li><p>Dark corrected image</p></li>
+<li><p>Mask</p></li>
+<li><p>I(Q)</p></li>
+<li><p>I(tth)</p></li>
+<li><p>F(Q)</p></li>
+<li><p>G(r)</p></li>
 </ol>
 </div></blockquote>
 </li>
 </ul>
 </div></blockquote>
 <ol class="arabic simple" start="6">
-<li>Navigate to <code class="docutils literal notranslate"><span class="pre">.../xpdUser/tiff_base/Setup</span></code> directory to preview the data using plotting tools such as <code class="docutils literal notranslate"><span class="pre">SrXgui</span></code>, <code class="docutils literal notranslate"><span class="pre">XPDSuite</span></code>, <code class="docutils literal notranslate"><span class="pre">Fit2D</span></code> etc.</li>
+<li><p>Navigate to <code class="docutils literal notranslate"><span class="pre">.../xpdUser/tiff_base/Setup</span></code> directory to preview the data using plotting tools such as <code class="docutils literal notranslate"><span class="pre">SrXgui</span></code>, <code class="docutils literal notranslate"><span class="pre">XPDSuite</span></code>, <code class="docutils literal notranslate"><span class="pre">Fit2D</span></code> etc.</p></li>
 </ol>
 <ol class="arabic simple" start="5">
-<li>Run your experiment by running <code class="docutils literal notranslate"><span class="pre">xrun(&lt;sample&gt;,</span> <span class="pre">&lt;scanplan&gt;)</span></code> and your data will be saved automatically.</li>
+<li><p>Run your experiment by running <code class="docutils literal notranslate"><span class="pre">xrun(&lt;sample&gt;,</span> <span class="pre">&lt;scanplan&gt;)</span></code> and your data will be saved automatically.</p></li>
 </ol>
 </div></blockquote>
 <p>These and many more things are explained below and elsewhere in the
@@ -304,8 +303,8 @@ your <code class="docutils literal notranslate"><span class="pre">collection-17Q
 or if the metadata is wrong, please get your beamtime environment properly
 set up by the instrument scientist (IS) before proceeding.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Only create and work on files within the <code class="docutils literal notranslate"><span class="pre">xpdUser</span></code> directory tree.  At the end of your
+<p class="admonition-title">Note</p>
+<p>Only create and work on files within the <code class="docutils literal notranslate"><span class="pre">xpdUser</span></code> directory tree.  At the end of your
 experiment, everything written in there will be permanently archived in a remote store
 and then deleted from the xpd computer leaving
 a clean environment for the next user.  You can, of course, take anything home from within <code class="docutils literal notranslate"><span class="pre">xpdUser</span></code>,
@@ -319,7 +318,7 @@ This will be in a separate terminal window.
 Use the instructions given above for <code class="docutils literal notranslate"><span class="pre">collection</span></code> to check you have found the right terminal window.
 For data analysis <code class="docutils literal notranslate"><span class="pre">show_env()</span></code> should return something like <code class="docutils literal notranslate"><span class="pre">analysis-17Q1.1</span></code>.</p>
 <ol class="arabic simple" start="2">
-<li>The analysis pipeline will start up automatically.</li>
+<li><p>The analysis pipeline will start up automatically.</p></li>
 </ol>
 <p>3. Once the analysis pipeline starts up a few blank visualization windows will pop up, these
 will be filled with data once acquisition begins.</p>
@@ -418,11 +417,11 @@ we recommend to just edit existing or add new samples to the sheet but not to de
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<ul class="last simple">
-<li>Instruction of the calibration steps: <a class="reference internal" href="usb_Running.html#calib-manual"><span class="std std-ref">Quick guide of calibration steps with pyFAI</span></a></li>
-<li>Full API documentation: <a class="reference internal" href="api_doc.html#calib-api"><span class="std std-ref">run_calibration API Documentation</span></a></li>
-<li>Documentation of <code class="docutils literal notranslate"><span class="pre">pyFAI</span></code> calibration gui <a class="reference external" href="http://pyfai.readthedocs.io/en/latest/usage/cookbook/calibrate.html#start-pyfai-calib">link</a></li>
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Instruction of the calibration steps: <a class="reference internal" href="usb_Running.html#calib-manual"><span class="std std-ref">Quick guide of calibration steps with pyFAI</span></a></p></li>
+<li><p>Full API documentation: <a class="reference internal" href="api_doc.html#calib-api"><span class="std std-ref">run_calibration API Documentation</span></a></p></li>
+<li><p>Documentation of <code class="docutils literal notranslate"><span class="pre">pyFAI</span></code> calibration gui <a class="reference external" href="http://pyfai.readthedocs.io/en/latest/usage/cookbook/calibrate.html#start-pyfai-calib">link</a></p></li>
 </ul>
 </div>
 <p>The resulting calibration parameters will be saved in the header of every scan you run until you
@@ -431,8 +430,8 @@ run <code class="docutils literal notranslate"><span class="pre">run_calibration
 <div class="section" id="set-up-a-mask">
 <h3>3. set up a mask<a class="headerlink" href="#set-up-a-mask" title="Permalink to this headline">¶</a></h3>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">After version <code class="docutils literal notranslate"><span class="pre">0.6.0</span></code>, a mask will be built by the automated analysis
+<p class="admonition-title">Note</p>
+<p>After version <code class="docutils literal notranslate"><span class="pre">0.6.0</span></code>, a mask will be built by the automated analysis
 pipeline. Following workflow will be useful if you wish to build the mask
 manually from a specific experimental setup.</p>
 </div>
@@ -555,28 +554,28 @@ stop-temperature and temperature-step, or you can create
 them when you need them (and reuse them after that).  Examples of what to type (followed by <code class="docutils literal notranslate"><span class="pre">Enter</span></code>)
 to create different example <code class="docutils literal notranslate"><span class="pre">ScanPlans</span></code> are shown
 in the table below.  Adapt these as you need to by changing the numbers in the arguments.</p>
-<table border="1" class="docutils">
+<table class="docutils align-center">
 <colgroup>
-<col width="34%" />
-<col width="66%" />
+<col style="width: 34%" />
+<col style="width: 66%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">command</th>
-<th class="head">&#160;</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>command</p></th>
+<th class="head"></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">ScanPlan(bt,</span> <span class="pre">ct,</span> <span class="pre">5)</span></code></td>
-<td>a count scan for 5s</td>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ScanPlan(bt,</span> <span class="pre">ct,</span> <span class="pre">5)</span></code></p></td>
+<td><p>a count scan for 5s</p></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">ScanPlan(bt,</span> <span class="pre">tseries,</span> <span class="pre">5,</span> <span class="pre">50,</span> <span class="pre">15)</span></code></td>
-<td>time series with 5s count time, 50s delay and 15 repeats</td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ScanPlan(bt,</span> <span class="pre">tseries,</span> <span class="pre">5,</span> <span class="pre">50,</span> <span class="pre">15)</span></code></p></td>
+<td><p>time series with 5s count time, 50s delay and 15 repeats</p></td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">ScanPlan(bt,</span> <span class="pre">Tramp,</span> <span class="pre">5,</span> <span class="pre">300,</span> <span class="pre">200,</span> <span class="pre">5)</span></code></td>
-<td>temperature series with 5s count time, starting from 300k to 200k with 5k per step</td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ScanPlan(bt,</span> <span class="pre">Tramp,</span> <span class="pre">5,</span> <span class="pre">300,</span> <span class="pre">200,</span> <span class="pre">5)</span></code></p></td>
+<td><p>temperature series with 5s count time, starting from 300k to 200k with 5k per step</p></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">ScanPlan(bt,</span> <span class="pre">Tlist,</span> <span class="pre">5,</span> <span class="pre">[250,</span> <span class="pre">180,</span> <span class="pre">200])</span></code></td>
-<td>exposure detector for 5s at 250K, 180K and 200K</td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ScanPlan(bt,</span> <span class="pre">Tlist,</span> <span class="pre">5,</span> <span class="pre">[250,</span> <span class="pre">180,</span> <span class="pre">200])</span></code></p></td>
+<td><p>exposure detector for 5s at 250K, 180K and 200K</p></td>
 </tr>
 </tbody>
 </table>
@@ -589,8 +588,8 @@ Check the sheet to make sure that all your background samples are listed as samp
 and that they are correctly linked to the samples for which they are the background.</p>
 <blockquote>
 <div><ol class="arabic simple">
-<li>Load the background sample (e.g., empty kapton tube) on the instrument</li>
-<li>In your <code class="docutils literal notranslate"><span class="pre">collection-17Q1.0</span></code> terminal type</li>
+<li><p>Load the background sample (e.g., empty kapton tube) on the instrument</p></li>
+<li><p>In your <code class="docutils literal notranslate"><span class="pre">collection-17Q1.0</span></code> terminal type</p></li>
 </ol>
 <blockquote>
 <div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">bt</span><span class="o">.</span><span class="n">list_bkg</span><span class="p">()</span>
@@ -600,7 +599,7 @@ and that they are correctly linked to the samples for which they are the backgro
 at position 3 in the list.</p>
 </div></blockquote>
 <ol class="arabic simple" start="3">
-<li>Then in the <code class="docutils literal notranslate"><span class="pre">collection-17Q1.0</span></code> terminal, you will type <code class="docutils literal notranslate"><span class="pre">xrun</span></code> giving as arguments the background sample-object with a <code class="docutils literal notranslate"><span class="pre">ct</span></code> ScanPlan object of the desired exposure.</li>
+<li><p>Then in the <code class="docutils literal notranslate"><span class="pre">collection-17Q1.0</span></code> terminal, you will type <code class="docutils literal notranslate"><span class="pre">xrun</span></code> giving as arguments the background sample-object with a <code class="docutils literal notranslate"><span class="pre">ct</span></code> ScanPlan object of the desired exposure.</p></li>
 </ol>
 <blockquote>
 <div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># if you are running this as a tutorial don&#39;t type this.  It will take &gt;30 mins to complete because</span>
@@ -747,8 +746,8 @@ Double and triple check your script, then when you are ready to execute it, in <
 </div></blockquote>
 <p>Stay there for a while to make sure everything is running as expected and then go to bed!</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">These scripts should execute as desired under normal circumstances.  Runs will automatically pause if
+<p class="admonition-title">Note</p>
+<p>These scripts should execute as desired under normal circumstances.  Runs will automatically pause if
 there is a beam-dump and then resume, for example.  However, there are some situations where the scans
 can be tricked into hanging, or continuing to run without scans completing, so please check your data
 carefully.  We are working on solutions for these edge cases.</p>
@@ -762,25 +761,25 @@ and want to end it?  Need to pause to refill liquid nitrogen, but then want to c
 crib</p>
 <div class="section" id="interactively-interrupt-execution">
 <h3>Interactively Interrupt Execution<a class="headerlink" href="#interactively-interrupt-execution" title="Permalink to this headline">¶</a></h3>
-<table border="1" class="docutils">
+<table class="docutils align-center">
 <colgroup>
-<col width="34%" />
-<col width="66%" />
+<col style="width: 34%" />
+<col style="width: 66%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Command</th>
-<th class="head">Outcome</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Command</p></th>
+<th class="head"><p>Outcome</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>Ctrl+C</td>
-<td>Pause soon (at next break point in the code)</td>
+<tbody>
+<tr class="row-even"><td><p>Ctrl+C</p></td>
+<td><p>Pause soon (at next break point in the code)</p></td>
 </tr>
-<tr class="row-odd"><td>Ctrl+C twice quickly</td>
-<td>Pause now</td>
+<tr class="row-odd"><td><p>Ctrl+C twice quickly</p></td>
+<td><p>Pause now</p></td>
 </tr>
-<tr class="row-even"><td>Ctrl+C three times fast</td>
-<td>(Shortcut) Pause now and abort</td>
+<tr class="row-even"><td><p>Ctrl+C three times fast</p></td>
+<td><p>(Shortcut) Pause now and abort</p></td>
 </tr>
 </tbody>
 </table>
@@ -793,31 +792,31 @@ fed up waiting for it to finish” case).  See below for handling this.</p>
 <h3>Recovering from the paused state caused by an interrupt<a class="headerlink" href="#recovering-from-the-paused-state-caused-by-an-interrupt" title="Permalink to this headline">¶</a></h3>
 <p>After a pause, when you are ready to continue working, type one of these commands
 into the <code class="docutils literal notranslate"><span class="pre">collection-17Q1.0</span></code> environment:</p>
-<table border="1" class="docutils">
+<table class="docutils align-center">
 <colgroup>
-<col width="26%" />
-<col width="74%" />
+<col style="width: 26%" />
+<col style="width: 74%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Command</th>
-<th class="head">Outcome</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Command</p></th>
+<th class="head"><p>Outcome</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>xrun.resume()</td>
-<td>Safely resume plan.</td>
+<tbody>
+<tr class="row-even"><td><p>xrun.resume()</p></td>
+<td><p>Safely resume plan.</p></td>
 </tr>
-<tr class="row-odd"><td>xrun.abort()</td>
-<td>Perform cleanup. Mark as aborted.</td>
+<tr class="row-odd"><td><p>xrun.abort()</p></td>
+<td><p>Perform cleanup. Mark as aborted.</p></td>
 </tr>
-<tr class="row-even"><td>xrun.stop()</td>
-<td>Perform cleanup. Mark as success.</td>
+<tr class="row-even"><td><p>xrun.stop()</p></td>
+<td><p>Perform cleanup. Mark as success.</p></td>
 </tr>
-<tr class="row-odd"><td>xrun.halt()</td>
-<td>Do not perform cleanup — just stop.</td>
+<tr class="row-odd"><td><p>xrun.halt()</p></td>
+<td><p>Do not perform cleanup — just stop.</p></td>
 </tr>
-<tr class="row-even"><td>xrun.state</td>
-<td>Check if ‘paused’ or ‘idle’.</td>
+<tr class="row-even"><td><p>xrun.state</p></td>
+<td><p>Check if ‘paused’ or ‘idle’.</p></td>
 </tr>
 </tbody>
 </table>

@@ -222,21 +222,17 @@ saved for reload and will be sent home with you at the end of the experiment.</p
 <dd><p>class that carries scan plan with corresponding experimental arguements</p>
 <p>after creation, this Sample object will be related to Beamtime
 object given as argument and will be available in bt.list()</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>beamtime</strong> (<em>xpdacq.beamtime.Beamtime</em>) – object representing current beamtime.</li>
-<li><strong>plan_func</strong> – predefined plan function. For complete list of available functions,
-please refere to <a class="reference external" href="http://xpdacq.github.io">http://xpdacq.github.io</a> for more information.</li>
-<li><strong>args</strong> – positional arguments corresponding to plan function in used.</li>
-<li><strong>kwargs</strong> – keyword arguments corresponding to plan function in used.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>beamtime</strong> (<em>xpdacq.beamtime.Beamtime</em>) – object representing current beamtime.</p></li>
+<li><p><strong>plan_func</strong> – predefined plan function. For complete list of available functions,
+please refere to <a class="reference external" href="http://xpdacq.github.io">http://xpdacq.github.io</a> for more information.</p></li>
+<li><p><strong>args</strong> – positional arguments corresponding to plan function in used.</p></li>
+<li><p><strong>kwargs</strong> – keyword arguments corresponding to plan function in used.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <p>A <cite>ct</cite> (count) scan with 5s exposure time linked to Beamtime object <cite>bt</cite>.
 &gt;&gt;&gt; ScanPlan(bt, ct, 5)</p>
@@ -249,27 +245,25 @@ please refere to <a class="reference external" href="http://xpdacq.github.io">ht
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sc</span> <span class="o">=</span> <span class="n">ScanPlan</span><span class="p">(</span><span class="n">bt</span><span class="p">,</span> <span class="n">ct</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>                      <span class="c1"># the simplest count scan definition</span>
 </pre></div>
 </div>
-<dl class="docutils">
-<dt>A few things to note:</dt>
-<dd><ul class="first last simple">
-<li>First argument is always <code class="docutils literal notranslate"><span class="pre">bt</span></code>, the <code class="docutils literal notranslate"><span class="pre">Beamtime</span></code> object.</li>
-<li>The second argument is always the scanplan. In the example above, we
-are using <em>count</em>, so we use <code class="docutils literal notranslate"><span class="pre">ct</span></code> as the second argument.</li>
-<li>The scan parameter is fed in after scan type, starting from the third positional argument.</li>
+<dl class="simple">
+<dt>A few things to note:</dt><dd><ul class="simple">
+<li><p>First argument is always <code class="docutils literal notranslate"><span class="pre">bt</span></code>, the <code class="docutils literal notranslate"><span class="pre">Beamtime</span></code> object.</p></li>
+<li><p>The second argument is always the scanplan. In the example above, we
+are using <em>count</em>, so we use <code class="docutils literal notranslate"><span class="pre">ct</span></code> as the second argument.</p></li>
+<li><p>The scan parameter is fed in after scan type, starting from the third positional argument.</p></li>
 </ul>
 </dd>
-<dt>Types of ScanPlan available in current version:</dt>
-<dd><ul class="first last simple">
-<li><code class="docutils literal notranslate"><span class="pre">ct</span></code> just exposes the detector for a number of seconds. e.g.,  <code class="docutils literal notranslate"><span class="pre">ScanPlan(bt,</span> <span class="pre">ct,</span> <span class="pre">17.5)</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">tseries</span></code> executes a series of <code class="docutils literal notranslate"><span class="pre">num</span></code> counts of exposure time <code class="docutils literal notranslate"><span class="pre">exposure</span></code> seconds with  a delay of <code class="docutils literal notranslate"><span class="pre">delay</span></code> seconds between them.  e.g., <code class="docutils literal notranslate"><span class="pre">ScanPlan(bt,</span> <span class="pre">tseries,</span> <span class="pre">1,</span> <span class="pre">59,</span> <span class="pre">50)</span></code> will measure 50 scans of 1 second with a delay of 59 seconds in between each of them.</li>
-<li><code class="docutils literal notranslate"><span class="pre">Tramp</span></code> executes a temperature ramp from <code class="docutils literal notranslate"><span class="pre">'startingT'</span></code> to <code class="docutils literal notranslate"><span class="pre">'endingT'</span></code> in temperature steps of <code class="docutils literal notranslate"><span class="pre">Tstep</span></code> with exposure time of <code class="docutils literal notranslate"><span class="pre">exposure</span></code>.  e.g., <code class="docutils literal notranslate"><span class="pre">ScanPlan(bt,</span> <span class="pre">Tramp,</span> <span class="pre">1,</span> <span class="pre">200,</span> <span class="pre">500,</span> <span class="pre">5)</span></code> will automatically change the temperature,
-starting at 200 K and ending at 500 K, measuring a scan of 1 s at every 5 K step. The temperature controller will hold at each temperature until the temperature stabilizes before starting the measurement.</li>
-<li><code class="docutils literal notranslate"><span class="pre">Tlist</span></code> exposes the detector for a given exposure time <code class="docutils literal notranslate"><span class="pre">exposure</span></code>
+<dt>Types of ScanPlan available in current version:</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ct</span></code> just exposes the detector for a number of seconds. e.g.,  <code class="docutils literal notranslate"><span class="pre">ScanPlan(bt,</span> <span class="pre">ct,</span> <span class="pre">17.5)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tseries</span></code> executes a series of <code class="docutils literal notranslate"><span class="pre">num</span></code> counts of exposure time <code class="docutils literal notranslate"><span class="pre">exposure</span></code> seconds with  a delay of <code class="docutils literal notranslate"><span class="pre">delay</span></code> seconds between them.  e.g., <code class="docutils literal notranslate"><span class="pre">ScanPlan(bt,</span> <span class="pre">tseries,</span> <span class="pre">1,</span> <span class="pre">59,</span> <span class="pre">50)</span></code> will measure 50 scans of 1 second with a delay of 59 seconds in between each of them.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Tramp</span></code> executes a temperature ramp from <code class="docutils literal notranslate"><span class="pre">'startingT'</span></code> to <code class="docutils literal notranslate"><span class="pre">'endingT'</span></code> in temperature steps of <code class="docutils literal notranslate"><span class="pre">Tstep</span></code> with exposure time of <code class="docutils literal notranslate"><span class="pre">exposure</span></code>.  e.g., <code class="docutils literal notranslate"><span class="pre">ScanPlan(bt,</span> <span class="pre">Tramp,</span> <span class="pre">1,</span> <span class="pre">200,</span> <span class="pre">500,</span> <span class="pre">5)</span></code> will automatically change the temperature,
+starting at 200 K and ending at 500 K, measuring a scan of 1 s at every 5 K step. The temperature controller will hold at each temperature until the temperature stabilizes before starting the measurement.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Tlist</span></code> exposes the detector for a given exposure time <code class="docutils literal notranslate"><span class="pre">exposure</span></code>
 in seconds at each temperature from a user-defined temperature
 list. For example, <code class="docutils literal notranslate"><span class="pre">ScanPlan(bt,</span> <span class="pre">Tlist,</span> <span class="pre">20,</span> <span class="pre">[250,</span> <span class="pre">180,</span> <span class="pre">200,</span> <span class="pre">230])</span></code>
 will drive the temperature controller to 250K, 180K, 200K and 230K
 and expose the detector for 20 seconds after the temperature
-controller equilibrates at each of the temperatures.</li>
+controller equilibrates at each of the temperatures.</p></li>
 </ul>
 </dd>
 </dl>
@@ -277,34 +271,34 @@ controller equilibrates at each of the temperatures.</li>
 <div class="section" id="summary-table-on-scanplan">
 <h2>Summary table on ScanPlan:<a class="headerlink" href="#summary-table-on-scanplan" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><table border="1" class="docutils">
+<div><table class="docutils align-center">
 <colgroup>
-<col width="8%" />
-<col width="34%" />
-<col width="58%" />
+<col style="width: 8%" />
+<col style="width: 34%" />
+<col style="width: 58%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">ScanPlan</th>
-<th class="head">Syntax</th>
-<th class="head">Summary</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>ScanPlan</p></th>
+<th class="head"><p>Syntax</p></th>
+<th class="head"><p>Summary</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">ct</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">ScanPlan(bt,</span> <span class="pre">ct,</span> <span class="pre">17.5)</span></code></td>
-<td>a count scan for 17.5s</td>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ct</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ScanPlan(bt,</span> <span class="pre">ct,</span> <span class="pre">17.5)</span></code></p></td>
+<td><p>a count scan for 17.5s</p></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">tseries</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">ScanPlan(bt,</span> <span class="pre">tseries,</span> <span class="pre">1,</span> <span class="pre">59,</span> <span class="pre">50)</span></code></td>
-<td>time series with 1s count time, 59s delay and 50 repeats</td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">tseries</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ScanPlan(bt,</span> <span class="pre">tseries,</span> <span class="pre">1,</span> <span class="pre">59,</span> <span class="pre">50)</span></code></p></td>
+<td><p>time series with 1s count time, 59s delay and 50 repeats</p></td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">Tramp</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">ScanPlan(bt,</span> <span class="pre">Tramp</span> <span class="pre">,</span> <span class="pre">1,</span> <span class="pre">200,</span> <span class="pre">500,</span> <span class="pre">5)</span></code></td>
-<td>temperature series with 1s count time, starting from 300k to 200k with 5k per step</td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Tramp</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ScanPlan(bt,</span> <span class="pre">Tramp</span> <span class="pre">,</span> <span class="pre">1,</span> <span class="pre">200,</span> <span class="pre">500,</span> <span class="pre">5)</span></code></p></td>
+<td><p>temperature series with 1s count time, starting from 300k to 200k with 5k per step</p></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">Tlist</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">ScanPlan(bt,</span> <span class="pre">Tlist,</span> <span class="pre">5,</span> <span class="pre">[250,</span> <span class="pre">180,</span> <span class="pre">200,</span> <span class="pre">230])</span></code></td>
-<td>exposure detector for 5s at 250K, 180K, 200K and 230K</td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Tlist</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ScanPlan(bt,</span> <span class="pre">Tlist,</span> <span class="pre">5,</span> <span class="pre">[250,</span> <span class="pre">180,</span> <span class="pre">200,</span> <span class="pre">230])</span></code></p></td>
+<td><p>exposure detector for 5s at 250K, 180K, 200K and 230K</p></td>
 </tr>
 </tbody>
 </table>
