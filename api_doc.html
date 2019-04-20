@@ -350,7 +350,7 @@ following commands:</p>
 
 <dl class="function">
 <dt id="xpdacq.beamtime.Tramp">
-<code class="descclassname">xpdacq.beamtime.</code><code class="descname">Tramp</code><span class="sig-paren">(</span><em>dets</em>, <em>exposure</em>, <em>Tstart</em>, <em>Tstop</em>, <em>Tstep</em>, <em>*</em>, <em>per_step=&lt;function _shutter_step&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#xpdacq.beamtime.Tramp" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">xpdacq.beamtime.</code><code class="descname">Tramp</code><span class="sig-paren">(</span><em>dets</em>, <em>exposure</em>, <em>Tstart</em>, <em>Tstop</em>, <em>Tstep</em>, <em>*</em>, <em>per_step=&lt;function shutter_step&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#xpdacq.beamtime.Tramp" title="Permalink to this definition">¶</a></dt>
 <dd><p>Collect data over a range of temperatures</p>
 <p>This plan sets the sample temperature using a temp_controller device
 and exposes a detector for a set time at each temperature.
@@ -398,7 +398,7 @@ open during the ramping.</p>
 
 <dl class="function">
 <dt id="xpdacq.beamtime.Tlist">
-<code class="descclassname">xpdacq.beamtime.</code><code class="descname">Tlist</code><span class="sig-paren">(</span><em>dets</em>, <em>exposure</em>, <em>T_list</em>, <em>*</em>, <em>per_step=&lt;function _shutter_step&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#xpdacq.beamtime.Tlist" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">xpdacq.beamtime.</code><code class="descname">Tlist</code><span class="sig-paren">(</span><em>dets</em>, <em>exposure</em>, <em>T_list</em>, <em>*</em>, <em>per_step=&lt;function shutter_step&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#xpdacq.beamtime.Tlist" title="Permalink to this definition">¶</a></dt>
 <dd><p>Collect data over a list of user-specific temperatures</p>
 <p>This plan sets the sample temperature using a temp_controller device
 and exposes a detector for a set time at each temperature.
