@@ -176,7 +176,7 @@
 <span id="calib-api"></span><h2>run_calibration API Documentation<a class="headerlink" href="#run-calibration-api-documentation" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="xpdacq.calib.run_calibration">
-<code class="descclassname">xpdacq.calib.</code><code class="descname">run_calibration</code><span class="sig-paren">(</span><em>exposure=5</em>, <em>dark_sub_bool=True</em>, <em>calibrant=None</em>, <em>phase_info=None</em>, <em>detector=None</em>, <em>*</em>, <em>RE_instance=None</em>, <em>wait_for_cal=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#xpdacq.calib.run_calibration" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">xpdacq.calib.</code><code class="sig-name descname">run_calibration</code><span class="sig-paren">(</span><em class="sig-param">exposure=5</em>, <em class="sig-param">dark_sub_bool=True</em>, <em class="sig-param">calibrant=None</em>, <em class="sig-param">phase_info=None</em>, <em class="sig-param">detector=None</em>, <em class="sig-param">*</em>, <em class="sig-param">RE_instance=None</em>, <em class="sig-param">wait_for_cal=True</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#xpdacq.calib.run_calibration" title="Permalink to this definition">¶</a></dt>
 <dd><p>function to run entire calibration process.</p>
 <p>Entire process includes:</p>
 <ol class="arabic simple">
@@ -235,7 +235,7 @@ pyFAI documentation for all options.</p></li>
 <span id="xrun-api"></span><h2>xrun API Documentation<a class="headerlink" href="#xrun-api-documentation" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="xpdacq.xpdacq.CustomizedRunEngine">
-<em class="property">class </em><code class="descclassname">xpdacq.xpdacq.</code><code class="descname">CustomizedRunEngine</code><span class="sig-paren">(</span><em>beamtime</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#xpdacq.xpdacq.CustomizedRunEngine" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">xpdacq.xpdacq.</code><code class="sig-name descname">CustomizedRunEngine</code><span class="sig-paren">(</span><em class="sig-param">beamtime</em>, <em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#xpdacq.xpdacq.CustomizedRunEngine" title="Permalink to this definition">¶</a></dt>
 <dd><p>A RunEngine customized for XPD workflows.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -246,7 +246,7 @@ beamtime object is linked, index-based syntax will not be allowed.</p>
 </dl>
 <dl class="attribute">
 <dt id="xpdacq.xpdacq.CustomizedRunEngine.beamtime">
-<code class="descname">beamtime</code><a class="headerlink" href="#xpdacq.xpdacq.CustomizedRunEngine.beamtime" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">beamtime</code><a class="headerlink" href="#xpdacq.xpdacq.CustomizedRunEngine.beamtime" title="Permalink to this definition">¶</a></dt>
 <dd><p>beamtime object currently associated with this RunEngine instance.</p>
 </dd></dl>
 
@@ -270,7 +270,7 @@ and contain the required keys.</p>
 </div>
 <dl class="method">
 <dt id="xpdacq.xpdacq.CustomizedRunEngine.__call__">
-<code class="descname">__call__</code><span class="sig-paren">(</span><em>sample</em>, <em>plan</em>, <em>subs=None</em>, <em>*</em>, <em>verify_write=False</em>, <em>dark_strategy=&lt;function periodic_dark&gt;</em>, <em>robot=False</em>, <em>**metadata_kw</em><span class="sig-paren">)</span><a class="headerlink" href="#xpdacq.xpdacq.CustomizedRunEngine.__call__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__call__</code><span class="sig-paren">(</span><em class="sig-param">sample</em>, <em class="sig-param">plan</em>, <em class="sig-param">subs=None</em>, <em class="sig-param">*</em>, <em class="sig-param">verify_write=False</em>, <em class="sig-param">dark_strategy=&lt;function periodic_dark&gt;</em>, <em class="sig-param">robot=False</em>, <em class="sig-param">**metadata_kw</em><span class="sig-paren">)</span><a class="headerlink" href="#xpdacq.xpdacq.CustomizedRunEngine.__call__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Execute a plan</p>
 <p>Any keyword arguments other than those listed below will
 be interpreted as metadata and recorded with the run.</p>
@@ -327,7 +327,7 @@ run time. If the extra metdata has the same key as the
 <span id="scanplan-api"></span><h2>ScanPlan API Documentation<a class="headerlink" href="#scanplan-api-documentation" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="xpdacq.beamtime.ct">
-<code class="descclassname">xpdacq.beamtime.</code><code class="descname">ct</code><span class="sig-paren">(</span><em>dets</em>, <em>exposure</em><span class="sig-paren">)</span><a class="headerlink" href="#xpdacq.beamtime.ct" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">xpdacq.beamtime.</code><code class="sig-name descname">ct</code><span class="sig-paren">(</span><em class="sig-param">dets</em>, <em class="sig-param">exposure</em><span class="sig-paren">)</span><a class="headerlink" href="#xpdacq.beamtime.ct" title="Permalink to this definition">¶</a></dt>
 <dd><p>Take one reading from area detector with given exposure time</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -350,7 +350,7 @@ following commands:</p>
 
 <dl class="function">
 <dt id="xpdacq.beamtime.Tramp">
-<code class="descclassname">xpdacq.beamtime.</code><code class="descname">Tramp</code><span class="sig-paren">(</span><em>dets</em>, <em>exposure</em>, <em>Tstart</em>, <em>Tstop</em>, <em>Tstep</em>, <em>*</em>, <em>per_step=&lt;function shutter_step&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#xpdacq.beamtime.Tramp" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">xpdacq.beamtime.</code><code class="sig-name descname">Tramp</code><span class="sig-paren">(</span><em class="sig-param">dets</em>, <em class="sig-param">exposure</em>, <em class="sig-param">Tstart</em>, <em class="sig-param">Tstop</em>, <em class="sig-param">Tstep</em>, <em class="sig-param">*</em>, <em class="sig-param">per_step=&lt;function shutter_step&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#xpdacq.beamtime.Tramp" title="Permalink to this definition">¶</a></dt>
 <dd><p>Collect data over a range of temperatures</p>
 <p>This plan sets the sample temperature using a temp_controller device
 and exposes a detector for a set time at each temperature.
@@ -398,7 +398,7 @@ open during the ramping.</p>
 
 <dl class="function">
 <dt id="xpdacq.beamtime.Tlist">
-<code class="descclassname">xpdacq.beamtime.</code><code class="descname">Tlist</code><span class="sig-paren">(</span><em>dets</em>, <em>exposure</em>, <em>T_list</em>, <em>*</em>, <em>per_step=&lt;function shutter_step&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#xpdacq.beamtime.Tlist" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">xpdacq.beamtime.</code><code class="sig-name descname">Tlist</code><span class="sig-paren">(</span><em class="sig-param">dets</em>, <em class="sig-param">exposure</em>, <em class="sig-param">T_list</em>, <em class="sig-param">*</em>, <em class="sig-param">per_step=&lt;function shutter_step&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#xpdacq.beamtime.Tlist" title="Permalink to this definition">¶</a></dt>
 <dd><p>Collect data over a list of user-specific temperatures</p>
 <p>This plan sets the sample temperature using a temp_controller device
 and exposes a detector for a set time at each temperature.
@@ -444,7 +444,7 @@ open during the ramping.</p>
 
 <dl class="function">
 <dt id="xpdacq.beamtime.tseries">
-<code class="descclassname">xpdacq.beamtime.</code><code class="descname">tseries</code><span class="sig-paren">(</span><em>dets</em>, <em>exposure</em>, <em>delay</em>, <em>num</em>, <em>auto_shutter=True</em><span class="sig-paren">)</span><a class="headerlink" href="#xpdacq.beamtime.tseries" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">xpdacq.beamtime.</code><code class="sig-name descname">tseries</code><span class="sig-paren">(</span><em class="sig-param">dets</em>, <em class="sig-param">exposure</em>, <em class="sig-param">delay</em>, <em class="sig-param">num</em>, <em class="sig-param">auto_shutter=True</em><span class="sig-paren">)</span><a class="headerlink" href="#xpdacq.beamtime.tseries" title="Permalink to this definition">¶</a></dt>
 <dd><p>time series scan with area detector.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
