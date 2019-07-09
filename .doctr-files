@@ -16,6 +16,7 @@
 ./_sources/changelog.rst.txt
 ./_sources/cheat_sheet.rst.txt
 ./_sources/configuration.rst.txt
+./_sources/db_export.rst.txt
 ./_sources/features.rst.txt
 ./_sources/index.rst.txt
 ./_sources/installation.rst.txt
@@ -89,6 +90,7 @@
 ./changelog.html
 ./cheat_sheet.html
 ./configuration.html
+./db_export.html
 ./features.html
 ./genindex.html
 ./index.html
