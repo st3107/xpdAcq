@@ -167,47 +167,6 @@
 <h1>Useful Functionalities<a class="headerlink" href="#useful-functionalities" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="helper-functions">
 <h2>Helper functions<a class="headerlink" href="#helper-functions" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="xpdacq.utils.export_userScriptsEtc">
-<code class="sig-prename descclassname">xpdacq.utils.</code><code class="sig-name descname">export_userScriptsEtc</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#xpdacq.utils.export_userScriptsEtc" title="Permalink to this definition">¶</a></dt>
-<dd><dl>
-<dt>function that exports user defined objects/scripts stored under</dt><dd><p>config_base and userScript.</p>
-<p>This function will create a uncompressed tarball under xpdUser/Export</p>
-</dd>
-</dl>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><ul class="simple">
-<li><p><strong>archive_path</strong> (<em>str</em>)</p></li>
-<li><p><em>path to archive file just created</em></p></li>
-</ul>
-</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="function">
-<dt id="xpdacq.utils.import_userScriptsEtc">
-<code class="sig-prename descclassname">xpdacq.utils.</code><code class="sig-name descname">import_userScriptsEtc</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#xpdacq.utils.import_userScriptsEtc" title="Permalink to this definition">¶</a></dt>
-<dd><p>Import user files that have been placed in xpdUser/Import</p>
-<p>Allowed files are python user-script files (extension .py),
-detector-image mask files (.npy) or files containing xpdAcq objects
-(extension .yml). Files created by running export_userScriptsEtc() are
-also allowed.  Unallowed files (anything not in the previous list) will
-be ignored.</p>
-<p>After import, all files in the xpdUser/import directory will be deleted
-The user can run <cite>export_userScriptsEtc</cite> to revert them.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><ul class="simple">
-<li><p><strong>moved_list</strong> (<em>list</em>)</p></li>
-<li><p><em>a list of file names that have been moved successfully</em></p></li>
-</ul>
-</p>
-</dd>
-</dl>
-</dd></dl>
-
 </div>
 </div>
 
