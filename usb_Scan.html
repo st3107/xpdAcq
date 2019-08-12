@@ -217,6 +217,31 @@ saved for reload and will be sent home with you at the end of the experiment.</p
 <div class="section" id="setting-up-scanplans">
 <h2>Setting up ScanPlans<a class="headerlink" href="#setting-up-scanplans" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">ScanPlan</span></code> takes <code class="docutils literal notranslate"><span class="pre">Beamtime</span></code>, scanplan and corresponding arguments. Let’s type <code class="docutils literal notranslate"><span class="pre">ScanPlan?</span></code> and hit return to find out more:</p>
+<dl class="function">
+<dt id="xpdacq.beamtime.ScanPlan">
+<code class="sig-prename descclassname">xpdacq.beamtime.</code><code class="sig-name descname">ScanPlan</code><span class="sig-paren">(</span><em class="sig-param">beamtime</em>, <em class="sig-param">plan_func</em>, <em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#xpdacq.beamtime.ScanPlan" title="Permalink to this definition">¶</a></dt>
+<dd><p>class that carries scan plan with corresponding experimental arguements</p>
+<p>after creation, this Sample object will be related to Beamtime
+object given as argument and will be available in bt.list()</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>beamtime</strong> (<em>xpdacq.beamtime.Beamtime</em>) – object representing current beamtime.</p></li>
+<li><p><strong>plan_func</strong> – predefined plan function. For complete list of available functions,
+please refere to <a class="reference external" href="http://xpdacq.github.io">http://xpdacq.github.io</a> for more information.</p></li>
+<li><p><strong>args</strong> – positional arguments corresponding to plan function in used.</p></li>
+<li><p><strong>kwargs</strong> – keyword arguments corresponding to plan function in used.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>A <cite>ct</cite> (count) scan with 5s exposure time linked to Beamtime object <cite>bt</cite>.
+&gt;&gt;&gt; ScanPlan(bt, ct, 5)</p>
+<p><cite>ScanPlan</cite> class also takes keyword arguments.
+&gt;&gt;&gt; ScanPlan(bt, ct, exposure=5)</p>
+<p>Please refer to <a class="reference external" href="http://xpdacq.github.io">http://xpdacq.github.io</a> for more examples.</p>
+</dd></dl>
+
 <p>Here are some examples of valid count-type ScanPlan definitions:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sc</span> <span class="o">=</span> <span class="n">ScanPlan</span><span class="p">(</span><span class="n">bt</span><span class="p">,</span> <span class="n">ct</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>                      <span class="c1"># the simplest count scan definition</span>
 </pre></div>
