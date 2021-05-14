@@ -13,6 +13,7 @@
 # See LICENSE.txt for license information.
 #
 ##############################################################################
+import copy
 import inspect
 import os
 import uuid
@@ -23,6 +24,7 @@ import bluesky.plan_stubs as bps
 import bluesky.plans as bp
 import bluesky.preprocessors as bpp
 import numpy as np
+import pyFAI
 import yaml
 from bluesky.callbacks import LiveTable
 from xpdconf.conf import XPD_SHUTTER_CONF
@@ -969,3 +971,61 @@ class ScanPlan(ValidatedDictLike, YamlChainMap, ABC):
         arg_value_str = map(str, self.bound_arguments.values())
         fn = "_".join([self["sp_plan_name"]] + list(arg_value_str))
         return os.path.join(glbl["yaml_dir"], "scanplans", "%s.yml" % fn)
+
+
+def load_calibration_md(poni_file: str) -> dict:
+    """Load the content in poni file as a dictionary.
+
+    Parameters
+    ----------
+    poni_file : str
+        The path to the poni file.
+
+    Returns
+    -------
+    dct :
+        The poni file data.
+    """
+    config = dict(pyFAI.load(poni_file).get_config())
+    detector_config = dict(config.pop("detector_config"))
+    config.update(detector_config)
+    return config
+
+
+def xpdacq_count(detectors: list, num: int = 1, delay: float = None, *, calibration_md: dict = None,
+                 md: dict = None):
+    """
+    Take one or more readings from detectors.
+
+    Parameters
+    ----------
+    detectors : list
+        list of 'readable' objects
+
+    num : integer, optional
+        number of readings to take; default is 1
+
+        If None, capture data until canceled
+
+    delay : iterable or scalar, optional
+        Time delay in seconds between successive readings; default is 0.
+
+    calibration_md :
+        The calibration metadata from pyFAI.
+
+    md : dict, optional
+        metadata
+
+    Notes
+    -----
+    If ``delay`` is an iterable, it must have at least ``num - 1`` entries or
+    the plan will raise a ``ValueError`` during iteration.
+    """
+    if md is None:
+        md = {}
+    _md = copy.deepcopy(md)
+    if calibration_md is not None:
+        _md.update({"calibration_md": calibration_md})
+    yield from open_shutter_stub()
+    yield from bp.count(detectors, num, delay, md=_md)
+    yield from close_shutter_stub()
