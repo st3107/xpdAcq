@@ -986,10 +986,7 @@ def load_calibration_md(poni_file: str) -> dict:
     dct :
         The poni file data.
     """
-    config = dict(pyFAI.load(poni_file).get_config())
-    detector_config = dict(config.pop("detector_config"))
-    config.update(detector_config)
-    return config
+    return pyFAI.load(poni_file).get_config()
 
 
 def xpdacq_count(detectors: list, num: int = 1, delay: float = None, *, calibration_md: dict = None,
